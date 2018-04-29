@@ -124,8 +124,8 @@ body,
 }
 body {
   font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
-/*background: url(/images/background.jpg)*/
-  background: #aaa;
+/* background: url(/images/background.jpg) */
+  background: #191919;
   font-size: 14px;
   -webkit-text-size-adjust: 100%;
   position: relative;
@@ -181,7 +181,7 @@ body {
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #aaa;
+  background: #191919;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -1353,7 +1353,7 @@ body {
   line-height: 36px;
 }
 .article-share-links {
-  background: #aaa;
+  background: #191919;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -2940,11 +2940,11 @@ pre .javascript .function {
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(245,245,245,0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
   border-radius: 8px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(245,245,245,0.2);
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb {
