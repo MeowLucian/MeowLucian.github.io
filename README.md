@@ -1,7 +1,9 @@
 # MeowLucian.github.io
 
-MeowLucian's Blog : https://meowlucian.github.io/
+Brain Garden (MeowLucian's Blog) : https://BrainGarden.ddns.net
+
+Github local site : https://meowlucian.github.io/
 
 `Powered by Hexo`
 
-![README_Home_Picture](https://drive.google.com/uc?export=download&id=1Z_4O97EoyX49RQIlfXfFPU7XGD4PzKOI)
+![README_Home_Picture](https://drive.google.com/uc?export=download&id=19UnRRRlcHMTg5-xGVzquz_5KaddJ0qz3)
