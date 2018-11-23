@@ -1,8 +1,8 @@
 # MeowLucian.github.io
 
-Brain Garden (MeowLucian's Blog) : https://Brain-Garden.ddns.net
+Brain Garden (MeowLucian's Blog) : https://Brain-Garden.tw
 
-Github local site : https://meowlucian.github.io/
+Github local site : https://meowlucian.github.io
 
 `Powered by Hexo`
 
