@@ -1,6 +1,6 @@
 # MeowLucian.github.io
 
-Brain Garden (MeowLucian's Blog) : https://BrainGarden.ddns.net
+Brain Garden (MeowLucian's Blog) : https://Brain-Garden.ddns.net
 
 Github local site : https://meowlucian.github.io/
 
