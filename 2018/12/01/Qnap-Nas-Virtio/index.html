@@ -7,13 +7,13 @@
 
 
 
-    <meta name="description" content="簡介在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
+    <meta name="description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
 <meta name="keywords" content="Nas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Qnap Nas Virtio (Qnap Nas 安裝 Virtio)">
 <meta property="og:url" content="http://brain-garden.tw/2018/12/01/Qnap-Nas-Virtio/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="簡介在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
+<meta property="og:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1YBmAKMUUHSbNhX5hUTJZdXXyF57Buf95">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET">
@@ -29,10 +29,10 @@
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx">
-<meta property="og:updated_time" content="2018-12-04T07:28:24.568Z">
+<meta property="og:updated_time" content="2018-12-06T17:19:29.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qnap Nas Virtio (Qnap Nas 安裝 Virtio)">
-<meta name="twitter:description" content="簡介在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
+<meta name="twitter:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1YBmAKMUUHSbNhX5hUTJZdXXyF57Buf95">
 
 
@@ -161,7 +161,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 918 words)
+                    6 minutes read (About 916 words)
                 </span>
                 
             </div>
@@ -169,11 +169,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Qnap Nas Virtio (Qnap Nas 安裝 Virtio)
+                <a class="has-link-black-ter">Qnap Nas Virtio (Qnap Nas 安裝 Virtio)</a>
             
         </h1>
         <div class="content">
-            <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。</p>
+            <p>在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。</p>
 <a id="more"></a>
 <h1 id="傳輸速度的疑難雜症"><a href="#傳輸速度的疑難雜症" class="headerlink" title="傳輸速度的疑難雜症"></a>傳輸速度的疑難雜症</h1><p>由於在虛擬機器安裝一個 Windows 的作業系統，所以 Qnap 的主 Linux 作業系統與虛擬出來的 Windows 作業系統在橋接(Bridge) 模式下，兩系統為獨立個體，透過各自的實體 IP 出去再由路由器交換資料、來達到互相傳輸的功能。</p>
 <p>此方式為安裝虛擬機後預設配置，交換資料是透過兩個階段而不是直接在 Nas 裡的硬體磁碟交換資料，以致於傳輸速度較低。</p>
@@ -409,32 +409,28 @@
 <div class="card widget" id="toc">
     <div class="card-content">
         <div class="menu">
-            <h3 class="menu-label">
+            <h3 class="menu-label has-text-danger">
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#簡介">
-        <span class="has-mr-6">1</span>
-        <span>簡介</span>
-        </a></li><li>
         <a class="is-flex" href="#傳輸速度的疑難雜症">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">1</span>
         <span>傳輸速度的疑難雜症</span>
         </a></li><li>
         <a class="is-flex" href="#何謂-Virtio">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">2</span>
         <span>何謂 Virtio</span>
         </a></li><li>
         <a class="is-flex" href="#Virtio-驅動下載">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">3</span>
         <span>Virtio 驅動下載</span>
         </a></li><li>
         <a class="is-flex" href="#安裝步驟">
-        <span class="has-mr-6">5</span>
+        <span class="has-mr-6">4</span>
         <span>安裝步驟</span>
         </a></li><li>
         <a class="is-flex" href="#結語">
-        <span class="has-mr-6">6</span>
+        <span class="has-mr-6">5</span>
         <span>結語</span>
         </a></li></ul>
         </div>
@@ -450,7 +446,7 @@
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
-            <h3 class="menu-label">
+            <h3 class="menu-label has-text-danger">
                 Categories
             </h3>
             <ul class="menu-list">
@@ -460,7 +456,7 @@
                 <span class="level-item">Learning-Note-學習筆記</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag is-primary">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Lift-生活/">
@@ -468,7 +464,7 @@
                 <span class="level-item">Lift-生活</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag is-primary">3</span>
             </span>
         </a></li>
             </ul>
@@ -479,7 +475,7 @@
         
 <div class="card widget">
     <div class="card-content">
-        <h3 class="menu-label">
+        <h3 class="menu-label has-text-danger">
             Tag Cloud
         </h3>
         <a href="/tags/Code/" style="font-size: 10px;">Code</a> <a href="/tags/Dpi/" style="font-size: 10px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a>
@@ -493,7 +489,7 @@
             
 <div class="card widget">
     <div class="card-content">
-        <h3 class="menu-label">
+        <h3 class="menu-label has-text-danger">
             Recent
         </h3>
         
@@ -599,7 +595,7 @@
             <div class="card widget">
     <div class="card-content">
         <div class="menu">
-        <h3 class="menu-label">
+        <h3 class="menu-label has-text-danger">
             Archives
         </h3>
         <ul class="menu-list">
@@ -610,7 +606,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag is-primary">3</span>
                 </span>
             </a>
         </li>
@@ -621,7 +617,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag is-primary">1</span>
                 </span>
             </a>
         </li>
@@ -632,7 +628,7 @@
                     <span class="level-item">March 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag is-primary">4</span>
                 </span>
             </a>
         </li>
@@ -643,7 +639,7 @@
                     <span class="level-item">January 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag is-primary">4</span>
                 </span>
             </a>
         </li>
@@ -656,7 +652,7 @@
             <div class="card widget">
     <div class="card-content">
         <div class="menu">
-            <h3 class="menu-label">
+            <h3 class="menu-label has-text-danger">
                 Tags
             </h3>
             <ul class="menu-list">
@@ -667,7 +663,7 @@
                             <span class="level-item">Code</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -678,7 +674,7 @@
                             <span class="level-item">Dpi</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -689,7 +685,7 @@
                             <span class="level-item">Drive</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -700,7 +696,7 @@
                             <span class="level-item">Github</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">2</span>
+                            <span class="level-item tag is-primary">2</span>
                         </span>
                     </a>
                 </li>
@@ -711,7 +707,7 @@
                             <span class="level-item">Headphone</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -722,7 +718,7 @@
                             <span class="level-item">Hexo</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">2</span>
+                            <span class="level-item tag is-primary">2</span>
                         </span>
                     </a>
                 </li>
@@ -733,7 +729,7 @@
                             <span class="level-item">MIMO</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -744,7 +740,7 @@
                             <span class="level-item">Mathtype</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -755,7 +751,7 @@
                             <span class="level-item">Nas</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -766,7 +762,7 @@
                             <span class="level-item">SDR</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -777,7 +773,7 @@
                             <span class="level-item">SSL</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -788,7 +784,7 @@
                             <span class="level-item">Url</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -799,7 +795,7 @@
                             <span class="level-item">Web</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">4</span>
+                            <span class="level-item tag is-primary">4</span>
                         </span>
                     </a>
                 </li>
@@ -822,7 +818,7 @@
         
 <div class="card widget">
     <div class="card-content">
-        <h3 class="menu-label">
+        <h3 class="menu-label has-text-danger">
             Recent
         </h3>
         
@@ -928,7 +924,7 @@
         <div class="card widget">
     <div class="card-content">
         <div class="menu">
-        <h3 class="menu-label">
+        <h3 class="menu-label has-text-danger">
             Archives
         </h3>
         <ul class="menu-list">
@@ -939,7 +935,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag is-primary">3</span>
                 </span>
             </a>
         </li>
@@ -950,7 +946,7 @@
                     <span class="level-item">November 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag is-primary">1</span>
                 </span>
             </a>
         </li>
@@ -961,7 +957,7 @@
                     <span class="level-item">March 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag is-primary">4</span>
                 </span>
             </a>
         </li>
@@ -972,7 +968,7 @@
                     <span class="level-item">January 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag is-primary">4</span>
                 </span>
             </a>
         </li>
@@ -985,7 +981,7 @@
         <div class="card widget">
     <div class="card-content">
         <div class="menu">
-            <h3 class="menu-label">
+            <h3 class="menu-label has-text-danger">
                 Tags
             </h3>
             <ul class="menu-list">
@@ -996,7 +992,7 @@
                             <span class="level-item">Code</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1007,7 +1003,7 @@
                             <span class="level-item">Dpi</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1018,7 +1014,7 @@
                             <span class="level-item">Drive</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1029,7 +1025,7 @@
                             <span class="level-item">Github</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">2</span>
+                            <span class="level-item tag is-primary">2</span>
                         </span>
                     </a>
                 </li>
@@ -1040,7 +1036,7 @@
                             <span class="level-item">Headphone</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1051,7 +1047,7 @@
                             <span class="level-item">Hexo</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">2</span>
+                            <span class="level-item tag is-primary">2</span>
                         </span>
                     </a>
                 </li>
@@ -1062,7 +1058,7 @@
                             <span class="level-item">MIMO</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1073,7 +1069,7 @@
                             <span class="level-item">Mathtype</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1084,7 +1080,7 @@
                             <span class="level-item">Nas</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1095,7 +1091,7 @@
                             <span class="level-item">SDR</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1106,7 +1102,7 @@
                             <span class="level-item">SSL</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1117,7 +1113,7 @@
                             <span class="level-item">Url</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag is-primary">1</span>
                         </span>
                     </a>
                 </li>
@@ -1128,7 +1124,7 @@
                             <span class="level-item">Web</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">4</span>
+                            <span class="level-item tag is-primary">4</span>
                         </span>
                     </a>
                 </li>

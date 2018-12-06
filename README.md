@@ -6,4 +6,4 @@ Github local site : https://meowlucian.github.io
 
 `Powered by Hexo`
 
-![README_Home_Picture](https://drive.google.com/uc?export=download&id=1NJTqyf6pQnEuMs8y-F9xNTGGcW2nVrCF)
+![README_Home_Picture](https://drive.google.com/uc?export=download&id=1_Wql5ccRi60GhmYQ_tmVKISvFvF-oKn5)
