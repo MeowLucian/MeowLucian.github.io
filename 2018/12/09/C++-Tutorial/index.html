@@ -2,23 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>C++ Tutorial (C++ 教學) - Brain Garden</title>
+<title>C++ STL Tutorial (C++ STL 教學) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="C++ 教學與筆記。">
+    <meta name="description" content="C++ STL 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ Tutorial (C++ 教學)">
+<meta property="og:title" content="C++ STL Tutorial (C++ STL 教學)">
 <meta property="og:url" content="http://brain-garden.tw/2018/12/09/C++-Tutorial/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="C++ 教學與筆記。">
+<meta property="og:description" content="C++ STL 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-11T02:11:59.496Z">
+<meta property="og:updated_time" content="2018-12-11T12:42:02.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ Tutorial (C++ 教學)">
-<meta name="twitter:description" content="C++ 教學與筆記。">
+<meta name="twitter:title" content="C++ STL Tutorial (C++ STL 教學)">
+<meta name="twitter:description" content="C++ STL 教學與筆記。">
 
 
 
@@ -84,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ Tutorial (C++ 教學)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ STL Tutorial (C++ STL 教學)" height="28">
             
             </a>
         </div>
@@ -128,7 +128,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ Tutorial (C++ 教學)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1E5sf4pG_q1GR0ditM_yWAsh9oPaEbH1-" alt="C++ STL Tutorial (C++ STL 教學)">
         </span>
     </div>
     
@@ -146,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 226 words)
+                    3 minutes read (About 436 words)
                 </span>
                 
             </div>
@@ -154,11 +154,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">C++ Tutorial (C++ 教學)</a>
+                <a class="has-link-black-ter">C++ STL Tutorial (C++ STL 教學)</a>
             
         </h1>
         <div class="content">
-            <p>C++ 教學與筆記。</p>
+            <p>C++ STL 教學與筆記。</p>
 <a id="more"></a>
 <h1 id="vector-amp-iterator-向量容器與疊代器"><a href="#vector-amp-iterator-向量容器與疊代器" class="headerlink" title="vector &amp; iterator (向量容器與疊代器)"></a>vector &amp; iterator (向量容器與疊代器)</h1><ul>
 <li>原始使用方法</li>
@@ -181,6 +181,21 @@
 <li>加入 參照(&amp;)後，可直接修改原始內容</li>
 </ul>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; x = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span>&amp; c : x) &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="erase-函數用法"><a href="#erase-函數用法" class="headerlink" title="erase 函數用法"></a>erase 函數用法</h1><ul>
+<li>以下為<code>錯誤</code>用法 :</li>
+</ul>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> p = begin(nums); p != end(nums); p++) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (*p == <span class="hljs-number">2</span>)</span><br><span class="line">            nums.erase(p);</span><br><span class="line">    &#125;	</span><br><span class="line">	</span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因為 earase 結束後，p 變成了空指標，p++ 就產生了錯誤。</p>
+<ul>
+<li>以下為<code>正確</code>用法 :</li>
+</ul>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> p = begin(nums); p != end(nums); p++) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (*p == <span class="hljs-number">2</span>)</span><br><span class="line">            p = nums.erase(p);</span><br><span class="line">    &#125;	</span><br><span class="line">	</span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>erase() 返回的值是一個迭代器，指向刪除元素的下一個元素；如果是 remove() 刪除某範圍內的元素時，返回值也是一個迭代器，指向最後一個刪除元素的下一個元素。</p>
+<p><code>此例不能連續刪除兩個 2。</code></p>
+<ul>
+<li>連續刪除 :</li>
+</ul>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> p = begin(nums); p != end(nums); ) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (*p == <span class="hljs-number">2</span>)</span><br><span class="line">            p = nums.erase(p);</span><br><span class="line">        <span class="hljs-keyword">else</span> </span><br><span class="line">            p++;</span><br><span class="line">    &#125;	</span><br><span class="line">	</span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -344,6 +359,10 @@
         <a class="is-flex" href="#vector-amp-iterator-向量容器與疊代器">
         <span class="has-mr-6">1</span>
         <span>vector &amp; iterator (向量容器與疊代器)</span>
+        </a></li><li>
+        <a class="is-flex" href="#erase-函數用法">
+        <span class="has-mr-6">2</span>
+        <span>erase 函數用法</span>
         </a></li></ul>
         </div>
     </div>
@@ -409,14 +428,14 @@
             
             <a href="/2018/12/09/C++-Tutorial/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ Tutorial (C++ 教學)">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1E5sf4pG_q1GR0ditM_yWAsh9oPaEbH1-" alt="C++ STL Tutorial (C++ STL 教學)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-08T16:00:00.000Z">2018-12-09</time></div>
-                    <a href="/2018/12/09/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ Tutorial (C++ 教學)</a>
+                    <a href="/2018/12/09/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ STL Tutorial (C++ STL 教學)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
                     </p>
@@ -749,14 +768,14 @@
             
             <a href="/2018/12/09/C++-Tutorial/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ Tutorial (C++ 教學)">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1E5sf4pG_q1GR0ditM_yWAsh9oPaEbH1-" alt="C++ STL Tutorial (C++ STL 教學)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-08T16:00:00.000Z">2018-12-09</time></div>
-                    <a href="/2018/12/09/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ Tutorial (C++ 教學)</a>
+                    <a href="/2018/12/09/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ STL Tutorial (C++ STL 教學)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
                     </p>
@@ -1080,7 +1099,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ Tutorial (C++ 教學)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ STL Tutorial (C++ STL 教學)" height="28">
                 
                 </a>
                 <p class="is-size-7">
