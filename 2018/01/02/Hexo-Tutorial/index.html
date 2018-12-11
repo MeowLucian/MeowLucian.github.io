@@ -15,10 +15,12 @@
 <meta property="og:site_name" content="Brain Garden">
 <meta property="og:description" content="Hexo 使用教學與客製化主題分享。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-08T02:46:49.248Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1_sb5S_3vCOVyZUsjcehE0CdRIGossHmW">
+<meta property="og:updated_time" content="2018-12-11T02:36:17.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Tutorial (Hexo 教學)">
 <meta name="twitter:description" content="Hexo 使用教學與客製化主題分享。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1_sb5S_3vCOVyZUsjcehE0CdRIGossHmW">
 
 
 
@@ -146,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 287 words)
+                    3 minutes read (About 408 words)
                 </span>
                 
             </div>
@@ -174,7 +176,14 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/MeowLucian/MeowLucian.github.io_Hexo_Theme.git themes/icarus</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="Json-content-外掛"><a href="#Json-content-外掛" class="headerlink" title="Json-content 外掛"></a>Json-content 外掛</h2><p>用於站內搜尋功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure></p>
+<h2 id="外掛"><a href="#外掛" class="headerlink" title="外掛"></a>外掛</h2><ul>
+<li><p>Json-content : 用於站內搜尋功能</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Sitemap : 用於產生網站地圖關鍵字功能</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h1 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h1><h2 id="主題"><a href="#主題" class="headerlink" title="主題"></a>主題</h2><p>編輯根目錄下的 <code>_config.yml</code><br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure></p>
 <h2 id="文章封面圖"><a href="#文章封面圖" class="headerlink" title="文章封面圖"></a>文章封面圖</h2><p>7:3 比例呈現</p>
 <h2 id="網址連結"><a href="#網址連結" class="headerlink" title="網址連結"></a>網址連結</h2><p>編輯根目錄下的 <code>_config.yml</code></p>
@@ -194,7 +203,20 @@
 <li><a href="http://localhost:3600/" target="_blank" rel="noopener">http://localhost:3600/</a></li>
 </ul>
 <h1 id="上傳到-Github"><a href="#上傳到-Github" class="headerlink" title="上傳到 Github"></a>上傳到 Github</h1><p>複製 <code>public</code> 資料夾裡的內容，建立 Commit 並 Push 到 Github 上的 Repository</p>
-<h1 id="註解"><a href="#註解" class="headerlink" title="註解"></a>註解</h1><p>個人放置網頁的 Repository 上有特殊檔案不要刪除或被更新的網頁覆蓋掉</p>
+<h1 id="產生-Sitemap"><a href="#產生-Sitemap" class="headerlink" title="產生 Sitemap"></a>產生 Sitemap</h1><ul>
+<li>到根目錄的 <code>_config.yml</code> 中的 <code># Site</code> 分類底下添加 :<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>輸入 <a href="https://localhost:3600/sitemap.xml" target="_blank" rel="noopener">https://localhost:3600/sitemap.xml</a>，查看所產生的 sitemap。</p>
+<ul>
+<li><p>完成後同樣將 <code># Site</code> 分類底下 <code>keywords</code> 添加關鍵字 :</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keywords:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最後別忘了在 Google Search Console 提交剛剛所產生的 Sitemap 資訊 :</p>
+</li>
+</ul>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1_sb5S_3vCOVyZUsjcehE0CdRIGossHmW" alt="Sitemap"></p>
+<h1 id="註解"><a href="#註解" class="headerlink" title="註解"></a>註解</h1><p>個人放置網頁的 Repository 上有特殊檔案不會自動產生，請不要刪除或被更新的網頁覆蓋掉</p>
 <ul>
 <li><code>README.md</code> : Github Repository 說明檔案</li>
 <li><code>CNAME</code> : 網站轉址檔案</li>
@@ -388,9 +410,9 @@
         <span class="has-mr-6">2.3</span>
         <span>icarus 主題</span>
         </a></li><li>
-        <a class="is-flex" href="#Json-content-外掛">
+        <a class="is-flex" href="#外掛">
         <span class="has-mr-6">2.4</span>
-        <span>Json-content 外掛</span>
+        <span>外掛</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#設定">
         <span class="has-mr-6">3</span>
@@ -432,8 +454,12 @@
         <span class="has-mr-6">5</span>
         <span>上傳到 Github</span>
         </a></li><li>
-        <a class="is-flex" href="#註解">
+        <a class="is-flex" href="#產生-Sitemap">
         <span class="has-mr-6">6</span>
+        <span>產生 Sitemap</span>
+        </a></li><li>
+        <a class="is-flex" href="#註解">
+        <span class="has-mr-6">7</span>
         <span>註解</span>
         </a></li></ul>
         </div>
