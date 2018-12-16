@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Brain Garden">
 <meta property="og:description" content="C++ STL 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-14T14:13:59.219Z">
+<meta property="og:updated_time" content="2018-12-16T10:46:07.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ STL Tutorial (C++ STL 教學)">
 <meta name="twitter:description" content="C++ STL 教學與筆記。">
@@ -146,7 +146,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 524 words)
+                    4 minutes read (About 591 words)
                 </span>
                 
             </div>
@@ -200,6 +200,9 @@
 <li>連續刪除(2) :</li>
 </ul>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> p = begin(nums); p != end(nums); p++) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (*p == <span class="hljs-number">2</span>) &#123;</span><br><span class="line">            p = nums.erase(p);</span><br><span class="line">            p--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;	</span><br><span class="line">	</span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="remove-函數用法"><a href="#remove-函數用法" class="headerlink" title="remove 函數用法"></a>remove 函數用法</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; nums = &#123; <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span> &#125;; <span class="hljs-comment">// 1 2 2 3 4 5</span></span><br><span class="line">                                                <span class="hljs-comment">// ^</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator pend = remove(begin(nums), end(nums), <span class="hljs-number">2</span>); <span class="hljs-comment">// 1 3 4 5 ?</span></span><br><span class="line">                                                                    <span class="hljs-comment">//         ^</span></span><br><span class="line">    <span class="hljs-comment">// print</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> c = begin(nums); c != pend; c++)</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; *c &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>remove() 同樣返回一個指標，指向刪除元素後、最後值的下一個元素。</p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -367,6 +370,10 @@
         <a class="is-flex" href="#erase-函數用法">
         <span class="has-mr-6">2</span>
         <span>erase 函數用法</span>
+        </a></li><li>
+        <a class="is-flex" href="#remove-函數用法">
+        <span class="has-mr-6">3</span>
+        <span>remove 函數用法</span>
         </a></li></ul>
         </div>
     </div>
