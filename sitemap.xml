@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/about/index.html</loc>
+    
+    <lastmod>2018-12-17T14:18:40.408Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw/2018/12/09/C++-STL-Tutorial/</loc>
     
     <lastmod>2018-12-16T11:01:56.629Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>http://brain-garden.tw/2018/12/04/Chrome-Extension/</loc>
     
     <lastmod>2018-12-06T17:17:54.918Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/about/index.html</loc>
-    
-    <lastmod>2018-12-06T11:57:22.637Z</lastmod>
     
   </url>
   
