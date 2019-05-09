@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Brain Garden">
 <meta property="og:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1YBmAKMUUHSbNhX5hUTJZdXXyF57Buf95">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1PhPWMQckthYPAKvEIzd1yJurItsuoCbd">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1p_g8aMdoHtSUSxNi2tM_vVbO3H6TSZmY">
@@ -29,11 +29,11 @@
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx">
-<meta property="og:updated_time" content="2018-12-06T17:19:29.115Z">
+<meta property="og:updated_time" content="2019-05-08T12:11:01.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qnap Nas Virtio (Qnap Nas 安裝 Virtio)">
 <meta name="twitter:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1YBmAKMUUHSbNhX5hUTJZdXXyF57Buf95">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M">
 
 
 
@@ -163,7 +163,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 916 words)
+                    6 minutes read (About 917 words)
                 </span>
                 
             </div>
@@ -180,7 +180,7 @@
 <h1 id="傳輸速度的疑難雜症"><a href="#傳輸速度的疑難雜症" class="headerlink" title="傳輸速度的疑難雜症"></a>傳輸速度的疑難雜症</h1><p>由於在虛擬機器安裝一個 Windows 的作業系統，所以 Qnap 的主 Linux 作業系統與虛擬出來的 Windows 作業系統在橋接(Bridge) 模式下，兩系統為獨立個體，透過各自的實體 IP 出去再由路由器交換資料、來達到互相傳輸的功能。</p>
 <p>此方式為安裝虛擬機後預設配置，交換資料是透過兩個階段而不是直接在 Nas 裡的硬體磁碟交換資料，以致於傳輸速度較低。</p>
 <p>可在 Qnap 的<code>網路與虛擬交換機</code>頁面中查看目前網路硬體配置，如下圖所示：</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1YBmAKMUUHSbNhX5hUTJZdXXyF57Buf95" alt="雙實體 IP 示意圖"></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M" alt="雙實體 IP 示意圖"></p>
 <h1 id="何謂-Virtio"><a href="#何謂-Virtio" class="headerlink" title="何謂 Virtio"></a>何謂 Virtio</h1><p>在 Kernel-based Virtual Machine(KVM) 架構下， Virtio 是用來虛擬 I/O 裝置的主要平台。透過應用程式介面讓主系統與虛擬機溝通而不需再透過實體網路。</p>
 <h1 id="Virtio-驅動下載"><a href="#Virtio-驅動下載" class="headerlink" title="Virtio 驅動下載"></a>Virtio 驅動下載</h1><ul>
 <li>For Windows : <a href="https://stg.fedoraproject.org/wiki/Windows_Virtio_Drivers" target="_blank" rel="noopener">Fedora Project Wiki</a> 點選 <code>Stable virtio-win iso</code>。</li>
