@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/Hexo-Tutorial/</loc>
+    
+    <lastmod>2019-05-14T08:30:15.904Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw/list/index.html</loc>
     
     <lastmod>2019-05-14T08:24:32.881Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://brain-garden.tw/Learning-Outcomes-Presentation/</loc>
     
     <lastmod>2019-05-14T08:20:36.251Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/Hexo-Tutorial/</loc>
-    
-    <lastmod>2019-05-14T08:20:16.083Z</lastmod>
     
   </url>
   
