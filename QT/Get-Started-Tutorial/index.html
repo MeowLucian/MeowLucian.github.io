@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>入門教學 (Get Started Tutorial) - Brain Garden</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="QT 入門教學與筆記。">
+<meta name="keywords" content="Code,C++,QT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="入門教學 (Get Started Tutorial)">
+<meta property="og:url" content="http://brain-garden.tw/QT/Get-Started-Tutorial/index.html">
+<meta property="og:site_name" content="Brain Garden">
+<meta property="og:description" content="QT 入門教學與筆記。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1EwpHJSlwsZUtK2dRzOhYtgBncnVSQ5Md">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1K_7M9NVvBuL8tqg2I4LG83cdPpwNmvfn">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=19XPxq9ceIQ_R3EGcD5mZk3FArRq5-teL">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1Yk-PCkkfHcnntFbzuYouPevB4cdGOqmB">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1_xIKgL-5hcmke1YXvnezcV4bDZImBoXW">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=15OcaOJMO2M8EZGEVrVr423EVERb0pubs">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1MZLQDHoh77zFPPmmzhN2wareF7WE0hvj">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1EszOqBHrmeEj55MTZTNxuQp5JBq-3QLn">
+<meta property="og:updated_time" content="2019-05-14T08:17:26.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="入門教學 (Get Started Tutorial)">
+<meta name="twitter:description" content="QT 入門教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1EwpHJSlwsZUtK2dRzOhYtgBncnVSQ5Md">
+
+
+
+
+
+<link rel="icon" href="https://drive.google.com/uc?export=download&id=1O6kDxxDKRUJoO2l7a63UrH6pwBPg4iYM">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="入門教學 (Get Started Tutorial)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Blog</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/list">List</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1VybFrH-TKgUJxrqBesZXzQMJsTL2dSoN" alt="入門教學 (Get Started Tutorial)">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-07T16:00:00.000Z">2019-02-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 505 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter">入門教學 (Get Started Tutorial)</a>
+            
+        </h1>
+        <div class="content">
+            <p>QT 入門教學與筆記。</p>
+<a id="more"></a>
+<h1 id="Install-QT"><a href="#Install-QT" class="headerlink" title="Install QT"></a>Install QT</h1><h2 id="Install-QT-Components"><a href="#Install-QT-Components" class="headerlink" title="Install QT Components"></a>Install QT Components</h2><p>首先安裝必要的 QT 組件，以下 Visual Studio 2017 為例：</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1EwpHJSlwsZUtK2dRzOhYtgBncnVSQ5Md" alt=""></p>
+<p>如有 64 bit 的開發需求，請務必勾選。</p>
+<p>其他功能依使用需求勾選。</p>
+<h2 id="Install-Visual-Studio-QT-Extension-Tools"><a href="#Install-Visual-Studio-QT-Extension-Tools" class="headerlink" title="Install Visual Studio QT Extension Tools"></a>Install Visual Studio QT Extension Tools</h2><p>工具列 -&gt; Tools -&gt; Extensions and Updates -&gt; Online</p>
+<p>搜尋 QT 後，就可看到 QT Visual Studio Tools 並安裝它。</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1K_7M9NVvBuL8tqg2I4LG83cdPpwNmvfn" alt=""></p>
+<p>或到 <a href="https://marketplace.visualstudio.com/items?itemName=TheQtCompany.QtVisualStudioTools-19123" target="_blank" rel="noopener">Visual Studio Marketplace</a> 直接下載安裝檔安裝。</p>
+<h2 id="Qt-Visual-Studio-Tools-Setting"><a href="#Qt-Visual-Studio-Tools-Setting" class="headerlink" title="Qt Visual Studio Tools Setting"></a>Qt Visual Studio Tools Setting</h2><p>工具列 -&gt; Qt VS Tools -&gt; Qt Options -&gt; Add</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=19XPxq9ceIQ_R3EGcD5mZk3FArRq5-teL" alt=""></p>
+<p>設定預設的 QT 安裝位置 <code>C:\Qt\5.12.3\msvc2017_64</code>。</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1Yk-PCkkfHcnntFbzuYouPevB4cdGOqmB" alt=""></p>
+<h1 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h1><h2 id="Add-New-QT-Project"><a href="#Add-New-QT-Project" class="headerlink" title="Add New QT Project"></a>Add New QT Project</h2><p>工具列 -&gt; File -&gt; New -&gt; Project</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1_xIKgL-5hcmke1YXvnezcV4bDZImBoXW" alt=""></p>
+<p>已經預設 Core、Gui、Widgets 等基礎功能，目前先不另外勾選其他功能。</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=15OcaOJMO2M8EZGEVrVr423EVERb0pubs" alt=""></p>
+<h2 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h2><p>按 F5 即可執行，結果如下：</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1MZLQDHoh77zFPPmmzhN2wareF7WE0hvj" alt=""></p>
+<h1 id="Fix-Execution-Error"><a href="#Fix-Execution-Error" class="headerlink" title="Fix Execution Error"></a>Fix Execution Error</h1><p><img src="https://drive.google.com/uc?export=download&amp;id=1EszOqBHrmeEj55MTZTNxuQp5JBq-3QLn" alt=""></p>
+<p>如果遇到缺少 dll 檔而無法執行程式的話，解決方法如下：</p>
+<ul>
+<li><p>如果 exe 檔不用發佈，可以在系統環境變量添加路徑，點擊<code>我的電腦右鍵-&gt;內容-&gt;系統及安全性-&gt;進階系統設定-&gt;環境變數-&gt;Path-&gt;編輯</code>。以我為例，在最後面添加 <code>C:\Qt\5.12.3\msvc2017_64\bin</code> 後按確定，實際添加內容要看個人的 Qt 版本及安裝位置。</p>
+</li>
+<li><p>如果要發佈給別人使用，到個人的 Qt 安裝目錄下的 bin 資料夾，這邊的位置在 <code>C:\Qt\5.12.3\msvc2017_64\bin</code> 內，複製缺少的 dll 檔放置於 exe 檔旁，持續運行並添加其他缺少的 dll 檔，這邊一共複製了以下 9 個 dll 檔才啟動成功。</p>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>, <a class="has-link-grey -link" href="/tags/QT/">QT</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-white  article-nav-prev" href="/Change-PowerPoint-Export-Resolution/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/STL/Vector/">
+                <span class="level-item">向量容器 (Vector)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://brain-garden.tw/QT/Get-Started-Tutorial/';
+        this.page.identifier = 'QT/Get-Started-Tutorial/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'braingarden' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="https://drive.google.com/uc?export=download&amp;id=1_hpo3Bm18dspxCcXA0dMxyTaC5SIBzrS" alt="Meow Lucian">
+                    
+                    <p class="is-size-4 is-block">
+                        Meow Lucian
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Engineer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Hsinchu, Taiwan</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        15
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        16
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/MeowLucian">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/MeowLucian">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://www.facebook.com/profile.php?id=100002550282519">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Linkedin" href="https://www.linkedin.com/in/lucian-lo-505a02132/">
+                
+                <i class="fab fa-linkedin"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Install-QT">
+        <span class="has-mr-6">1</span>
+        <span>Install QT</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Install-QT-Components">
+        <span class="has-mr-6">1.1</span>
+        <span>Install QT Components</span>
+        </a></li><li>
+        <a class="is-flex" href="#Install-Visual-Studio-QT-Extension-Tools">
+        <span class="has-mr-6">1.2</span>
+        <span>Install Visual Studio QT Extension Tools</span>
+        </a></li><li>
+        <a class="is-flex" href="#Qt-Visual-Studio-Tools-Setting">
+        <span class="has-mr-6">1.3</span>
+        <span>Qt Visual Studio Tools Setting</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Get-Started">
+        <span class="has-mr-6">2</span>
+        <span>Get Started</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Add-New-QT-Project">
+        <span class="has-mr-6">2.1</span>
+        <span>Add New QT Project</span>
+        </a></li><li>
+        <a class="is-flex" href="#Execution">
+        <span class="has-mr-6">2.2</span>
+        <span>Execution</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Fix-Execution-Error">
+        <span class="has-mr-6">3</span>
+        <span>Fix Execution Error</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Learning-Note-學習筆記/">
+            <span class="level-start">
+                <span class="level-item">Learning-Note-學習筆記</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag is-primary">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Lift-生活/">
+            <span class="level-start">
+                <span class="level-item">Lift-生活</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag is-primary">3</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label has-text-danger">
+            Tag Cloud
+        </h3>
+        <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/Code/" style="font-size: 16.67px;">Code</a> <a href="/tags/Dpi/" style="font-size: 13.33px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/Office/" style="font-size: 13.33px;">Office</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a>
+    </div>
+</div>
+
+    
+    
+        <div class="card card-transparent is-hidden-widescreen">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label has-text-danger">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/QT-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1VybFrH-TKgUJxrqBesZXzQMJsTL2dSoN" alt="QT 教學 (QT Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/QT-Tutorial/" class="has-link-black-ter is-size-6">QT 教學 (QT Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/C++-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ 教學 (C++ Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Change-PowerPoint-Export-Resolution/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=13A1VZRW-LihD9gc5DHmDJX0W3OVE_Ae-" alt="變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-06T16:00:00.000Z">2019-05-07</time></div>
+                    <a href="/Change-PowerPoint-Export-Resolution/" class="has-link-black-ter is-size-6">變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Chrome-Extension/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1Nwm5be1aPeuHlPmRXTwaGUoJMbFbzivC" alt="Chrome 擴充功能 (Chrome Extension)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T16:00:00.000Z">2018-12-04</time></div>
+                    <a href="/Chrome-Extension/" class="has-link-black-ter is-size-6">Chrome 擴充功能 (Chrome Extension)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Visual-Studio-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj" alt="Visual Studio 教學 (Visual Studio Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-01T16:00:00.000Z">2018-12-02</time></div>
+                    <a href="/Visual-Studio-Tutorial/" class="has-link-black-ter is-size-6">Visual Studio 教學 (Visual Studio Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label has-text-danger">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/C/">
+                        <span class="level-start">
+                            <span class="level-item">C++</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Code/">
+                        <span class="level-start">
+                            <span class="level-item">Code</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Dpi/">
+                        <span class="level-start">
+                            <span class="level-item">Dpi</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Drive/">
+                        <span class="level-start">
+                            <span class="level-item">Drive</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Github/">
+                        <span class="level-start">
+                            <span class="level-item">Github</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Headphone/">
+                        <span class="level-start">
+                            <span class="level-item">Headphone</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Hexo/">
+                        <span class="level-start">
+                            <span class="level-item">Hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/MIMO/">
+                        <span class="level-start">
+                            <span class="level-item">MIMO</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Mathtype/">
+                        <span class="level-start">
+                            <span class="level-item">Mathtype</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Nas/">
+                        <span class="level-start">
+                            <span class="level-item">Nas</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Office/">
+                        <span class="level-start">
+                            <span class="level-item">Office</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/QT/">
+                        <span class="level-start">
+                            <span class="level-item">QT</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SDR/">
+                        <span class="level-start">
+                            <span class="level-item">SDR</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SSL/">
+                        <span class="level-start">
+                            <span class="level-item">SSL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Url/">
+                        <span class="level-start">
+                            <span class="level-item">Url</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Web/">
+                        <span class="level-start">
+                            <span class="level-item">Web</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label has-text-danger">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/QT-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1VybFrH-TKgUJxrqBesZXzQMJsTL2dSoN" alt="QT 教學 (QT Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/QT-Tutorial/" class="has-link-black-ter is-size-6">QT 教學 (QT Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/C++-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time></div>
+                    <a href="/C++-Tutorial/" class="has-link-black-ter is-size-6">C++ 教學 (C++ Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Change-PowerPoint-Export-Resolution/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=13A1VZRW-LihD9gc5DHmDJX0W3OVE_Ae-" alt="變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-06T16:00:00.000Z">2019-05-07</time></div>
+                    <a href="/Change-PowerPoint-Export-Resolution/" class="has-link-black-ter is-size-6">變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Chrome-Extension/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1Nwm5be1aPeuHlPmRXTwaGUoJMbFbzivC" alt="Chrome 擴充功能 (Chrome Extension)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T16:00:00.000Z">2018-12-04</time></div>
+                    <a href="/Chrome-Extension/" class="has-link-black-ter is-size-6">Chrome 擴充功能 (Chrome Extension)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/Visual-Studio-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj" alt="Visual Studio 教學 (Visual Studio Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-01T16:00:00.000Z">2018-12-02</time></div>
+                    <a href="/Visual-Studio-Tutorial/" class="has-link-black-ter is-size-6">Visual Studio 教學 (Visual Studio Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label has-text-danger">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">4</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Tags
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/C/">
+                        <span class="level-start">
+                            <span class="level-item">C++</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Code/">
+                        <span class="level-start">
+                            <span class="level-item">Code</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Dpi/">
+                        <span class="level-start">
+                            <span class="level-item">Dpi</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Drive/">
+                        <span class="level-start">
+                            <span class="level-item">Drive</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Github/">
+                        <span class="level-start">
+                            <span class="level-item">Github</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Headphone/">
+                        <span class="level-start">
+                            <span class="level-item">Headphone</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Hexo/">
+                        <span class="level-start">
+                            <span class="level-item">Hexo</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/MIMO/">
+                        <span class="level-start">
+                            <span class="level-item">MIMO</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Mathtype/">
+                        <span class="level-start">
+                            <span class="level-item">Mathtype</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Nas/">
+                        <span class="level-start">
+                            <span class="level-item">Nas</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Office/">
+                        <span class="level-start">
+                            <span class="level-item">Office</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/QT/">
+                        <span class="level-start">
+                            <span class="level-item">QT</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SDR/">
+                        <span class="level-start">
+                            <span class="level-item">SDR</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/SSL/">
+                        <span class="level-start">
+                            <span class="level-item">SSL</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Url/">
+                        <span class="level-start">
+                            <span class="level-item">Url</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Web/">
+                        <span class="level-start">
+                            <span class="level-item">Web</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag is-primary">4</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="入門教學 (Get Started Tutorial)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Meow Lucian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                <!-- Counter -->
+                <center>
+                    <a href="https://SiteStates.com" title="站長工具">
+                        <img src="https://SiteStates.com/show/image/32617.jpg" border="0">
+                    </a>
+                    
+                    <a href="https://SiteStates.com" title="站長工具">
+                        <img src="https://SiteStates.com/show/image/32616.jpg" border="0">
+                    </a>
+                    <!-- Flag Counter
+                        <a href="https://info.flagcounter.com/v7MC">
+                            <img src="https://s04.flagcounter.com/count/v7MC/bg_EDF4FF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" />
+                        </a>
+                    Flag Counter End -->
+                </center>
+                <!-- Counter End -->
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/MeowLucian/MeowLucian.github.io_Hexo_Theme">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            <center>
+                <img src="https://drive.google.com/uc?export=download&id=1-Q_sg-TQjqtyRJ0lcy2sTGXx_gAA_H0m" height="140" width="140">
+            </center>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
