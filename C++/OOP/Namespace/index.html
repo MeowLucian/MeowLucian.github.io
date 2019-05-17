@@ -2,23 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>C++ 教學 (C++ Tutorial) - Brain Garden</title>
+<title>命名空間 (Namespace) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="C++ 教學與筆記。">
+    <meta name="description" content="命名空間 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ 教學 (C++ Tutorial)">
-<meta property="og:url" content="http://brain-garden.tw/C++-Tutorial/index.html">
+<meta property="og:title" content="命名空間 (Namespace)">
+<meta property="og:url" content="http://brain-garden.tw/C++/OOP/Namespace/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="C++ 教學與筆記。">
+<meta property="og:description" content="命名空間 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-17T14:16:12.531Z">
+<meta property="og:updated_time" content="2019-05-17T14:17:53.984Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ 教學 (C++ Tutorial)">
-<meta name="twitter:description" content="C++ 教學與筆記。">
+<meta name="twitter:title" content="命名空間 (Namespace)">
+<meta name="twitter:description" content="命名空間 教學與筆記。">
 
 
 
@@ -84,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ 教學 (C++ Tutorial)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="命名空間 (Namespace)" height="28">
             
             </a>
         </div>
@@ -130,7 +130,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x" alt="命名空間 (Namespace)">
         </span>
     </div>
     
@@ -138,7 +138,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time>
+                <time class="level-item has-text-grey" datetime="2019-05-16T16:00:00.000Z">2019-05-17</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 71 words)
+                    a minute read (About 142 words)
                 </span>
                 
             </div>
@@ -156,20 +156,17 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">C++ 教學 (C++ Tutorial)</a>
+                <a class="has-link-black-ter">命名空間 (Namespace)</a>
             
         </h1>
         <div class="content">
-            <p>C++ 教學與筆記。</p>
+            <p>命名空間 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="C-Programming-C-程式設計"><a href="#C-Programming-C-程式設計" class="headerlink" title="C++ Programming (C++ 程式設計)"></a>C++ Programming (C++ 程式設計)</h1><h2 id="物件導向-Object-Oriented-Programming"><a href="#物件導向-Object-Oriented-Programming" class="headerlink" title="物件導向 (Object Oriented Programming)"></a>物件導向 (Object Oriented Programming)</h2><h3 id="建立物件與類別"><a href="#建立物件與類別" class="headerlink" title="建立物件與類別"></a>建立物件與類別</h3><ul>
-<li><a href="/C++/OOP/Namespace/">命名空間 (Namespace)</a></li>
-<li><a href="/C++/OOP/Constructor-Destructor/">建構式 &amp; 解構式 (Constructor, Destructor)</a></li>
-</ul>
-<h2 id="標準模板庫-Standard-Template-Library-STL"><a href="#標準模板庫-Standard-Template-Library-STL" class="headerlink" title="標準模板庫 (Standard Template Library, STL)"></a>標準模板庫 (Standard Template Library, STL)</h2><h3 id="STL-常用容器"><a href="#STL-常用容器" class="headerlink" title="STL 常用容器"></a>STL 常用容器</h3><ul>
-<li><a href="/C++/STL/Vector/">向量容器 (Vector)</a></li>
-</ul>
-
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>當程式越龐大，可能會發生同名類別的問題。這時可使用命名空間來解決。</p>
+<h2 id="命名空間-範例"><a href="#命名空間-範例" class="headerlink" title="命名空間 範例"></a>命名空間 範例</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> ASUS &#123;</span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">notebook</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> Acer &#123;</span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">notebook</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ASUS::notebook A;</span><br><span class="line">    Acer::notebook B;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"PAUSE"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>::</code>為範圍運算子。</p>
+<h2 id="子命名空間-範例"><a href="#子命名空間-範例" class="headerlink" title="子命名空間 範例"></a>子命名空間 範例</h2><p>另外還可再延伸至 子命名空間。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> ASUS &#123;</span><br><span class="line">    <span class="hljs-keyword">namespace</span> Taiwan &#123;</span><br><span class="line">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">notebook</span> &#123;</span></span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">namespace</span> Japan &#123;</span><br><span class="line">        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">notebook</span> &#123;</span></span><br><span class="line"></span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ASUS::Taiwan::notebook A;</span><br><span class="line">    ASUS::Japan::notebook B;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"PAUSE"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -190,17 +187,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/QT-Tutorial/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">QT 教學 (QT Tutorial)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/Change-PowerPoint-Export-Resolution/">
-                <span class="level-item">變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/OOP/Constructor-Destructor/">
+                <span class="level-item">建構式 &amp; 解構式 (Constructor &amp; Destructor)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -216,8 +206,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++-Tutorial/';
-        this.page.identifier = 'C++-Tutorial/';
+        this.page.url = 'http://brain-garden.tw/C++/OOP/Namespace/';
+        this.page.identifier = 'C++/OOP/Namespace/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -337,26 +327,18 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#C-Programming-C-程式設計">
+        <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
-        <span>C++ Programming (C++ 程式設計)</span>
+        <span>說明</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#物件導向-Object-Oriented-Programming">
+        <a class="is-flex" href="#命名空間-範例">
         <span class="has-mr-6">1.1</span>
-        <span>物件導向 (Object Oriented Programming)</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#建立物件與類別">
-        <span class="has-mr-6">1.1.1</span>
-        <span>建立物件與類別</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#標準模板庫-Standard-Template-Library-STL">
+        <span>命名空間 範例</span>
+        </a></li><li>
+        <a class="is-flex" href="#子命名空間-範例">
         <span class="has-mr-6">1.2</span>
-        <span>標準模板庫 (Standard Template Library, STL)</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#STL-常用容器">
-        <span class="has-mr-6">1.2.1</span>
-        <span>STL 常用容器</span>
-        </a></li></ul></li></ul></li></ul>
+        <span>子命名空間 範例</span>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -1158,7 +1140,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="C++ 教學 (C++ Tutorial)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="命名空間 (Namespace)" height="28">
                 
                 </a>
                 <p class="is-size-7">
