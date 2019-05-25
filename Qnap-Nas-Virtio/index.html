@@ -15,25 +15,14 @@
 <meta property="og:site_name" content="Brain Garden">
 <meta property="og:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1PhPWMQckthYPAKvEIzd1yJurItsuoCbd">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1p_g8aMdoHtSUSxNi2tM_vVbO3H6TSZmY">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1FXoPTmvAOKdW3ZqXZANxgDlAlWDoV_8S">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1nkJqfl0HA4lzYTBs5KpEbD5FPEGSbDlS">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1DpXm1KJicf8i0et0lq6zdZwwenjmH6U5">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1AT3UpgmNbFuCjKEOztM7Uuh4ok_yziT2">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1J-IOFIfNR8h9F4STCA2nDXGf0THAOvlZ">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1FK_-B-ZKJcXQW8JkntXimUHzzxieJQHd">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1xGk1DT_jCt3V4eNQo1QqHOaP6nDiYO_F">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1WmmkoyDgzzhfVbtMgfJTmfz6h164wzag">
 <meta property="og:updated_time" content="2019-05-14T08:21:28.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Qnap Nas 安裝 Virtio (Qnap Nas Virtio)">
 <meta name="twitter:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1WmmkoyDgzzhfVbtMgfJTmfz6h164wzag">
+
+
 
 
 
@@ -89,6 +78,12 @@
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
     
+    
+    
+
+    
+    
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -107,7 +102,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item" href="/">Blog</a>
+                <a class="navbar-item" href="/">Home</a>
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
@@ -166,6 +161,7 @@
                     6 minutes read (About 917 words)
                 </span>
                 
+                
             </div>
         </div>
         
@@ -188,64 +184,64 @@
 <h1 id="安裝步驟"><a href="#安裝步驟" class="headerlink" title="安裝步驟"></a>安裝步驟</h1><ol>
 <li>虛擬工作站頁面 -&gt; 設定 -&gt; 網路 -&gt; 型別 -&gt; 改成 Virtio</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET" alt></p>
 <ol start="2">
 <li>儲存空間 -&gt; 新增裝置</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1PhPWMQckthYPAKvEIzd1yJurItsuoCbd" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1PhPWMQckthYPAKvEIzd1yJurItsuoCbd" alt></p>
 <p>有別於 Windows 虛擬主磁碟的預設 IDE 介面；這裡我們要新增一個 Virtio 介面的虛擬副磁碟，以便載入剛剛下載的 Virtio 驅動程式。</p>
 <ol start="3">
 <li>介面 -&gt; Virtio</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1p_g8aMdoHtSUSxNi2tM_vVbO3H6TSZmY" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1p_g8aMdoHtSUSxNi2tM_vVbO3H6TSZmY" alt></p>
 <p>這裡的容量大小不重要，設置為最小 1 GB 即可。</p>
 <ol start="4">
 <li>CD /DVD 頁面 -&gt; 載入剛剛下載的驅動程式路徑</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1FXoPTmvAOKdW3ZqXZANxgDlAlWDoV_8S" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1FXoPTmvAOKdW3ZqXZANxgDlAlWDoV_8S" alt></p>
 <ol start="5">
 <li>進入 Windows 虛擬機 -&gt; 裝置管理員</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1nkJqfl0HA4lzYTBs5KpEbD5FPEGSbDlS" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1nkJqfl0HA4lzYTBs5KpEbD5FPEGSbDlS" alt></p>
 <p>發現有幾個 Virtio 裝置尚未安裝。</p>
 <ol start="6">
 <li>右鍵更新驅動 -&gt; 瀏覽電腦上的驅動程式軟體</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1DpXm1KJicf8i0et0lq6zdZwwenjmH6U5" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1DpXm1KJicf8i0et0lq6zdZwwenjmH6U5" alt></p>
 <ol start="7">
 <li>點選剛剛新增的虛擬光碟機檔案</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1AT3UpgmNbFuCjKEOztM7Uuh4ok_yziT2" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1AT3UpgmNbFuCjKEOztM7Uuh4ok_yziT2" alt></p>
 <p>記得點選<code>包含子資料夾</code>給它搜尋。</p>
 <ol start="8">
 <li>確認安裝</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1J-IOFIfNR8h9F4STCA2nDXGf0THAOvlZ" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1J-IOFIfNR8h9F4STCA2nDXGf0THAOvlZ" alt></p>
 <ol start="9">
 <li>個別點選並更新驅動</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1FK_-B-ZKJcXQW8JkntXimUHzzxieJQHd" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1FK_-B-ZKJcXQW8JkntXimUHzzxieJQHd" alt></p>
 <p>確認所有都安裝完成後，會看到硬體都可辨識成功。</p>
 <ol start="10">
 <li>回到虛擬工作站頁面 -&gt; 儲存空間 -&gt; X</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1xGk1DT_jCt3V4eNQo1QqHOaP6nDiYO_F" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1xGk1DT_jCt3V4eNQo1QqHOaP6nDiYO_F" alt></p>
 <p>驅動安裝完成後，將虛擬 Windows 關閉，並將虛擬主磁碟的介面由原本的 IDE 改成 Virtio。</p>
 <p>剛剛新增的虛擬副磁碟已不再需要，所以可以把它刪除。</p>
 <ol start="11">
 <li>移除虛擬副磁碟</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo" alt></p>
 <p>映像檔也不再需要，可以一併刪除。</p>
 <ol start="12">
 <li>移除虛擬光碟機裝置</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l" alt></p>
 <p>新增的虛擬光碟機也不再需要，可以一併刪除。</p>
 <ol start="13">
 <li>確認移除裝置</li>
 </ol>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx" alt=""></p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx" alt></p>
 <h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>大功告成，現在 Nas 的主系統磁碟應該與虛擬機執行的 Windows 磁碟之間有 Virtio 介面做連接，可有較快的交換資料速度。</p>
 
         </div>
@@ -263,6 +259,9 @@
         
     </div>
 </div>
+
+
+
 
 
 <div class="card card-transparent">
@@ -316,7 +315,8 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
         
 <div class="card widget">
@@ -324,7 +324,9 @@
         <nav class="level">
             <div class="level-item has-text-centered">
                 <div>
-                    <img class="image is-128x128 has-mb-6" src="https://drive.google.com/uc?export=download&amp;id=1_hpo3Bm18dspxCcXA0dMxyTaC5SIBzrS" alt="Meow Lucian">
+                    
+                        <img class="image is-128x128 has-mb-6" src="https://drive.google.com/uc?export=download&amp;id=1_hpo3Bm18dspxCcXA0dMxyTaC5SIBzrS" alt="Meow Lucian">
+                    
                     
                     <p class="is-size-4 is-block">
                         Meow Lucian
@@ -377,14 +379,14 @@
             </div>
         </nav>
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/MeowLucian">
+            <a class="level-item button is-link is-rounded" href="https://github.com/MeowLucian" target="_blank">
                 Follow</a>
         </div>
         
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/MeowLucian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/MeowLucian">
                 
                 <i class="fab fa-github"></i>
                 
@@ -486,7 +488,7 @@
 
     
     
-        <div class="card card-transparent is-hidden-widescreen">
+        <div class="column-right-shadow is-hidden-widescreen ">
         
             
 <div class="card widget">
@@ -668,185 +670,121 @@
             <h3 class="menu-label has-text-danger">
                 Tags
             </h3>
-            <ul class="menu-list">
+            <div class="field is-grouped is-grouped-multiline">
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/C/">
-                        <span class="level-start">
-                            <span class="level-item">C++</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Code/">
-                        <span class="level-start">
-                            <span class="level-item">Code</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">3</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Code/">
+                        <span class="tag">Code</span>
+                        <span class="tag is-primary">3</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Dpi/">
-                        <span class="level-start">
-                            <span class="level-item">Dpi</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Dpi/">
+                        <span class="tag">Dpi</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Drive/">
-                        <span class="level-start">
-                            <span class="level-item">Drive</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Drive/">
+                        <span class="tag">Drive</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Github/">
-                        <span class="level-start">
-                            <span class="level-item">Github</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Headphone/">
-                        <span class="level-start">
-                            <span class="level-item">Headphone</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Headphone/">
+                        <span class="tag">Headphone</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Hexo/">
-                        <span class="level-start">
-                            <span class="level-item">Hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/MIMO/">
-                        <span class="level-start">
-                            <span class="level-item">MIMO</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MIMO/">
+                        <span class="tag">MIMO</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Mathtype/">
-                        <span class="level-start">
-                            <span class="level-item">Mathtype</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mathtype/">
+                        <span class="tag">Mathtype</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Nas/">
-                        <span class="level-start">
-                            <span class="level-item">Nas</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nas/">
+                        <span class="tag">Nas</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Office/">
-                        <span class="level-start">
-                            <span class="level-item">Office</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Office/">
+                        <span class="tag">Office</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/QT/">
-                        <span class="level-start">
-                            <span class="level-item">QT</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/QT/">
+                        <span class="tag">QT</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/SDR/">
-                        <span class="level-start">
-                            <span class="level-item">SDR</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SDR/">
+                        <span class="tag">SDR</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/SSL/">
-                        <span class="level-start">
-                            <span class="level-item">SSL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SSL/">
+                        <span class="tag">SSL</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Url/">
-                        <span class="level-start">
-                            <span class="level-item">Url</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Web/">
-                        <span class="level-start">
-                            <span class="level-item">Web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">4</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-primary">4</span>
                     </a>
-                </li>
+                </div>
                 
-            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -859,7 +797,8 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
 <div class="card widget">
@@ -1041,185 +980,121 @@
             <h3 class="menu-label has-text-danger">
                 Tags
             </h3>
-            <ul class="menu-list">
+            <div class="field is-grouped is-grouped-multiline">
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/C/">
-                        <span class="level-start">
-                            <span class="level-item">C++</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C++</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Code/">
-                        <span class="level-start">
-                            <span class="level-item">Code</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">3</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Code/">
+                        <span class="tag">Code</span>
+                        <span class="tag is-primary">3</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Dpi/">
-                        <span class="level-start">
-                            <span class="level-item">Dpi</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Dpi/">
+                        <span class="tag">Dpi</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Drive/">
-                        <span class="level-start">
-                            <span class="level-item">Drive</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Drive/">
+                        <span class="tag">Drive</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Github/">
-                        <span class="level-start">
-                            <span class="level-item">Github</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Github/">
+                        <span class="tag">Github</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Headphone/">
-                        <span class="level-start">
-                            <span class="level-item">Headphone</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Headphone/">
+                        <span class="tag">Headphone</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Hexo/">
-                        <span class="level-start">
-                            <span class="level-item">Hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/MIMO/">
-                        <span class="level-start">
-                            <span class="level-item">MIMO</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MIMO/">
+                        <span class="tag">MIMO</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Mathtype/">
-                        <span class="level-start">
-                            <span class="level-item">Mathtype</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mathtype/">
+                        <span class="tag">Mathtype</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Nas/">
-                        <span class="level-start">
-                            <span class="level-item">Nas</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Nas/">
+                        <span class="tag">Nas</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Office/">
-                        <span class="level-start">
-                            <span class="level-item">Office</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">2</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Office/">
+                        <span class="tag">Office</span>
+                        <span class="tag is-primary">2</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/QT/">
-                        <span class="level-start">
-                            <span class="level-item">QT</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/QT/">
+                        <span class="tag">QT</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/SDR/">
-                        <span class="level-start">
-                            <span class="level-item">SDR</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SDR/">
+                        <span class="tag">SDR</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/SSL/">
-                        <span class="level-start">
-                            <span class="level-item">SSL</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SSL/">
+                        <span class="tag">SSL</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Url/">
-                        <span class="level-start">
-                            <span class="level-item">Url</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">1</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Url/">
+                        <span class="tag">Url</span>
+                        <span class="tag is-primary">1</span>
                     </a>
-                </li>
+                </div>
                 
-                <li>
-                    <a class="level is-marginless" href="/tags/Web/">
-                        <span class="level-start">
-                            <span class="level-item">Web</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag is-primary">4</span>
-                        </span>
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Web/">
+                        <span class="tag">Web</span>
+                        <span class="tag is-primary">4</span>
                     </a>
-                </li>
+                </div>
                 
-            </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -1241,7 +1116,7 @@
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 Meow Lucian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 <!-- Counter -->
                 <center>
                     <a href="https://SiteStates.com" title="站長工具">
@@ -1256,9 +1131,9 @@
                             <img src="https://s04.flagcounter.com/count/v7MC/bg_EDF4FF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0" />
                         </a>
                     Flag Counter End -->
-                    <a href="http://livetrafficfeed.com/flag-counter" id="LTF_flags_href" target="_blank"><img id="LTF_flags_src" src="//livetrafficfeed.com/static/flag-counter/feed.png?d=Brain-Garden.tw&c=ac96293e32c6f9668365fed4441f5f31&row=4&col=2&code=0&flag=1&bg=ffffff&b=000000&r=687480461" alt="Flag Counter"></a><script src="//livetrafficfeed.com/static/flag-counter/live.js?98237259"></script>
                 </center>
                 <!-- Counter End -->
+                
                 </p>
             </div>
             <div class="level-end">
@@ -1345,9 +1220,21 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     MathJax.Hub.Config({
-        'HTML-CSS': {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
     });
 });
 </script>
@@ -1367,6 +1254,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
     
 
     
