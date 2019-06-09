@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/list/index.html</loc>
+    
+    <lastmod>2019-06-09T13:56:25.220Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
+    
+    <lastmod>2019-06-09T13:56:19.324Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw//404.html</loc>
     
     <lastmod>2019-05-25T05:08:08.263Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://brain-garden.tw/about/index.html</loc>
     
     <lastmod>2019-05-25T05:07:29.363Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
-    
-    <lastmod>2019-05-22T15:06:55.015Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>http://brain-garden.tw/QT-Tutorial/</loc>
     
     <lastmod>2019-05-18T14:38:03.951Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/list/index.html</loc>
-    
-    <lastmod>2019-05-18T14:31:46.100Z</lastmod>
     
   </url>
   
