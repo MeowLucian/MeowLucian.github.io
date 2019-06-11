@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/Chrome-Extension/</loc>
+    
+    <lastmod>2019-06-11T12:05:21.394Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw/list/index.html</loc>
     
     <lastmod>2019-06-09T13:56:25.220Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>http://brain-garden.tw/First-Post/</loc>
     
     <lastmod>2019-05-14T08:19:28.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/Chrome-Extension/</loc>
-    
-    <lastmod>2019-05-14T08:18:42.843Z</lastmod>
     
   </url>
   
