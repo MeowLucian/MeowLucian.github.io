@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>字元陣列 (C-style String) - Brain Garden</title>
+<title>Void 指標 (Void Pointer) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="字元陣列 教學與筆記。">
+    <meta name="description" content="Void 指標 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字元陣列 (C-style String)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/C-style-String/index.html">
+<meta property="og:title" content="Void 指標 (Void Pointer)">
+<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Void-Pointer/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="字元陣列 教學與筆記。">
+<meta property="og:description" content="Void 指標 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-06-20T23:07:28.556Z">
+<meta property="og:updated_time" content="2019-06-22T07:11:21.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字元陣列 (C-style String)">
-<meta name="twitter:description" content="字元陣列 教學與筆記。">
+<meta name="twitter:title" content="Void 指標 (Void Pointer)">
+<meta name="twitter:description" content="Void 指標 教學與筆記。">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (C-style String)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Void 指標 (Void Pointer)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字元陣列 (C-style String)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="Void 指標 (Void Pointer)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-20T16:00:00.000Z">2019-06-21</time>
+                <time class="level-item has-text-grey" datetime="2019-06-21T16:00:00.000Z">2019-06-22</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 13 words)
+                    a minute read (About 175 words)
                 </span>
                 
                 
@@ -167,13 +167,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">字元陣列 (C-style String)</a>
+                <a class="has-link-black-ter">Void 指標 (Void Pointer)</a>
             
         </h1>
         <div class="content">
-            <p>字元陣列 教學與筆記。</p>
+            <p>Void 指標 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1>
+<h1 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h1><p>void * 表示這個指標可以指向任何類型的數據 (函數除外)。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-keyword">void</span> *p = &amp;a;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// address</span></span><br></pre></td></tr></table></figure>
+<h1 id="指標取值"><a href="#指標取值" class="headerlink" title="指標取值"></a>指標取值</h1><p>不能直接使用 * 取值，須先使用型態轉換 <code>(type *)</code>。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">void</span> *p = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-comment">// cout &lt;&lt; p &lt;&lt; endl; // print address</span></span><br><span class="line">    <span class="hljs-comment">// cout &lt;&lt; *p &lt;&lt; endl; // error, 'void*' is not a pointer-to-object type</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// int</span></span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line">    p = &amp;a;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"int : "</span> &lt;&lt; *(<span class="hljs-keyword">int</span>*)p &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// char</span></span><br><span class="line">    <span class="hljs-keyword">char</span> b = <span class="hljs-string">'x'</span>;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"char : "</span> &lt;&lt; *(<span class="hljs-keyword">char</span>*)p &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// string</span></span><br><span class="line">    <span class="hljs-built_in">string</span> c = <span class="hljs-string">"hello"</span>;</span><br><span class="line">    p = &amp;c;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"string : "</span> &lt;&lt; *(<span class="hljs-built_in">string</span>*)p &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// char pointer</span></span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *d = <span class="hljs-string">"hello"</span>;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span> *pp = d;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"char pointer : "</span> &lt;&lt; *(<span class="hljs-keyword">char</span>*)pp &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// h</span></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"char pointer : "</span> &lt;&lt; (<span class="hljs-keyword">char</span>*)pp &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// hello</span></span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"Pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>結果圖：</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=15wQ2Th8r2WSPf9-fiJLdgbLmiY14XMT1" alt></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -197,17 +203,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Char-String-Pointer/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">指標與字元字串 (Char &amp; String Pointer)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Literal-Constant/">
-                <span class="level-item">字面常數 (Literal Constant)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Char-Array-Pointer/">
+                <span class="level-item">字元陣列指標 (Char Array Pointer)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -223,8 +222,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/C-style-String/';
-        this.page.identifier = 'C++/ADP/C-style-String/';
+        this.page.url = 'http://brain-garden.tw/C++/ADP/Void-Pointer/';
+        this.page.identifier = 'C++/ADP/Void-Pointer/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -347,9 +346,13 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#說明">
+        <a class="is-flex" href="#宣告">
         <span class="has-mr-6">1</span>
-        <span>說明</span>
+        <span>宣告</span>
+        </a></li><li>
+        <a class="is-flex" href="#指標取值">
+        <span class="has-mr-6">2</span>
+        <span>指標取值</span>
         </a></li></ul>
         </div>
     </div>
@@ -1025,7 +1028,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (C-style String)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Void 指標 (Void Pointer)" height="28">
                 
                 </a>
                 <p class="is-size-7">

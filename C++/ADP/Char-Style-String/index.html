@@ -2,24 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Brain Garden</title>
+<title>字元陣列 (Char-Style String) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="MeowLucian&apos;s Blog">
-<meta name="keywords" content="C++, Code, Dpi, Drive, Github, Headphone, Hexo, MIMO, Mathtype, Nas, SDR, SSL, Url, Web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brain Garden">
-<meta property="og:url" content="http://brain-garden.tw/index.html">
+    <meta name="description" content="字元陣列 教學與筆記。">
+<meta name="keywords" content="Code,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字元陣列 (Char-Style String)">
+<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Char-Style-String/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="MeowLucian&apos;s Blog">
+<meta property="og:description" content="字元陣列 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://brain-garden.tw/images/og_image.png">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta property="og:updated_time" content="2019-06-22T05:22:54.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brain Garden">
-<meta name="twitter:description" content="MeowLucian&apos;s Blog">
-<meta name="twitter:image" content="http://brain-garden.tw/images/og_image.png">
+<meta name="twitter:title" content="字元陣列 (Char-Style String)">
+<meta name="twitter:description" content="字元陣列 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
 
@@ -93,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Brain Garden" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
             
             </a>
         </div>
@@ -101,7 +102,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active" href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
@@ -118,6 +119,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -131,20 +136,19 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    <div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
     <div class="card-image">
-        <a href="/C++-Tutorial/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
-        </a>
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字元陣列 (Char-Style String)">
+        </span>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time>
+                <time class="level-item has-text-grey" datetime="2019-06-20T16:00:00.000Z">2019-06-21</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -154,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 156 words)
+                    3 minutes read (About 399 words)
                 </span>
                 
                 
@@ -163,21 +167,41 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/C++-Tutorial/">C++ 教學 (C++ Tutorial)</a>
+                <a class="has-link-black-ter">字元陣列 (Char-Style String)</a>
             
         </h1>
         <div class="content">
-            <p>C++ 教學與筆記。</p>
+            <p>字元陣列 教學與筆記。</p>
+<a id="more"></a>
+<h1 id="字元陣列字串組成說明"><a href="#字元陣列字串組成說明" class="headerlink" title="字元陣列字串組成說明"></a>字元陣列字串組成說明</h1><p>字串的是由字元所組成的陣列，並在最後加上一個空(null)字元 <code>\0</code>。</p>
+<h2 id="宣告方式-1-："><a href="#宣告方式-1-：" class="headerlink" title="宣告方式(1)："></a>宣告方式(1)：</h2><p>注意需要使用單引號表示字元。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = &#123;<span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="宣告方式-2-："><a href="#宣告方式-2-：" class="headerlink" title="宣告方式(2)："></a>宣告方式(2)：</h2><p>此法程式會在最後自動加上空字元。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"hello"</span>;</span><br></pre></td></tr></table></figure>
+<p>2種方法 <code>hello</code> + <code>\0</code> 共使用了6個字元。</p>
+<h1 id="使用空字元檢驗字串是否為空"><a href="#使用空字元檢驗字串是否為空" class="headerlink" title="使用空字元檢驗字串是否為空"></a>使用空字元檢驗字串是否為空</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(str[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) &#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"字串為空"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="指定新的字串值"><a href="#指定新的字串值" class="headerlink" title="指定新的字串值"></a>指定新的字串值</h1><h2 id="不能直接指定"><a href="#不能直接指定" class="headerlink" title="不能直接指定"></a>不能直接指定</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str = <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
+<p>需要一個個字元指定至陣列中，並在最後加上空字元。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str[<span class="hljs-number">0</span>] = <span class="hljs-string">'h'</span>;</span><br><span class="line">str[<span class="hljs-number">1</span>] = <span class="hljs-string">'e'</span>;</span><br><span class="line">str[<span class="hljs-number">2</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">3</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">4</span>] = <span class="hljs-string">'o'</span>;</span><br><span class="line">str[<span class="hljs-number">5</span>] = <span class="hljs-string">'\0'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="使用-C-提供的字串處理相關函式"><a href="#使用-C-提供的字串處理相關函式" class="headerlink" title="使用 C++ 提供的字串處理相關函式"></a>使用 C++ 提供的字串處理相關函式</h2><p>指定宣告新字串</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[] = <span class="hljs-string">"hello"</span>;</span><br><span class="line"><span class="hljs-keyword">char</span> str2[<span class="hljs-number">6</span>];</span><br><span class="line">strcpy_s(str2, str1);</span><br></pre></td></tr></table></figure>
+<p>相關函式</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">strcpy</span>(str2, str1);  <span class="hljs-comment">// str1字串複製給str2字串</span></span><br><span class="line"><span class="hljs-built_in">strcat</span>(str2, str1);  <span class="hljs-comment">// str1字串串接在str2字串後</span></span><br><span class="line"><span class="hljs-built_in">strlen</span>(str1);        <span class="hljs-comment">// 計算不含空字元的字串長度</span></span><br><span class="line"><span class="hljs-built_in">strcmp</span>(str1, str2);  <span class="hljs-comment">// 比較兩個字串長度大小，若相同傳回0，str1大於str2則傳回大於0的值，小於則傳回小於0的值</span></span><br></pre></td></tr></table></figure>
+<p>在 Visual Studio 編譯器中要使用字串處理相關函式， <code>&lt;cstring&gt;</code> 或 <code>&lt;string&gt;</code> 可不需含入程式碼中。</p>
+<p>另外因為安全起見，他會建議使用 <code>strcpy_s</code> 而非舊語法 <code>strcpy</code>。</p>
+<h1 id="取得使用者的輸入字串"><a href="#取得使用者的輸入字串" class="headerlink" title="取得使用者的輸入字串"></a>取得使用者的輸入字串</h1><p>使用 <code>cin()</code> 函式，但輸入字串時中間不能包括空白；使用 <code>gets()</code>函式則可。</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-info" href="/C++-Tutorial/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -187,261 +211,51 @@
 
 
 
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/QT-Tutorial/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1VybFrH-TKgUJxrqBesZXzQMJsTL2dSoN" alt="QT 教學 (QT Tutorial)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 26 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/QT-Tutorial/">QT 教學 (QT Tutorial)</a>
-            
-        </h1>
-        <div class="content">
-            <p>QT 教學與筆記。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/QT-Tutorial/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/Change-PowerPoint-Export-Resolution/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=13A1VZRW-LihD9gc5DHmDJX0W3OVE_Ae-" alt="變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-06T16:00:00.000Z">2019-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 287 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/Change-PowerPoint-Export-Resolution/">變更 PowerPoint 投影片的匯出解析度 (Change PowerPoint Export Resolution)</a>
-            
-        </h1>
-        <div class="content">
-            <p>設定 Microsoft Office PowerPoint 匯出解析度。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/Change-PowerPoint-Export-Resolution/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/Chrome-Extension/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1Nwm5be1aPeuHlPmRXTwaGUoJMbFbzivC" alt="Chrome 擴充功能 (Chrome Extension)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-03T16:00:00.000Z">2018-12-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 297 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/Chrome-Extension/">Chrome 擴充功能 (Chrome Extension)</a>
-            
-        </h1>
-        <div class="content">
-            <p>分享各種實用的 Chrome 擴充插件。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/Chrome-Extension/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/Visual-Studio-Tutorial/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj" alt="Visual Studio 教學 (Visual Studio Tutorial)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-01T16:00:00.000Z">2018-12-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 153 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/Visual-Studio-Tutorial/">Visual Studio 教學 (Visual Studio Tutorial)</a>
-            
-        </h1>
-        <div class="content">
-            <p>Visual Studio 使用教學與筆記。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/Visual-Studio-Tutorial/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/page/0/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Char-Array-Pointer/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">字元陣列指標 (Char Array Pointer)</span>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/page/2/">Next</a>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Literal-Constant/">
+                <span class="level-item">字面常數 (Literal Constant)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://brain-garden.tw/C++/ADP/Char-Style-String/';
+        this.page.identifier = 'C++/ADP/Char-Style-String/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'braingarden' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
 </div>
 </div>
                 
@@ -543,6 +357,49 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#字元陣列字串組成說明">
+        <span class="has-mr-6">1</span>
+        <span>字元陣列字串組成說明</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#宣告方式-1-：">
+        <span class="has-mr-6">1.1</span>
+        <span>宣告方式(1)：</span>
+        </a></li><li>
+        <a class="is-flex" href="#宣告方式-2-：">
+        <span class="has-mr-6">1.2</span>
+        <span>宣告方式(2)：</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#使用空字元檢驗字串是否為空">
+        <span class="has-mr-6">2</span>
+        <span>使用空字元檢驗字串是否為空</span>
+        </a></li><li>
+        <a class="is-flex" href="#指定新的字串值">
+        <span class="has-mr-6">3</span>
+        <span>指定新的字串值</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#不能直接指定">
+        <span class="has-mr-6">3.1</span>
+        <span>不能直接指定</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用-C-提供的字串處理相關函式">
+        <span class="has-mr-6">3.2</span>
+        <span>使用 C++ 提供的字串處理相關函式</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#取得使用者的輸入字串">
+        <span class="has-mr-6">4</span>
+        <span>取得使用者的輸入字串</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1213,7 +1070,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Brain Garden" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
                 
                 </a>
                 <p class="is-size-7">

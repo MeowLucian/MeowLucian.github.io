@@ -375,18 +375,19 @@ img.thumbnail {
 }
 .content h1 {
   font-size: 1.75em;
-  color: #00d1b2;
+  color: #ff3860;
 }
 .content h2 {
   font-size: 1.5em;
-  color: #ff3860;
+  color: #00d1b2;
 }
 .content h3 {
   font-size: 1.25em;
-  color: #ff8c00;
+  color: #f9d;
 }
 .content h4 {
   font-size: 1.125em;
+  color: #3273dc;
 }
 .content h5 {
   font-size: 1em;

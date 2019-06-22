@@ -16,7 +16,7 @@
 <meta property="og:description" content="字面常數 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-06-21T09:09:42.665Z">
+<meta property="og:updated_time" content="2019-06-21T17:19:13.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字面常數 (Literal Constant)">
 <meta name="twitter:description" content="字面常數 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 303 words)
+                    2 minutes read (About 301 words)
                 </span>
                 
                 
@@ -173,13 +173,13 @@
         <div class="content">
             <p>字面常數 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><h2 id="字面常數記憶體大小"><a href="#字面常數記憶體大小" class="headerlink" title="字面常數記憶體大小"></a>字面常數記憶體大小</h2><p>程式中宣告一個整數值，預設它會是個 int 型態無正負號的數值；而宣告一個小數，預設會是 double 型態。</p>
+<h1 id="字面常數記憶體大小"><a href="#字面常數記憶體大小" class="headerlink" title="字面常數記憶體大小"></a>字面常數記憶體大小</h1><p>程式中宣告一個整數值，預設它會是個 int 型態無正負號的數值；而宣告一個小數，預設會是 double 型態。</p>
 <p>以下範例顯示出預設數值使用記憶體大小：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"sizeof(1): "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-number">1</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;     <span class="hljs-comment">// sizeof(1): 4</span></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"sizeof(1.0): "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-number">1.0</span>) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// sizeof(1): 8</span></span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"Pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="字面常數進制"><a href="#字面常數進制" class="headerlink" title="字面常數進制"></a>字面常數進制</h2><p>整數可以用8進位、10進位與16進位來表示：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"sizeof(1): "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-number">1</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;     <span class="hljs-comment">// sizeof(1)   : 4</span></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"sizeof(1.0): "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-number">1.0</span>) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// sizeof(1.0) : 8</span></span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"Pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="字面常數進制"><a href="#字面常數進制" class="headerlink" title="字面常數進制"></a>字面常數進制</h1><p>整數可以用8進位、10進位與16進位來表示：</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">26</span> &lt;&lt; <span class="hljs-built_in">endl</span>;   <span class="hljs-comment">// 10進位</span></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">032</span> &lt;&lt; <span class="hljs-built_in">endl</span>;  <span class="hljs-comment">// 8進位</span></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">0x1A</span> &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 16進位</span></span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"Pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上都顯示為 26。</p>
-<h2 id="編碼"><a href="#編碼" class="headerlink" title="編碼"></a>編碼</h2><h3 id="常用字元"><a href="#常用字元" class="headerlink" title="常用字元"></a>常用字元</h3><p>符號與數字的對應關係為使用 ASCII 碼 (American Standard Code for Information Interchange)，常見的對應為：</p>
+<h1 id="編碼"><a href="#編碼" class="headerlink" title="編碼"></a>編碼</h1><h2 id="常用字元"><a href="#常用字元" class="headerlink" title="常用字元"></a>常用字元</h2><p>符號與數字的對應關係為使用 ASCII 碼 (American Standard Code for Information Interchange)，常見的對應為：</p>
 <table>
 <thead>
 <tr>
@@ -265,7 +265,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="跳脫自元"><a href="#跳脫自元" class="headerlink" title="跳脫自元"></a>跳脫自元</h3><p>需要特殊功能字元，則有跳脫自元 (Escape Sequence) 可供使用：</p>
+<h2 id="跳脫自元"><a href="#跳脫自元" class="headerlink" title="跳脫自元"></a>跳脫自元</h2><p>需要特殊功能字元，則有跳脫自元 (Escape Sequence) 可供使用：</p>
 <table>
 <thead>
 <tr>
@@ -345,9 +345,9 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/C-style-String/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Char-Style-String/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">字元陣列 (C-style String)</span>
+                <span class="level-item">字元陣列 (Char-Style String)</span>
             </a>
         </div>
         
@@ -494,30 +494,26 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#說明">
-        <span class="has-mr-6">1</span>
-        <span>說明</span>
-        </a><ul class="menu-list"><li>
         <a class="is-flex" href="#字面常數記憶體大小">
-        <span class="has-mr-6">1.1</span>
+        <span class="has-mr-6">1</span>
         <span>字面常數記憶體大小</span>
         </a></li><li>
         <a class="is-flex" href="#字面常數進制">
-        <span class="has-mr-6">1.2</span>
+        <span class="has-mr-6">2</span>
         <span>字面常數進制</span>
         </a></li><li>
         <a class="is-flex" href="#編碼">
-        <span class="has-mr-6">1.3</span>
+        <span class="has-mr-6">3</span>
         <span>編碼</span>
         </a><ul class="menu-list"><li>
         <a class="is-flex" href="#常用字元">
-        <span class="has-mr-6">1.3.1</span>
+        <span class="has-mr-6">3.1</span>
         <span>常用字元</span>
         </a></li><li>
         <a class="is-flex" href="#跳脫自元">
-        <span class="has-mr-6">1.3.2</span>
+        <span class="has-mr-6">3.2</span>
         <span>跳脫自元</span>
-        </a></li></ul></li></ul></li></ul>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>
