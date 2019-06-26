@@ -16,7 +16,7 @@
 <meta property="og:description" content="指標的指標 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-06-24T13:35:14.407Z">
+<meta property="og:updated_time" content="2019-06-25T01:18:46.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指標的指標 (Pointer of Pointer)">
 <meta name="twitter:description" content="指標的指標 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 118 words)
+                    2 minutes read (About 335 words)
                 </span>
                 
                 
@@ -176,7 +176,18 @@
 <h1 id="基本宣告"><a href="#基本宣告" class="headerlink" title="基本宣告"></a>基本宣告</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> p = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> *ptr1 = &amp;p;</span><br><span class="line"><span class="hljs-keyword">int</span> **ptr2 = &amp;ptr1;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"p的值："</span> &lt;&lt; p &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"p的記憶體位置: "</span> &lt;&lt; &amp;p &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"*ptr1 = "</span> &lt;&lt; *ptr1 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"ptr1 = "</span> &lt;&lt; ptr1 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"ptr1的記憶體位置: "</span> &lt;&lt; &amp;ptr1 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"**ptr2 = "</span> &lt;&lt; **ptr2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"*ptr2 = "</span> &lt;&lt; *ptr2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"ptr2 = "</span> &lt;&lt; ptr2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"總整理："</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"&amp;p = "</span> &lt;&lt; &amp;p &lt;&lt; <span class="hljs-string">"\t\t"</span> &lt;&lt; <span class="hljs-string">"ptr1 = "</span> &lt;&lt; ptr1 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"&amp;ptr1 = "</span> &lt;&lt; &amp;ptr1 &lt;&lt; <span class="hljs-string">"\t"</span> &lt;&lt; <span class="hljs-string">"ptr2 = "</span> &lt;&lt; ptr2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <p>結果圖：</p>
 <p><img src="https://drive.google.com/uc?export=download&amp;id=16r9q-j-T8cbeg2fpUseuWLHLTcxLv6s5" alt></p>
-
+<h1 id="進階練習"><a href="#進階練習" class="headerlink" title="進階練習"></a>進階練習</h1><h2 id="無雙重指標"><a href="#無雙重指標" class="headerlink" title="無雙重指標"></a>無雙重指標</h2><p>以下不會改變 localPtr 本身：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> value = <span class="hljs-number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changePtr</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *ptr)</span> <span class="hljs-comment">// 同型態</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    ptr = &amp;value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> localValue = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> *localPtr = &amp;localValue;</span><br><span class="line">    changePtr(localPtr);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; *localPtr &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因為 changePtr 中 ptr 的值是 localPtr 的複本，屬於傳值。</p>
+<p>類比在單純的 int 函式：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> value = <span class="hljs-number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">change</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> <span class="hljs-comment">// 同型態</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    a = value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> localValue = <span class="hljs-number">1</span>;</span><br><span class="line">    change(localValue);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; localValue &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同樣不會改變 localValue 的值。</p>
+<h2 id="正確使用雙重指標用法"><a href="#正確使用雙重指標用法" class="headerlink" title="正確使用雙重指標用法"></a>正確使用雙重指標用法</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> value = <span class="hljs-number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changePtr</span><span class="hljs-params">(<span class="hljs-keyword">int</span> **ptr)</span> <span class="hljs-comment">// 透過雙重指標改變指標變數的值 </span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    *ptr = &amp;value;        <span class="hljs-comment">// 改變指標變數的值，即改變 localPtr 存放的值 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> localValue = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> *localPtr = &amp;localValue;</span><br><span class="line">    changePtr(&amp;localPtr);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; *localPtr &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// value 變數值 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>結論：</p>
+<blockquote>
+<p>如果要將傳入的<code>變數</code>內容改變，就要用<code>傳址</code>呼叫<br>如果要將傳入的<code>指標</code>內容改變，就要用<code>雙重傳址</code>呼叫</p>
+</blockquote>
+<h1 id="應用"><a href="#應用" class="headerlink" title="應用"></a>應用</h1>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -200,10 +211,17 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/DS-A/Sort/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">排序 (Sort)</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/DS-A/Sort/">
-                <span class="level-item">排序 (Sort)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Void-Pointer/">
+                <span class="level-item">Void 指標 (Void Pointer)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -346,6 +364,22 @@
         <a class="is-flex" href="#基本宣告">
         <span class="has-mr-6">1</span>
         <span>基本宣告</span>
+        </a></li><li>
+        <a class="is-flex" href="#進階練習">
+        <span class="has-mr-6">2</span>
+        <span>進階練習</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#無雙重指標">
+        <span class="has-mr-6">2.1</span>
+        <span>無雙重指標</span>
+        </a></li><li>
+        <a class="is-flex" href="#正確使用雙重指標用法">
+        <span class="has-mr-6">2.2</span>
+        <span>正確使用雙重指標用法</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#應用">
+        <span class="has-mr-6">3</span>
+        <span>應用</span>
         </a></li></ul>
         </div>
     </div>

@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>建構式 &amp; 解構式 (Constructor &amp; Destructor) - Brain Garden</title>
+<title>傳值、傳址、傳參考 (Call by Value, Address, Reference) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="建構式 &amp;amp; 解構式 教學與筆記。">
+    <meta name="description" content="傳值、傳址、傳參考 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
-<meta property="og:url" content="http://brain-garden.tw/C++/OOP/Constructor-Destructor/index.html">
+<meta property="og:title" content="傳值、傳址、傳參考 (Call by Value, Address, Reference)">
+<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Call-by-Value-Address-Reference/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="建構式 &amp;amp; 解構式 教學與筆記。">
+<meta property="og:description" content="傳值、傳址、傳參考 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
-<meta property="og:updated_time" content="2019-05-18T14:21:46.255Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
+<meta property="og:updated_time" content="2019-06-25T01:18:56.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
-<meta name="twitter:description" content="建構式 &amp;amp; 解構式 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
+<meta name="twitter:title" content="傳值、傳址、傳參考 (Call by Value, Address, Reference)">
+<meta name="twitter:description" content="傳值、傳址、傳參考 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="傳值、傳址、傳參考 (Call by Value, Address, Reference)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C" alt="傳值、傳址、傳參考 (Call by Value, Address, Reference)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-14T16:00:00.000Z">2019-05-15</time>
+                <time class="level-item has-text-grey" datetime="2019-06-24T16:00:00.000Z">2019-06-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 288 words)
+                    3 minutes read (About 422 words)
                 </span>
                 
                 
@@ -167,24 +167,223 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">建構式 &amp; 解構式 (Constructor &amp; Destructor)</a>
+                <a class="has-link-black-ter">傳值、傳址、傳參考 (Call by Value, Address, Reference)</a>
             
         </h1>
         <div class="content">
-            <p>建構式 &amp; 解構式 教學與筆記。</p>
+            <p>傳值、傳址、傳參考 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="建構式-Constructor"><a href="#建構式-Constructor" class="headerlink" title="建構式 (Constructor)"></a>建構式 (Constructor)</h1><p>當新增物件變數時，將會自動執行建構式。</p>
-<h2 id="建立建構式初始化"><a href="#建立建構式初始化" class="headerlink" title="建立建構式初始化"></a>建立建構式初始化</h2><p>原始方式：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>第二種方式有同樣效果：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() : _name(<span class="hljs-string">"Benz"</span>), _speed(<span class="hljs-number">100</span>) &#123; </span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>; </span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="建構式多載-Overload"><a href="#建構式多載-Overload" class="headerlink" title="建構式多載 (Overload)"></a>建構式多載 (Overload)</h2><p>當建立物件時無引數或有多個引數，可允許使用多個建構式相對應。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Car(<span class="hljs-built_in">string</span> name, <span class="hljs-keyword">int</span> speed) &#123;</span><br><span class="line">            _name = name;</span><br><span class="line">            _speed = speed;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="解構式-Destructor"><a href="#解構式-Destructor" class="headerlink" title="解構式 (Destructor)"></a>解構式 (Destructor)</h1><p>當物件消滅時將會自動執行解構式。解構式只允許有一個。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        ~Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Car "</span> &lt;&lt; _name &lt;&lt; <span class="hljs-string">" was eliminated."</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Car(<span class="hljs-built_in">string</span> name, <span class="hljs-keyword">int</span> speed) &#123;</span><br><span class="line">            _name = name;</span><br><span class="line">            _speed = speed;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ~Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Car "</span> &lt;&lt; _name &lt;&lt; <span class="hljs-string">" was eliminated."</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Car MyCar;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function">Car <span class="hljs-title">MyCar2</span><span class="hljs-params">(<span class="hljs-string">"BMW"</span>,<span class="hljs-number">200</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"PAUSE"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>結果圖：</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1Pvr7pvvUkFlAudmw3k5fx1t2FfuA-Uwx" alt></p>
+<h1 id="傳值-Call-by-Value"><a href="#傳值-Call-by-Value" class="headerlink" title="傳值 (Call by Value)"></a>傳值 (Call by Value)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> c, <span class="hljs-keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> temp = c;</span><br><span class="line">    c = d;</span><br><span class="line">    d = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">10</span>;</span><br><span class="line">    swap(a, b);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>main 裡的 a,b 沒有變化，只把<code>值</code>複製給對方。</p>
+<ul>
+<li><code>執行前</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 a</th>
+<th style="text-align:center">swap 的 b </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10        </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x16</td>
+<td style="text-align:center">0x20      </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>執行完</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 a</th>
+<th style="text-align:center">swap 的 b </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5        </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x16</td>
+<td style="text-align:center">0x20      </td>
+</tr>
+</tbody>
+</table>
+<h1 id="傳址-Call-by-Address"><a href="#傳址-Call-by-Address" class="headerlink" title="傳址 (Call by Address)"></a>傳址 (Call by Address)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *c, <span class="hljs-keyword">int</span> *d)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> temp = *c;</span><br><span class="line">    *c = *d;</span><br><span class="line">    *d = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">10</span>;</span><br><span class="line">    swap(&amp;a, &amp;b);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>執行前</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 *c</th>
+<th style="text-align:center">swap 的 *d </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08        </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x16</td>
+<td style="text-align:center">0x20      </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>執行完</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 *c</th>
+<th style="text-align:center">swap 的 *d </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08        </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x16</td>
+<td style="text-align:center">0x20      </td>
+</tr>
+</tbody>
+</table>
+<p>結論：</p>
+<blockquote>
+<p>指標是專門用來儲存某記憶體的位址，但指標本身也有自己的記憶體位址。<br>Call by Address 本質上還是 <code>Call by Value</code>。</p>
+</blockquote>
+<h1 id="傳參考-Call-by-Reference"><a href="#傳參考-Call-by-Reference" class="headerlink" title="傳參考 (Call by Reference)"></a>傳參考 (Call by Reference)</h1><p>傳參考的功能只有 C++ 才有。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;c, <span class="hljs-keyword">int</span> &amp;d)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> temp = c;</span><br><span class="line">    c = d;</span><br><span class="line">    d = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;	</span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">10</span>;</span><br><span class="line">    swap(a, b);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>執行前</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 &amp;c</th>
+<th style="text-align:center">swap 的 &amp;d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">10      </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08      </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>執行完</code>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">\</th>
+<th style="text-align:center">main 的 a</th>
+<th style="text-align:center">main 的 b</th>
+<th style="text-align:center">………</th>
+<th style="text-align:center">swap 的 &amp;c</th>
+<th style="text-align:center">swap 的 &amp;d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">儲存值</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5      </td>
+</tr>
+<tr>
+<td style="text-align:center">記憶體位址</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08</td>
+<td style="text-align:center">………</td>
+<td style="text-align:center">0x04</td>
+<td style="text-align:center">0x08      </td>
+</tr>
+</tbody>
+</table>
+<p>傳參考的意思就是變數的別名、綽號，因此 c 的記憶體位址跟主程式的 a 的位址一樣。</p>
+<blockquote>
+<p>Call by Reference 其實才是真正意義上的 Call by Address。</p>
+</blockquote>
 
         </div>
         
@@ -209,17 +408,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/OOP/Namespace/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">命名空間 (Namespace)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/QT-Tutorial/">
-                <span class="level-item">QT 教學 (QT Tutorial)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/DS-A/Sort/">
+                <span class="level-item">排序 (Sort)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -235,8 +427,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/OOP/Constructor-Destructor/';
-        this.page.identifier = 'C++/OOP/Constructor-Destructor/';
+        this.page.url = 'http://brain-garden.tw/C++/ADP/Call-by-Value-Address-Reference/';
+        this.page.identifier = 'C++/ADP/Call-by-Value-Address-Reference/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -359,25 +551,17 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#建構式-Constructor">
+        <a class="is-flex" href="#傳值-Call-by-Value">
         <span class="has-mr-6">1</span>
-        <span>建構式 (Constructor)</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#建立建構式初始化">
-        <span class="has-mr-6">1.1</span>
-        <span>建立建構式初始化</span>
+        <span>傳值 (Call by Value)</span>
         </a></li><li>
-        <a class="is-flex" href="#建構式多載-Overload">
-        <span class="has-mr-6">1.2</span>
-        <span>建構式多載 (Overload)</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#解構式-Destructor">
+        <a class="is-flex" href="#傳址-Call-by-Address">
         <span class="has-mr-6">2</span>
-        <span>解構式 (Destructor)</span>
+        <span>傳址 (Call by Address)</span>
         </a></li><li>
-        <a class="is-flex" href="#完整程式碼">
+        <a class="is-flex" href="#傳參考-Call-by-Reference">
         <span class="has-mr-6">3</span>
-        <span>完整程式碼</span>
+        <span>傳參考 (Call by Reference)</span>
         </a></li></ul>
         </div>
     </div>
@@ -1053,7 +1237,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="傳值、傳址、傳參考 (Call by Value, Address, Reference)" height="28">
                 
                 </a>
                 <p class="is-size-7">
