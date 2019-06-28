@@ -16,7 +16,7 @@
 <meta property="og:description" content="排序 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
-<meta property="og:updated_time" content="2019-06-26T01:15:06.349Z">
+<meta property="og:updated_time" content="2019-06-26T03:20:02.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序 (Sort)">
 <meta name="twitter:description" content="排序 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 243 words)
+                    2 minutes read (About 325 words)
                 </span>
                 
                 
@@ -181,6 +181,9 @@
 <h1 id="氣泡排序-Bubble-Sort"><a href="#氣泡排序-Bubble-Sort" class="headerlink" title="氣泡排序 (Bubble Sort)"></a>氣泡排序 (Bubble Sort)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len - <span class="hljs-number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; len - <span class="hljs-number">1</span> - i; ++j) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[j] &gt; <span class="hljs-built_in">array</span>[j + <span class="hljs-number">1</span>])</span><br><span class="line">                swap(<span class="hljs-built_in">array</span>[j], <span class="hljs-built_in">array</span>[j + <span class="hljs-number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="選擇排序-Selection-Sort"><a href="#選擇排序-Selection-Sort" class="headerlink" title="選擇排序 (Selection Sort)"></a>選擇排序 (Selection Sort)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SelectionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len - <span class="hljs-number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> min_index = i;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; len; ++j) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[min_index] &gt; <span class="hljs-built_in">array</span>[j])</span><br><span class="line">                min_index = j;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(<span class="hljs-built_in">array</span>[i], <span class="hljs-built_in">array</span>[min_index]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="插入排序-Insertion-Sort"><a href="#插入排序-Insertion-Sort" class="headerlink" title="插入排序 (Insertion Sort)"></a>插入排序 (Insertion Sort)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InsertionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *<span class="hljs-built_in">array</span>, <span class="hljs-keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; len; ++i) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> key = <span class="hljs-built_in">array</span>[i];</span><br><span class="line">        <span class="hljs-keyword">int</span> j = i - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (<span class="hljs-built_in">array</span>[j] &gt; key &amp;&amp; j &gt;= <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-built_in">array</span>[j + <span class="hljs-number">1</span>] = <span class="hljs-built_in">array</span>[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-built_in">array</span>[j + <span class="hljs-number">1</span>] = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序 (Quick Sort)"></a>快速排序 (Quick Sort)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *arr, <span class="hljs-keyword">int</span> front, <span class="hljs-keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> pivot = arr[end];</span><br><span class="line">    <span class="hljs-keyword">int</span> i = front - <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = front; j &lt; end; ++j) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (arr[j] &lt; pivot) &#123;</span><br><span class="line">            i++;</span><br><span class="line">            swap(arr[i], arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    i++;</span><br><span class="line">    swap(arr[i], arr[end]);</span><br><span class="line">    <span class="hljs-keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">QuickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *arr, <span class="hljs-keyword">int</span> front, <span class="hljs-keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (front &lt; end) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> pivot_index = Partition(arr, front, end);</span><br><span class="line">        QuickSort(arr, front, pivot_index - <span class="hljs-number">1</span>);</span><br><span class="line">        QuickSort(arr, pivot_index + <span class="hljs-number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    QuickSort(<span class="hljs-built_in">array</span>, <span class="hljs-number">0</span>, len<span class="hljs-number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -205,16 +208,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Call-by-Value-Address-Reference/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Pointer-of-Pointer/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">傳值、傳址、傳參考 (Call by Value, Address, Reference)</span>
+                <span class="level-item">指標的指標 (Pointer of Pointer)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Pointer-of-Pointer/">
-                <span class="level-item">指標的指標 (Pointer of Pointer)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Void-Pointer/">
+                <span class="level-item">Void 指標 (Void Pointer)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -373,6 +376,10 @@
         <a class="is-flex" href="#插入排序-Insertion-Sort">
         <span class="has-mr-6">5</span>
         <span>插入排序 (Insertion Sort)</span>
+        </a></li><li>
+        <a class="is-flex" href="#快速排序-Quick-Sort">
+        <span class="has-mr-6">6</span>
+        <span>快速排序 (Quick Sort)</span>
         </a></li></ul>
         </div>
     </div>

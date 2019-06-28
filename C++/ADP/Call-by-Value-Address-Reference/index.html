@@ -16,7 +16,7 @@
 <meta property="og:description" content="傳值、傳址、傳參考 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
-<meta property="og:updated_time" content="2019-06-25T01:18:56.479Z">
+<meta property="og:updated_time" content="2019-06-26T12:58:12.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="傳值、傳址、傳參考 (Call by Value, Address, Reference)">
 <meta name="twitter:description" content="傳值、傳址、傳參考 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 422 words)
+                    3 minutes read (About 505 words)
                 </span>
                 
                 
@@ -384,6 +384,8 @@
 <blockquote>
 <p>Call by Reference 其實才是真正意義上的 Call by Address。</p>
 </blockquote>
+<h1 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CallByValue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Call By Value : "</span> &lt;&lt; &amp;b &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 002FFD58</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CallByAddress</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *b)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Call By Address : "</span> &lt;&lt; &amp;b &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 002FFD58</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CallByReference</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Call By Reference : "</span> &lt;&lt; &amp;b &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 002FFE2C</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"main a address : "</span> &lt;&lt; &amp;a &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 002FFE2C</span></span><br><span class="line"></span><br><span class="line">    CallByValue(a);</span><br><span class="line">    CallByAddress(&amp;a);</span><br><span class="line">    CallByReference(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只有 Call By Reference 能讓 function 裡的變數之記憶體位址跟主程式的位址一樣。</p>
 
         </div>
         
@@ -408,10 +410,17 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/DS-A/Linked-List/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">連結串列 (Linked list)</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/DS-A/Sort/">
-                <span class="level-item">排序 (Sort)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Pointer-of-Pointer/">
+                <span class="level-item">指標的指標 (Pointer of Pointer)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -562,6 +571,10 @@
         <a class="is-flex" href="#傳參考-Call-by-Reference">
         <span class="has-mr-6">3</span>
         <span>傳參考 (Call by Reference)</span>
+        </a></li><li>
+        <a class="is-flex" href="#練習">
+        <span class="has-mr-6">4</span>
+        <span>練習</span>
         </a></li></ul>
         </div>
     </div>

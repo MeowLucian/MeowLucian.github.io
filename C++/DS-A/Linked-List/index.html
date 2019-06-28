@@ -2,24 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: C++ - Brain Garden</title>
+<title>連結串列 (Linked list) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="MeowLucian&apos;s Blog">
-<meta name="keywords" content="C++, Code, Dpi, Drive, Github, Headphone, Hexo, MIMO, Mathtype, Nas, SDR, SSL, Url, Web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brain Garden">
-<meta property="og:url" content="http://brain-garden.tw/tags/C/index.html">
+    <meta name="description" content="連結串列 教學與筆記。">
+<meta name="keywords" content="Code,C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="連結串列 (Linked list)">
+<meta property="og:url" content="http://brain-garden.tw/C++/DS-A/Linked-List/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="MeowLucian&apos;s Blog">
+<meta property="og:description" content="連結串列 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://brain-garden.tw/images/og_image.png">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
+<meta property="og:updated_time" content="2019-06-28T07:43:35.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brain Garden">
-<meta name="twitter:description" content="MeowLucian&apos;s Blog">
-<meta name="twitter:image" content="http://brain-garden.tw/images/og_image.png">
+<meta name="twitter:title" content="連結串列 (Linked list)">
+<meta name="twitter:description" content="連結串列 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C">
 
 
 
@@ -93,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Brain Garden" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="連結串列 (Linked list)" height="28">
             
             </a>
         </div>
@@ -118,6 +119,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -132,132 +137,103 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1akRbLktKgmvIPfGXA0HOxZPfaqcwov2C" alt="連結串列 (Linked list)">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-26T16:00:00.000Z">2019-06-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 180 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter">連結串列 (Linked list)</a>
+            
+        </h1>
+        <div class="content">
+            <p>連結串列 教學與筆記。</p>
+<a id="more"></a>
+<h1 id="struct-實現"><a href="#struct-實現" class="headerlink" title="struct 實現"></a>struct 實現</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> data;</span><br><span class="line">    node* next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">node* <span class="hljs-title">creat</span><span class="hljs-params">(<span class="hljs-keyword">int</span> newdata)</span> </span>&#123;</span><br><span class="line">    node* head = <span class="hljs-keyword">new</span> node;</span><br><span class="line">    head-&gt;data = newdata;</span><br><span class="line">    head-&gt;next = <span class="hljs-literal">NULL</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(node* p)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span> (p != <span class="hljs-literal">NULL</span>) &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; p-&gt;data &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_back</span><span class="hljs-params">(node* head, <span class="hljs-keyword">int</span> newdata)</span> </span>&#123;</span><br><span class="line">    node* p = head;</span><br><span class="line">    <span class="hljs-keyword">while</span> (p-&gt;next != <span class="hljs-literal">NULL</span>)</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    p-&gt;next = <span class="hljs-keyword">new</span> node;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">    p-&gt;data = newdata;</span><br><span class="line">    p-&gt;next = <span class="hljs-literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_front</span><span class="hljs-params">(node* &amp;head, <span class="hljs-keyword">int</span> newdata)</span> </span>&#123;</span><br><span class="line">    node* p = <span class="hljs-keyword">new</span> node;</span><br><span class="line">    p-&gt;data = newdata;</span><br><span class="line">    p-&gt;next = head;</span><br><span class="line">    head = p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">delete_node</span><span class="hljs-params">(node* &amp;head, <span class="hljs-keyword">int</span> ddata)</span> </span>&#123;</span><br><span class="line">    node* previous = <span class="hljs-literal">NULL</span>;</span><br><span class="line">    node* current = head;</span><br><span class="line">    <span class="hljs-keyword">while</span> (current-&gt;data != ddata &amp;&amp; current-&gt;next != <span class="hljs-literal">NULL</span>) &#123;</span><br><span class="line">        previous = current;</span><br><span class="line">        current = current-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="hljs-keyword">if</span> (current-&gt;data == ddata) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (previous == <span class="hljs-literal">NULL</span>) &#123; <span class="hljs-comment">// First node</span></span><br><span class="line">            head = current-&gt;next;</span><br><span class="line">            <span class="hljs-keyword">delete</span> current;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            previous-&gt;next = current-&gt;next;</span><br><span class="line">            <span class="hljs-keyword">delete</span> current;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Not found"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    node* head = creat(<span class="hljs-number">1</span>);</span><br><span class="line">    push_back(head, <span class="hljs-number">2</span>);</span><br><span class="line">    push_front(head,<span class="hljs-number">0</span>);</span><br><span class="line">    delete_node(head,<span class="hljs-number">0</span>);</span><br><span class="line">    print(head);</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="object-實現"><a href="#object-實現" class="headerlink" title="object 實現"></a>object 實現</h1>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Call-by-Value-Address-Reference/">
+                <span class="level-item">傳值、傳址、傳參考 (Call by Value, Address, Reference)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">C++</a></li>
-        </ul>
-        </nav>
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://brain-garden.tw/C++/DS-A/Linked-List/';
+        this.page.identifier = 'C++/DS-A/Linked-List/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'braingarden' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
     </div>
 </div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/C++-Tutorial/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 220 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/C++-Tutorial/">C++ 教學 (C++ Tutorial)</a>
-            
-        </h1>
-        <div class="content">
-            <p>C++ 教學與筆記。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/C++-Tutorial/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/QT-Tutorial/" class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1VybFrH-TKgUJxrqBesZXzQMJsTL2dSoN" alt="QT 教學 (QT Tutorial)">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T16:00:00.000Z">2019-05-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 26 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/QT-Tutorial/">QT 教學 (QT Tutorial)</a>
-            
-        </h1>
-        <div class="content">
-            <p>QT 教學與筆記。</p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-info" href="/QT-Tutorial/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -358,6 +334,25 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label has-text-danger">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#struct-實現">
+        <span class="has-mr-6">1</span>
+        <span>struct 實現</span>
+        </a></li><li>
+        <a class="is-flex" href="#object-實現">
+        <span class="has-mr-6">2</span>
+        <span>object 實現</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1028,7 +1023,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Brain Garden" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="連結串列 (Linked list)" height="28">
                 
                 </a>
                 <p class="is-size-7">
