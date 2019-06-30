@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>建構式 &amp; 解構式 (Constructor &amp; Destructor) - Brain Garden</title>
+<title>Const 關鍵字 (Const Keyword) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="建構式 &amp;amp; 解構式 教學與筆記。">
+    <meta name="description" content="Const 關鍵字 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
-<meta property="og:url" content="http://brain-garden.tw/C++/OOP/Constructor-Destructor/index.html">
+<meta property="og:title" content="Const 關鍵字 (Const Keyword)">
+<meta property="og:url" content="http://brain-garden.tw/C++/Basic/Const-Keyword/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="建構式 &amp;amp; 解構式 教學與筆記。">
+<meta property="og:description" content="Const 關鍵字 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
-<meta property="og:updated_time" content="2019-05-18T14:21:46.255Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta property="og:updated_time" content="2019-06-30T04:19:24.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
-<meta name="twitter:description" content="建構式 &amp;amp; 解構式 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
+<meta name="twitter:title" content="Const 關鍵字 (Const Keyword)">
+<meta name="twitter:description" content="Const 關鍵字 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Const 關鍵字 (Const Keyword)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="Const 關鍵字 (Const Keyword)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-14T16:00:00.000Z">2019-05-15</time>
+                <time class="level-item has-text-grey" datetime="2019-06-29T16:00:00.000Z">2019-06-30</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 288 words)
+                    a minute read (About 176 words)
                 </span>
                 
                 
@@ -167,24 +167,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">建構式 &amp; 解構式 (Constructor &amp; Destructor)</a>
+                <a class="has-link-black-ter">Const 關鍵字 (Const Keyword)</a>
             
         </h1>
         <div class="content">
-            <p>建構式 &amp; 解構式 教學與筆記。</p>
+            <p>Const 關鍵字 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="建構式-Constructor"><a href="#建構式-Constructor" class="headerlink" title="建構式 (Constructor)"></a>建構式 (Constructor)</h1><p>當新增物件變數時，將會自動執行建構式。</p>
-<h2 id="建立建構式初始化"><a href="#建立建構式初始化" class="headerlink" title="建立建構式初始化"></a>建立建構式初始化</h2><p>原始方式：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>第二種方式有同樣效果：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() : _name(<span class="hljs-string">"Benz"</span>), _speed(<span class="hljs-number">100</span>) &#123; </span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>; </span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="建構式多載-Overload"><a href="#建構式多載-Overload" class="headerlink" title="建構式多載 (Overload)"></a>建構式多載 (Overload)</h2><p>當建立物件時無引數或有多個引數，可允許使用多個建構式相對應。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Car(<span class="hljs-built_in">string</span> name, <span class="hljs-keyword">int</span> speed) &#123;</span><br><span class="line">            _name = name;</span><br><span class="line">            _speed = speed;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="解構式-Destructor"><a href="#解構式-Destructor" class="headerlink" title="解構式 (Destructor)"></a>解構式 (Destructor)</h1><p>當物件消滅時將會自動執行解構式。解構式只允許有一個。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        ~Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Car "</span> &lt;&lt; _name &lt;&lt; <span class="hljs-string">" was eliminated."</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="完整程式碼"><a href="#完整程式碼" class="headerlink" title="完整程式碼"></a>完整程式碼</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">private</span>:</span><br><span class="line">        <span class="hljs-built_in">string</span> _name = <span class="hljs-string">"Benz"</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> _speed = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-keyword">public</span>:</span><br><span class="line">        Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Car(<span class="hljs-built_in">string</span> name, <span class="hljs-keyword">int</span> speed) &#123;</span><br><span class="line">            _name = name;</span><br><span class="line">            _speed = speed;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _name &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; _speed &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ~Car() &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Car "</span> &lt;&lt; _name &lt;&lt; <span class="hljs-string">" was eliminated."</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Car MyCar;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function">Car <span class="hljs-title">MyCar2</span><span class="hljs-params">(<span class="hljs-string">"BMW"</span>,<span class="hljs-number">200</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"PAUSE"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>結果圖：</p>
-<p><img src="https://drive.google.com/uc?export=download&amp;id=1Pvr7pvvUkFlAudmw3k5fx1t2FfuA-Uwx" alt></p>
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>如果希望宣告的變數是<code>唯讀</code>的，可使用 Const 關鍵字。</p>
+<h2 id="int-const-a"><a href="#int-const-a" class="headerlink" title="int const a"></a>int const a</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;</span><br><span class="line">a = <span class="hljs-number">2</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
+<h2 id="const-int-a"><a href="#const-int-a" class="headerlink" title="const int a"></a>const int a</h2><p>與 int const a 相同。</p>
+<h2 id="int-const-p-amp-a"><a href="#int-const-p-amp-a" class="headerlink" title="int const *p = &amp;a"></a>int const *p = &amp;a</h2><p><code>不可改變指定變數的值</code>；但<code>可改變指定成其他變數</code>。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> *p = &amp;a;</span><br><span class="line">*p = <span class="hljs-number">3</span>; <span class="hljs-comment">// error</span></span><br><span class="line">p = &amp;b; <span class="hljs-comment">// OK</span></span><br></pre></td></tr></table></figure>
+<h2 id="const-int-p-amp-a"><a href="#const-int-p-amp-a" class="headerlink" title="const int *p = &amp;a"></a>const int *p = &amp;a</h2><p>與 int const *p 相同。</p>
+<h2 id="int-const-p-amp-a-1"><a href="#int-const-p-amp-a-1" class="headerlink" title="int *const p = &amp;a"></a>int *const p = &amp;a</h2><p><code>可改變指定變數的值</code>；但<code>不可改變指定成其他變數</code>。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p = &amp;a;</span><br><span class="line">*p = <span class="hljs-number">3</span>; <span class="hljs-comment">// OK</span></span><br><span class="line">p = &amp;b; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
+<h2 id="const-int-const-p-amp-a"><a href="#const-int-const-p-amp-a" class="headerlink" title="const int *const p = &amp;a"></a>const int *const p = &amp;a</h2><p><code>不可改變指定變數的值</code>；也<code>不可改變指定成其他變數</code>。</p>
 
         </div>
         
@@ -209,17 +206,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/OOP/Namespace/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">命名空間 (Namespace)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/QT-Tutorial/">
-                <span class="level-item">QT 教學 (QT Tutorial)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Function-Pointer/">
+                <span class="level-item">函式指標 (Function Pointer)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -235,8 +225,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/OOP/Constructor-Destructor/';
-        this.page.identifier = 'C++/OOP/Constructor-Destructor/';
+        this.page.url = 'http://brain-garden.tw/C++/Basic/Const-Keyword/';
+        this.page.identifier = 'C++/Basic/Const-Keyword/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -359,26 +349,34 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#建構式-Constructor">
+        <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
-        <span>建構式 (Constructor)</span>
+        <span>說明</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#建立建構式初始化">
+        <a class="is-flex" href="#int-const-a">
         <span class="has-mr-6">1.1</span>
-        <span>建立建構式初始化</span>
+        <span>int const a</span>
         </a></li><li>
-        <a class="is-flex" href="#建構式多載-Overload">
+        <a class="is-flex" href="#const-int-a">
         <span class="has-mr-6">1.2</span>
-        <span>建構式多載 (Overload)</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#解構式-Destructor">
-        <span class="has-mr-6">2</span>
-        <span>解構式 (Destructor)</span>
+        <span>const int a</span>
         </a></li><li>
-        <a class="is-flex" href="#完整程式碼">
-        <span class="has-mr-6">3</span>
-        <span>完整程式碼</span>
-        </a></li></ul>
+        <a class="is-flex" href="#int-const-p-amp-a">
+        <span class="has-mr-6">1.3</span>
+        <span>int const *p = &amp;a</span>
+        </a></li><li>
+        <a class="is-flex" href="#const-int-p-amp-a">
+        <span class="has-mr-6">1.4</span>
+        <span>const int *p = &amp;a</span>
+        </a></li><li>
+        <a class="is-flex" href="#int-const-p-amp-a-1">
+        <span class="has-mr-6">1.5</span>
+        <span>int *const p = &amp;a</span>
+        </a></li><li>
+        <a class="is-flex" href="#const-int-const-p-amp-a">
+        <span class="has-mr-6">1.6</span>
+        <span>const int *const p = &amp;a</span>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -1053,7 +1051,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="建構式 &amp; 解構式 (Constructor &amp; Destructor)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Const 關鍵字 (Const Keyword)" height="28">
                 
                 </a>
                 <p class="is-size-7">
