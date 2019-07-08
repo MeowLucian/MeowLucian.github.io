@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Friend 函式 (Friend Function) - Brain Garden</title>
+<title>最大公因數 (Greatest Common Divisor) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Friend 函式 教學與筆記。">
+    <meta name="description" content="最大公因數 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Friend 函式 (Friend Function)">
-<meta property="og:url" content="http://brain-garden.tw/C++/OOP/Friend-Function/index.html">
+<meta property="og:title" content="最大公因數 (Greatest Common Divisor)">
+<meta property="og:url" content="http://brain-garden.tw/C++/Common/GCD/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="Friend 函式 教學與筆記。">
+<meta property="og:description" content="最大公因數 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
-<meta property="og:updated_time" content="2019-06-29T01:33:54.031Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta property="og:updated_time" content="2019-07-07T06:25:37.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Friend 函式 (Friend Function)">
-<meta name="twitter:description" content="Friend 函式 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x">
+<meta name="twitter:title" content="最大公因數 (Greatest Common Divisor)">
+<meta name="twitter:description" content="最大公因數 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Friend 函式 (Friend Function)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="最大公因數 (Greatest Common Divisor)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1M5kUF99H64YcpO_C0bzLdVBFiKVm20_x" alt="Friend 函式 (Friend Function)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="最大公因數 (Greatest Common Divisor)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-28T16:00:00.000Z">2019-06-29</time>
+                <time class="level-item has-text-grey" datetime="2019-07-06T16:00:00.000Z">2019-07-07</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 134 words)
+                    a few seconds read (About 59 words)
                 </span>
                 
                 
@@ -167,14 +167,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">Friend 函式 (Friend Function)</a>
+                <a class="has-link-black-ter">最大公因數 (Greatest Common Divisor)</a>
             
         </h1>
         <div class="content">
-            <p>Friend 函式 教學與筆記。</p>
+            <p>最大公因數 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>有時候我們希望私有成員給某些外部函式來存取，這時可以設定類別的 friend 函式，只有 friend 函式可以直接存取該類別的私有成員。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">private</span>:</span><br><span class="line">    <span class="hljs-keyword">int</span> m_x;</span><br><span class="line">    <span class="hljs-keyword">int</span> m_y;</span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    Point(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y) &#123;</span><br><span class="line">        m_x = x;</span><br><span class="line">        m_y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">friend</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showPoint</span><span class="hljs-params">(Point &amp;pt)</span></span>; <span class="hljs-comment">// 給其他函式存取私有成員</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showPoint</span><span class="hljs-params">(Point &amp;pt)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"("</span> &lt;&lt; pt.m_x &lt;&lt; <span class="hljs-string">"，"</span> &lt;&lt; pt.m_y &lt;&lt; <span class="hljs-string">")"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function">Point <span class="hljs-title">myPoint</span><span class="hljs-params">(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)</span></span>;</span><br><span class="line">    showPoint(myPoint);</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>使用<code>輾轉相除法</code>求最大公因數。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (y == <span class="hljs-number">0</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> x;</span><br><span class="line">    <span class="hljs-keyword">return</span> gcd(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;	</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; gcd(<span class="hljs-number">54</span>, <span class="hljs-number">24</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -199,16 +199,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Const-Keyword/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Logical-Bitwise-Shift/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Const 關鍵字 (Const Keyword)</span>
+                <span class="level-item">邏輯、位元、位移運算 (Logical, Bitwise, Shift)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/Function-Pointer/">
-                <span class="level-item">函式指標 (Function Pointer)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Input-Output/">
+                <span class="level-item">輸入輸出 (Input Output)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -224,8 +224,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/OOP/Friend-Function/';
-        this.page.identifier = 'C++/OOP/Friend-Function/';
+        this.page.url = 'http://brain-garden.tw/C++/Common/GCD/';
+        this.page.identifier = 'C++/Common/GCD/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -1026,7 +1026,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Friend 函式 (Friend Function)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="最大公因數 (Greatest Common Divisor)" height="28">
                 
                 </a>
                 <p class="is-size-7">
