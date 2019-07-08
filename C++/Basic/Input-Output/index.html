@@ -16,7 +16,7 @@
 <meta property="og:description" content="輸入輸出 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-07T09:08:49.788Z">
+<meta property="og:updated_time" content="2019-07-08T07:09:05.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="輸入輸出 (Input Output)">
 <meta name="twitter:description" content="輸入輸出 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 63 words)
+                    a minute read (About 114 words)
                 </span>
                 
                 
@@ -181,6 +181,9 @@
 </li>
 </ul>
 <h1 id="不同進位輸出"><a href="#不同進位輸出" class="headerlink" title="不同進位輸出"></a>不同進位輸出</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">200</span>;              <span class="hljs-comment">// 預設 10 進位</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; hex &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 16 進位</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; oct &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 8  進位</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; dec &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 10 進位</span></span><br></pre></td></tr></table></figure>
+<h1 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h1><p>使用 <code>cin</code> 函式，但輸入字串時中間不能包括空白；使用 <code>gets_s()</code>函式則可。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line"><span class="hljs-built_in">cin</span> &gt;&gt; str; <span class="hljs-comment">// hello</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">gets_s(str);         <span class="hljs-comment">// AB CD</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// AB CD</span></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -205,16 +208,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Common/GCD/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Common/strlen-Implementation/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">最大公因數 (Greatest Common Divisor)</span>
+                <span class="level-item">strlen 實作 (strlen Implementation)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Common/Reverse-Number/">
-                <span class="level-item">數字反轉 (Reverse Number)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Common/GCD/">
+                <span class="level-item">最大公因數 (Greatest Common Divisor)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -361,6 +364,10 @@
         <a class="is-flex" href="#不同進位輸出">
         <span class="has-mr-6">2</span>
         <span>不同進位輸出</span>
+        </a></li><li>
+        <a class="is-flex" href="#輸入">
+        <span class="has-mr-6">3</span>
+        <span>輸入</span>
         </a></li></ul>
         </div>
     </div>
