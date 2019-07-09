@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>字元陣列 (Char-Style String) - Brain Garden</title>
+<title>費氏數列 (Fibonacci) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="字元陣列 教學與筆記。">
+    <meta name="description" content="費氏數列 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字元陣列 (Char-Style String)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Char-Style-String/index.html">
+<meta property="og:title" content="費氏數列 (Fibonacci)">
+<meta property="og:url" content="http://brain-garden.tw/C++/Common/Fibonacci/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="字元陣列 教學與筆記。">
+<meta property="og:description" content="費氏數列 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-09T03:04:51.754Z">
+<meta property="og:updated_time" content="2019-07-08T10:28:00.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字元陣列 (Char-Style String)">
-<meta name="twitter:description" content="字元陣列 教學與筆記。">
+<meta name="twitter:title" content="費氏數列 (Fibonacci)">
+<meta name="twitter:description" content="費氏數列 教學與筆記。">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="費氏數列 (Fibonacci)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字元陣列 (Char-Style String)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="費氏數列 (Fibonacci)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-20T16:00:00.000Z">2019-06-21</time>
+                <time class="level-item has-text-grey" datetime="2019-07-07T16:00:00.000Z">2019-07-08</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 241 words)
+                    a few seconds read (About 62 words)
                 </span>
                 
                 
@@ -167,25 +167,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">字元陣列 (Char-Style String)</a>
+                <a class="has-link-black-ter">費氏數列 (Fibonacci)</a>
             
         </h1>
         <div class="content">
-            <p>字元陣列 教學與筆記。</p>
+            <p>費氏數列 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="字元陣列字串組成說明"><a href="#字元陣列字串組成說明" class="headerlink" title="字元陣列字串組成說明"></a>字元陣列字串組成說明</h1><p>字串的是由字元所組成的陣列，並在最後加上一個空(null)字元 <code>\0</code>。</p>
-<h2 id="宣告方式-1-："><a href="#宣告方式-1-：" class="headerlink" title="宣告方式(1)："></a>宣告方式(1)：</h2><p>注意需要使用單引號表示字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = &#123;<span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="宣告方式-2-："><a href="#宣告方式-2-：" class="headerlink" title="宣告方式(2)："></a>宣告方式(2)：</h2><p>此法程式會在最後自動加上空字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"hello"</span>;</span><br></pre></td></tr></table></figure>
-<p>2種方法 <code>hello</code> + <code>\0</code> 共使用了6個字元。</p>
-<h1 id="使用空字元檢驗字串是否為空"><a href="#使用空字元檢驗字串是否為空" class="headerlink" title="使用空字元檢驗字串是否為空"></a>使用空字元檢驗字串是否為空</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(str[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) &#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"字串為空"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="指定新的字串值"><a href="#指定新的字串值" class="headerlink" title="指定新的字串值"></a>指定新的字串值</h1><h2 id="不能直接指定"><a href="#不能直接指定" class="headerlink" title="不能直接指定"></a>不能直接指定</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str = <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
-<p>需要一個個字元指定至陣列中，並在最後加上空字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str[<span class="hljs-number">0</span>] = <span class="hljs-string">'h'</span>;</span><br><span class="line">str[<span class="hljs-number">1</span>] = <span class="hljs-string">'e'</span>;</span><br><span class="line">str[<span class="hljs-number">2</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">3</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">4</span>] = <span class="hljs-string">'o'</span>;</span><br><span class="line">str[<span class="hljs-number">5</span>] = <span class="hljs-string">'\0'</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h1><p>使用 <code>cin</code> 函式，但輸入字串時中間不能包括空白；使用 <code>gets_s()</code>函式則可。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line"><span class="hljs-built_in">cin</span> &gt;&gt; str; <span class="hljs-comment">// hello</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">gets_s(str);         <span class="hljs-comment">// AB CD</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// AB CD</span></span><br></pre></td></tr></table></figure>
+<h1 id="遞迴法-Recursion"><a href="#遞迴法-Recursion" class="headerlink" title="遞迴法 (Recursion)"></a>遞迴法 (Recursion)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> n;</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        <span class="hljs-keyword">return</span> (fib(n - <span class="hljs-number">1</span>) + fib(n - <span class="hljs-number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = <span class="hljs-number">10</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i)</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; fib(i) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="動態規劃-Dynamic-Programming"><a href="#動態規劃-Dynamic-Programming" class="headerlink" title="動態規劃 (Dynamic Programming)"></a>動態規劃 (Dynamic Programming)</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -210,16 +199,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Literal-Constant/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/STL/STL-Introduction/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">字面常數 (Literal Constant)</span>
+                <span class="level-item">STL 簡介 (STL Introduction)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/if-Statement/">
-                <span class="level-item">if 條件判斷 (if-Statements)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Common/Prime/">
+                <span class="level-item">質數 (Prime)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -235,8 +224,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/Char-Style-String/';
-        this.page.identifier = 'C++/ADP/Char-Style-String/';
+        this.page.url = 'http://brain-garden.tw/C++/Common/Fibonacci/';
+        this.page.identifier = 'C++/Common/Fibonacci/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -359,33 +348,13 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#字元陣列字串組成說明">
+        <a class="is-flex" href="#遞迴法-Recursion">
         <span class="has-mr-6">1</span>
-        <span>字元陣列字串組成說明</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#宣告方式-1-：">
-        <span class="has-mr-6">1.1</span>
-        <span>宣告方式(1)：</span>
+        <span>遞迴法 (Recursion)</span>
         </a></li><li>
-        <a class="is-flex" href="#宣告方式-2-：">
-        <span class="has-mr-6">1.2</span>
-        <span>宣告方式(2)：</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#使用空字元檢驗字串是否為空">
+        <a class="is-flex" href="#動態規劃-Dynamic-Programming">
         <span class="has-mr-6">2</span>
-        <span>使用空字元檢驗字串是否為空</span>
-        </a></li><li>
-        <a class="is-flex" href="#指定新的字串值">
-        <span class="has-mr-6">3</span>
-        <span>指定新的字串值</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#不能直接指定">
-        <span class="has-mr-6">3.1</span>
-        <span>不能直接指定</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#輸入">
-        <span class="has-mr-6">4</span>
-        <span>輸入</span>
+        <span>動態規劃 (Dynamic Programming)</span>
         </a></li></ul>
         </div>
     </div>
@@ -1061,7 +1030,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="費氏數列 (Fibonacci)" height="28">
                 
                 </a>
                 <p class="is-size-7">

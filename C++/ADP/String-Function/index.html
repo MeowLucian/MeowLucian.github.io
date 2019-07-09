@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>字元陣列 (Char-Style String) - Brain Garden</title>
+<title>字串函式 (String Function) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="字元陣列 教學與筆記。">
+    <meta name="description" content="字串函式 教學與筆記。">
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字元陣列 (Char-Style String)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Char-Style-String/index.html">
+<meta property="og:title" content="字串函式 (String Function)">
+<meta property="og:url" content="http://brain-garden.tw/C++/ADP/String-Function/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="字元陣列 教學與筆記。">
+<meta property="og:description" content="字串函式 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-09T03:04:51.754Z">
+<meta property="og:updated_time" content="2019-07-09T03:54:05.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字元陣列 (Char-Style String)">
-<meta name="twitter:description" content="字元陣列 教學與筆記。">
+<meta name="twitter:title" content="字串函式 (String Function)">
+<meta name="twitter:description" content="字串函式 教學與筆記。">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字串函式 (String Function)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字元陣列 (Char-Style String)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字串函式 (String Function)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-20T16:00:00.000Z">2019-06-21</time>
+                <time class="level-item has-text-grey" datetime="2019-07-08T16:00:00.000Z">2019-07-09</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 241 words)
+                    2 minutes read (About 276 words)
                 </span>
                 
                 
@@ -167,25 +167,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">字元陣列 (Char-Style String)</a>
+                <a class="has-link-black-ter">字串函式 (String Function)</a>
             
         </h1>
         <div class="content">
-            <p>字元陣列 教學與筆記。</p>
+            <p>字串函式 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="字元陣列字串組成說明"><a href="#字元陣列字串組成說明" class="headerlink" title="字元陣列字串組成說明"></a>字元陣列字串組成說明</h1><p>字串的是由字元所組成的陣列，並在最後加上一個空(null)字元 <code>\0</code>。</p>
-<h2 id="宣告方式-1-："><a href="#宣告方式-1-：" class="headerlink" title="宣告方式(1)："></a>宣告方式(1)：</h2><p>注意需要使用單引號表示字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = &#123;<span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="宣告方式-2-："><a href="#宣告方式-2-：" class="headerlink" title="宣告方式(2)："></a>宣告方式(2)：</h2><p>此法程式會在最後自動加上空字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"hello"</span>;</span><br></pre></td></tr></table></figure>
-<p>2種方法 <code>hello</code> + <code>\0</code> 共使用了6個字元。</p>
-<h1 id="使用空字元檢驗字串是否為空"><a href="#使用空字元檢驗字串是否為空" class="headerlink" title="使用空字元檢驗字串是否為空"></a>使用空字元檢驗字串是否為空</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span>(str[<span class="hljs-number">0</span>] == <span class="hljs-string">'\0'</span>) &#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"字串為空"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="指定新的字串值"><a href="#指定新的字串值" class="headerlink" title="指定新的字串值"></a>指定新的字串值</h1><h2 id="不能直接指定"><a href="#不能直接指定" class="headerlink" title="不能直接指定"></a>不能直接指定</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str = <span class="hljs-string">"hello"</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
-<p>需要一個個字元指定至陣列中，並在最後加上空字元。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">str[<span class="hljs-number">0</span>] = <span class="hljs-string">'h'</span>;</span><br><span class="line">str[<span class="hljs-number">1</span>] = <span class="hljs-string">'e'</span>;</span><br><span class="line">str[<span class="hljs-number">2</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">3</span>] = <span class="hljs-string">'l'</span>;</span><br><span class="line">str[<span class="hljs-number">4</span>] = <span class="hljs-string">'o'</span>;</span><br><span class="line">str[<span class="hljs-number">5</span>] = <span class="hljs-string">'\0'</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h1><p>使用 <code>cin</code> 函式，但輸入字串時中間不能包括空白；使用 <code>gets_s()</code>函式則可。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line"><span class="hljs-built_in">cin</span> &gt;&gt; str; <span class="hljs-comment">// hello</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[<span class="hljs-number">6</span>];</span><br><span class="line">gets_s(str);         <span class="hljs-comment">// AB CD</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// AB CD</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用-C-提供的字串處理相關函式"><a href="#使用-C-提供的字串處理相關函式" class="headerlink" title="使用 C++ 提供的字串處理相關函式"></a>使用 C++ 提供的字串處理相關函式</h1><p>在 Visual Studio 編譯器中要使用字串處理相關函式， <code>&lt;cstring&gt;</code> 或 <code>&lt;string&gt;</code> 可不需含入程式碼中。</p>
+<p>strcpy_s()、strcat_s() 在 Visual Studio 的建議下使用安全性更強的 CRT 函式 (加 <code>_s</code>)；而非舊語法。</p>
+<h2 id="strcpy-s"><a href="#strcpy-s" class="headerlink" title="strcpy_s()"></a>strcpy_s()</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[] = <span class="hljs-string">"hello"</span>;</span><br><span class="line"><span class="hljs-keyword">char</span> str2[<span class="hljs-number">6</span>];         <span class="hljs-comment">// 需要預先宣告大小</span></span><br><span class="line">strcpy_s(str2, str1); <span class="hljs-comment">// str1 字串複製給 str2 字串</span></span><br></pre></td></tr></table></figure>
+<h2 id="strcat-s"><a href="#strcat-s" class="headerlink" title="strcat_s()"></a>strcat_s()</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[<span class="hljs-number">11</span>] = &#123; <span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span> &#125;; <span class="hljs-comment">// 需要預先宣告大小</span></span><br><span class="line"><span class="hljs-keyword">char</span> str2[]   = &#123; <span class="hljs-string">'w'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'r'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'d'</span>, <span class="hljs-string">'\0'</span> &#125;;</span><br><span class="line">strcat_s(str1, str2); <span class="hljs-comment">// str2 字串串接在 str1 字串後</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; str1 &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// helloworld</span></span><br></pre></td></tr></table></figure>
+<h2 id="strlen"><a href="#strlen" class="headerlink" title="strlen()"></a>strlen()</h2><p>計算不包含 <code>\0</code> 的字串長度。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[<span class="hljs-number">11</span>] = &#123; <span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'\0'</span> &#125;; <span class="hljs-comment">// 遇到 '\0' 就停止計算</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(str1) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h2 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a>strcmp()</h2><p>比較的標準是依 ASCII 碼的字典順序。</p>
+<p>strcmp(str1, str2) 比較兩個字串大小，若相同傳回 0，str1 大於 str2 則傳回大於 0 的值，小於則傳回小於 0 的值。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[] = &#123;<span class="hljs-string">"abc"</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">char</span> str2[] = &#123;<span class="hljs-string">"abc"</span>&#125;;</span><br><span class="line"><span class="hljs-built_in">strcmp</span>(str1, str2);    <span class="hljs-comment">// 0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[] = &#123;<span class="hljs-string">"abd"</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">char</span> str2[] = &#123;<span class="hljs-string">"abc"</span>&#125;;</span><br><span class="line"><span class="hljs-built_in">strcmp</span>(str1, str2);    <span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str1[] = &#123;<span class="hljs-string">"abc"</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">char</span> str2[] = &#123;<span class="hljs-string">"abd"</span>&#125;;</span><br><span class="line"><span class="hljs-built_in">strcmp</span>(str1, str2);    <span class="hljs-comment">// -1</span></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -210,16 +208,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Literal-Constant/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/String-Num-Type-Conversion/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">字面常數 (Literal Constant)</span>
+                <span class="level-item">數字字串型態轉換 (String Num Type Conversion)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/if-Statement/">
-                <span class="level-item">if 條件判斷 (if-Statements)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/STL/STL-Introduction/">
+                <span class="level-item">STL 簡介 (STL Introduction)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -235,8 +233,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/Char-Style-String/';
-        this.page.identifier = 'C++/ADP/Char-Style-String/';
+        this.page.url = 'http://brain-garden.tw/C++/ADP/String-Function/';
+        this.page.identifier = 'C++/ADP/String-Function/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -359,34 +357,26 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#字元陣列字串組成說明">
+        <a class="is-flex" href="#使用-C-提供的字串處理相關函式">
         <span class="has-mr-6">1</span>
-        <span>字元陣列字串組成說明</span>
+        <span>使用 C++ 提供的字串處理相關函式</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#宣告方式-1-：">
+        <a class="is-flex" href="#strcpy-s">
         <span class="has-mr-6">1.1</span>
-        <span>宣告方式(1)：</span>
+        <span>strcpy_s()</span>
         </a></li><li>
-        <a class="is-flex" href="#宣告方式-2-：">
+        <a class="is-flex" href="#strcat-s">
         <span class="has-mr-6">1.2</span>
-        <span>宣告方式(2)：</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#使用空字元檢驗字串是否為空">
-        <span class="has-mr-6">2</span>
-        <span>使用空字元檢驗字串是否為空</span>
+        <span>strcat_s()</span>
         </a></li><li>
-        <a class="is-flex" href="#指定新的字串值">
-        <span class="has-mr-6">3</span>
-        <span>指定新的字串值</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#不能直接指定">
-        <span class="has-mr-6">3.1</span>
-        <span>不能直接指定</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#輸入">
-        <span class="has-mr-6">4</span>
-        <span>輸入</span>
-        </a></li></ul>
+        <a class="is-flex" href="#strlen">
+        <span class="has-mr-6">1.3</span>
+        <span>strlen()</span>
+        </a></li><li>
+        <a class="is-flex" href="#strcmp">
+        <span class="has-mr-6">1.4</span>
+        <span>strcmp()</span>
+        </a></li></ul></li></ul>
         </div>
     </div>
 </div>
@@ -1061,7 +1051,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列 (Char-Style String)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字串函式 (String Function)" height="28">
                 
                 </a>
                 <p class="is-size-7">
