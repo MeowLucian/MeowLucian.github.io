@@ -16,7 +16,7 @@
 <meta property="og:description" content="執行緒 基礎教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-09T15:05:58.693Z">
+<meta property="og:updated_time" content="2019-07-10T03:19:40.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="執行緒基礎 (Thread Basic)">
 <meta name="twitter:description" content="執行緒 基礎教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 118 words)
+                    3 minutes read (About 395 words)
                 </span>
                 
                 
@@ -176,6 +176,20 @@
 <h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>main 指派完 thread 的工作後，繼續完成接續的程式，並在最後等待 thread 完成工作。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"windows.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fun</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">double</span> Sum = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; ++i)</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">10000</span>; ++j)</span><br><span class="line">            Sum += i * j;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Thread result : "</span> &lt;&lt; Sum &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function">thread <span class="hljs-title">mThread</span><span class="hljs-params">(fun)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// do something</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">        Sleep(<span class="hljs-number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mThread.join(); <span class="hljs-comment">// wait the thread stop</span></span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://drive.google.com/uc?export=download&amp;id=1cz3mWDrcbzR6HFA0yHaBV99_czbEJPEJ" alt></p>
+<h1 id="競爭條件-Race-Condition"><a href="#競爭條件-Race-Condition" class="headerlink" title="競爭條件 (Race Condition)"></a>競爭條件 (Race Condition)</h1><p>使用互斥鎖 (Mutual Exclusion, Mutex)、Lock</p>
+<h1 id="行程死結-Process-Deadlock"><a href="#行程死結-Process-Deadlock" class="headerlink" title="行程死結 (Process Deadlock)"></a>行程死結 (Process Deadlock)</h1><h2 id="原因四要素"><a href="#原因四要素" class="headerlink" title="原因四要素"></a>原因四要素</h2><h3 id="互斥-Mutual-Exclusion-："><a href="#互斥-Mutual-Exclusion-：" class="headerlink" title="互斥 (Mutual Exclusion)："></a>互斥 (Mutual Exclusion)：</h3><p>一個系統資源只能被一個行程所持有。</p>
+<h3 id="禁止搶占-No-Preemption-："><a href="#禁止搶占-No-Preemption-：" class="headerlink" title="禁止搶占 (No Preemption)："></a>禁止搶占 (No Preemption)：</h3><p>系統資源不能被強制從一個行程中退出。</p>
+<h3 id="持有和等待-Hold-and-Wait-："><a href="#持有和等待-Hold-and-Wait-：" class="headerlink" title="持有和等待 (Hold and Wait)："></a>持有和等待 (Hold and Wait)：</h3><p>一個行程可以在等待時持有系統資源。</p>
+<h3 id="循環等待-Circular-Waiting-："><a href="#循環等待-Circular-Waiting-：" class="headerlink" title="循環等待 (Circular Waiting)："></a>循環等待 (Circular Waiting)：</h3><p>一系列行程互相持有其他行程所需要的資源。</p>
+<h2 id="解決死結"><a href="#解決死結" class="headerlink" title="解決死結"></a>解決死結</h2><h3 id="破壞互斥："><a href="#破壞互斥：" class="headerlink" title="破壞互斥："></a>破壞互斥：</h3><p>很困難(不可能)打破。</p>
+<h3 id="破壞禁止搶占："><a href="#破壞禁止搶占：" class="headerlink" title="破壞禁止搶占："></a>破壞禁止搶占：</h3><p>提高優先權。</p>
+<h3 id="破壞持有和等待："><a href="#破壞持有和等待：" class="headerlink" title="破壞持有和等待："></a>破壞持有和等待：</h3><ul>
+<li><p>除非 process 可以一次取得完成工作所需的全部資源，才允許 process 持有資源，否則不准持有任何資源</p>
+</li>
+<li><p>一旦要申請新資源，則必須先釋放持有的全部資源，才可以提申請。</p>
+</li>
+</ul>
+<h3 id="破壞循環等待："><a href="#破壞循環等待：" class="headerlink" title="破壞循環等待："></a>破壞循環等待：</h3><p>給予每個Resource唯一的(unique)資源編號(ID)、規定process需依資源編號<code>遞增</code>的方式提出申請。</p>
 
         </div>
         
@@ -346,7 +360,55 @@
         <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
         <span>說明</span>
-        </a></li></ul>
+        </a></li><li>
+        <a class="is-flex" href="#競爭條件-Race-Condition">
+        <span class="has-mr-6">2</span>
+        <span>競爭條件 (Race Condition)</span>
+        </a></li><li>
+        <a class="is-flex" href="#行程死結-Process-Deadlock">
+        <span class="has-mr-6">3</span>
+        <span>行程死結 (Process Deadlock)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#原因四要素">
+        <span class="has-mr-6">3.1</span>
+        <span>原因四要素</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#互斥-Mutual-Exclusion-：">
+        <span class="has-mr-6">3.1.1</span>
+        <span>互斥 (Mutual Exclusion)：</span>
+        </a></li><li>
+        <a class="is-flex" href="#禁止搶占-No-Preemption-：">
+        <span class="has-mr-6">3.1.2</span>
+        <span>禁止搶占 (No Preemption)：</span>
+        </a></li><li>
+        <a class="is-flex" href="#持有和等待-Hold-and-Wait-：">
+        <span class="has-mr-6">3.1.3</span>
+        <span>持有和等待 (Hold and Wait)：</span>
+        </a></li><li>
+        <a class="is-flex" href="#循環等待-Circular-Waiting-：">
+        <span class="has-mr-6">3.1.4</span>
+        <span>循環等待 (Circular Waiting)：</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#解決死結">
+        <span class="has-mr-6">3.2</span>
+        <span>解決死結</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#破壞互斥：">
+        <span class="has-mr-6">3.2.1</span>
+        <span>破壞互斥：</span>
+        </a></li><li>
+        <a class="is-flex" href="#破壞禁止搶占：">
+        <span class="has-mr-6">3.2.2</span>
+        <span>破壞禁止搶占：</span>
+        </a></li><li>
+        <a class="is-flex" href="#破壞持有和等待：">
+        <span class="has-mr-6">3.2.3</span>
+        <span>破壞持有和等待：</span>
+        </a></li><li>
+        <a class="is-flex" href="#破壞循環等待：">
+        <span class="has-mr-6">3.2.4</span>
+        <span>破壞循環等待：</span>
+        </a></li></ul></li></ul></li></ul>
         </div>
     </div>
 </div>
