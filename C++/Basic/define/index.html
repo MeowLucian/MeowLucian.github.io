@@ -16,7 +16,7 @@
 <meta property="og:description" content="define 巨集 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-11T15:29:21.927Z">
+<meta property="og:updated_time" content="2019-07-13T11:23:49.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="define 巨集 (define Macro)">
 <meta name="twitter:description" content="define 巨集 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 52 words)
+                    a few seconds read (About 86 words)
                 </span>
                 
                 
@@ -174,9 +174,10 @@
             <p>define 巨集 教學與筆記。</p>
 <a id="more"></a>
 <h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><h1 id="編譯時期的常數"><a href="#編譯時期的常數" class="headerlink" title="編譯時期的常數"></a>編譯時期的常數</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> Pi 3.14</span></span><br></pre></td></tr></table></figure>
-<h1 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> POWER(x) (x)*(x)</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; POWER(<span class="hljs-number">3</span> + <span class="hljs-number">4</span>) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 49</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="使用注意事項"><a href="#使用注意事項" class="headerlink" title="使用注意事項"></a>使用注意事項</h1><blockquote>
-<p>單純替換</p>
+<h1 id="函式"><a href="#函式" class="headerlink" title="函式"></a>函式</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> Power(x) (x)*(x)</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; Power(<span class="hljs-number">3</span> + <span class="hljs-number">4</span>) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 49</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用注意事項"><a href="#使用注意事項" class="headerlink" title="使用注意事項"></a>使用注意事項</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> Add(a,b) a+b</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-number">3</span> * Add(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>) * <span class="hljs-number">4</span> &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 3 * 3 + 4 * 4 = 25</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>define 比較像是單純替換，務必注意使用方式。</p>
 </blockquote>
 
         </div>
