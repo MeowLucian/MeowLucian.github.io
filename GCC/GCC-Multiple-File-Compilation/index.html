@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>邏輯、位元、位移運算 (Logical, Bitwise, Shift) - Brain Garden</title>
+<title>GCC 編譯多個文件 (GCC Multiple File Compilation) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="邏輯、位元、位移運算 教學與筆記。">
-<meta name="keywords" content="Code,C++">
+    <meta name="description" content="GCC 編譯多個文件 教學與筆記。">
+<meta name="keywords" content="Code,GCC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="邏輯、位元、位移運算 (Logical, Bitwise, Shift)">
-<meta property="og:url" content="http://brain-garden.tw/C++/Basic/Logical-Bitwise-Shift/index.html">
+<meta property="og:title" content="GCC 編譯多個文件 (GCC Multiple File Compilation)">
+<meta property="og:url" content="http://brain-garden.tw/GCC/GCC-Multiple-File-Compilation/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="邏輯、位元、位移運算 教學與筆記。">
+<meta property="og:description" content="GCC 編譯多個文件 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-07T10:41:21.744Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1NuQGRZoR_mADjD044URFQysub3pcuTep">
+<meta property="og:updated_time" content="2019-07-15T16:28:40.733Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邏輯、位元、位移運算 (Logical, Bitwise, Shift)">
-<meta name="twitter:description" content="邏輯、位元、位移運算 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta name="twitter:title" content="GCC 編譯多個文件 (GCC Multiple File Compilation)">
+<meta name="twitter:description" content="GCC 編譯多個文件 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1NuQGRZoR_mADjD044URFQysub3pcuTep">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="邏輯、位元、位移運算 (Logical, Bitwise, Shift)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="GCC 編譯多個文件 (GCC Multiple File Compilation)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="邏輯、位元、位移運算 (Logical, Bitwise, Shift)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1NuQGRZoR_mADjD044URFQysub3pcuTep" alt="GCC 編譯多個文件 (GCC Multiple File Compilation)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-06T16:00:00.000Z">2019-07-07</time>
+                <time class="level-item has-text-grey" datetime="2019-07-14T16:00:00.000Z">2019-07-15</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 312 words)
+                    a few seconds read (About 59 words)
                 </span>
                 
                 
@@ -167,44 +167,32 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">邏輯、位元、位移運算 (Logical, Bitwise, Shift)</a>
+                <a class="has-link-black-ter">GCC 編譯多個文件 (GCC Multiple File Compilation)</a>
             
         </h1>
         <div class="content">
-            <p>邏輯、位元、位移運算 教學與筆記。</p>
+            <p>GCC 編譯多個文件 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>常常會搞錯邏輯與位元運算兩者差別，初學時可要多注意。</p>
+<h1 id="範例程式"><a href="#範例程式" class="headerlink" title="範例程式"></a>範例程式</h1><ul>
+<li>show.h</li>
+</ul>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>邏輯運算： <code>反相：!</code> 、 <code>且：&amp;&amp;</code> 、 <code>或：||</code></p>
-</li>
-<li><p>位元運算： <code>NOT：!</code> 、 <code>AND：&amp;</code> 、 <code>OR：|</code> 、 <code>XOR：^</code> 、 <code>補數：~</code></p>
-</li>
-<li><p>位移運算： <code>&lt;&lt;</code> 、 <code>&gt;&gt;</code></p>
-</li>
+<li>show.c</li>
 </ul>
-<h1 id="邏輯運算-Logical-Operation"><a href="#邏輯運算-Logical-Operation" class="headerlink" title="邏輯運算 (Logical Operation)"></a>邏輯運算 (Logical Operation)</h1><h1 id="位元運算-Bitwise-Operation"><a href="#位元運算-Bitwise-Operation" class="headerlink" title="位元運算 (Bitwise Operation)"></a>位元運算 (Bitwise Operation)</h1><h2 id="NOT："><a href="#NOT：" class="headerlink" title="NOT：!"></a>NOT：<code>!</code></h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">0</span>;   <span class="hljs-comment">// 0</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = !a;  <span class="hljs-comment">// 1</span></span><br></pre></td></tr></table></figure>
-<h2 id="AND：-amp"><a href="#AND：-amp" class="headerlink" title="AND：&amp;"></a>AND：<code>&amp;</code></h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">20</span>;        <span class="hljs-comment">// 10100</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">26</span>;        <span class="hljs-comment">// 11010</span></span><br><span class="line"><span class="hljs-keyword">int</span> c = a &amp; b;     <span class="hljs-comment">// 10000</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 16 in dec</span></span><br></pre></td></tr></table></figure>
-<h2 id="OR："><a href="#OR：" class="headerlink" title="OR：|"></a>OR：<code>|</code></h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">20</span>;        <span class="hljs-comment">// 10100</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">26</span>;        <span class="hljs-comment">// 11010</span></span><br><span class="line"><span class="hljs-keyword">int</span> c = a | b;     <span class="hljs-comment">// 11110</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 30 in dec</span></span><br></pre></td></tr></table></figure>
-<h2 id="XOR："><a href="#XOR：" class="headerlink" title="XOR：^"></a>XOR：<code>^</code></h2><p>奇數個 1 輸出為 1；偶數個 1 輸出為 0。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">20</span>;        <span class="hljs-comment">// 10100</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">26</span>;        <span class="hljs-comment">// 11010</span></span><br><span class="line"><span class="hljs-keyword">int</span> c = a ^ b;     <span class="hljs-comment">// 01110</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 14 in dec</span></span><br></pre></td></tr></table></figure>
-<h2 id="補數："><a href="#補數：" class="headerlink" title="補數：~"></a>補數：<code>~</code></h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> a = <span class="hljs-number">255</span>;      <span class="hljs-comment">// 11111111</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = ~a;        <span class="hljs-comment">// 00000000</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 0 in dec</span></span><br></pre></td></tr></table></figure>
-<h1 id="位移運算-Shift-Operation"><a href="#位移運算-Shift-Operation" class="headerlink" title="位移運算 (Shift Operation)"></a>位移運算 (Shift Operation)</h1><ul>
-<li><p><code>&lt;&lt;</code>：向左移位，a &lt;&lt; n 即 a 向左移 n 個 bits，相當於乘以 2 的 n 次方。</p>
-</li>
-<li><p><code>&gt;&gt;</code>：向右移位，a &gt;&gt; n 即 a 向右移 n 個 bits，相當於除以 2 的 n 次方。</p>
-</li>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>main.c</li>
 </ul>
-<blockquote>
-<p>左移運算：左邊被擠出去的位元會被丟棄，而右邊會補上 0。<br>右移運算：右邊被擠出去的位元會被丟棄，而左邊會補上 0。</p>
-</blockquote>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">20</span>;        <span class="hljs-comment">//  10100</span></span><br><span class="line"><span class="hljs-keyword">int</span> b = a &lt;&lt; <span class="hljs-number">1</span>;    <span class="hljs-comment">// 101000</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; b &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 40 in dec</span></span><br><span class="line"><span class="hljs-keyword">int</span> c = a &gt;&gt; <span class="hljs-number">1</span>;    <span class="hljs-comment">// 001010</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 10 in dec</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"show.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="GCC-編譯指令"><a href="#GCC-編譯指令" class="headerlink" title="GCC 編譯指令"></a>GCC 編譯指令</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o test main.c show.c</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                    <a class="has-link-grey -link" href="/tags/Code/">Code</a>, <a class="has-link-grey -link" href="/tags/GCC/">GCC</a>
                 </div>
             </div>
         </div>
@@ -222,16 +210,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Common/Fibonacci/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Static-Keyword/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">費氏數列 (Fibonacci)</span>
+                <span class="level-item">Static 關鍵字 (Static Keyword)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Input-Output/">
-                <span class="level-item">輸入輸出 (Input Output)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Time/Time-Basic/">
+                <span class="level-item">計時基礎 (Time Basic)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -247,8 +235,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/Basic/Logical-Bitwise-Shift/';
-        this.page.identifier = 'C++/Basic/Logical-Bitwise-Shift/';
+        this.page.url = 'http://brain-garden.tw/GCC/GCC-Multiple-File-Compilation/';
+        this.page.identifier = 'GCC/GCC-Multiple-File-Compilation/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -371,41 +359,13 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#說明">
+        <a class="is-flex" href="#範例程式">
         <span class="has-mr-6">1</span>
-        <span>說明</span>
+        <span>範例程式</span>
         </a></li><li>
-        <a class="is-flex" href="#邏輯運算-Logical-Operation">
+        <a class="is-flex" href="#GCC-編譯指令">
         <span class="has-mr-6">2</span>
-        <span>邏輯運算 (Logical Operation)</span>
-        </a></li><li>
-        <a class="is-flex" href="#位元運算-Bitwise-Operation">
-        <span class="has-mr-6">3</span>
-        <span>位元運算 (Bitwise Operation)</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#NOT：">
-        <span class="has-mr-6">3.1</span>
-        <span>NOT：!</span>
-        </a></li><li>
-        <a class="is-flex" href="#AND：-amp">
-        <span class="has-mr-6">3.2</span>
-        <span>AND：&amp;</span>
-        </a></li><li>
-        <a class="is-flex" href="#OR：">
-        <span class="has-mr-6">3.3</span>
-        <span>OR：|</span>
-        </a></li><li>
-        <a class="is-flex" href="#XOR：">
-        <span class="has-mr-6">3.4</span>
-        <span>XOR：^</span>
-        </a></li><li>
-        <a class="is-flex" href="#補數：">
-        <span class="has-mr-6">3.5</span>
-        <span>補數：~</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#位移運算-Shift-Operation">
-        <span class="has-mr-6">4</span>
-        <span>位移運算 (Shift Operation)</span>
+        <span>GCC 編譯指令</span>
         </a></li></ul>
         </div>
     </div>
@@ -1117,7 +1077,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="邏輯、位元、位移運算 (Logical, Bitwise, Shift)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="GCC 編譯多個文件 (GCC Multiple File Compilation)" height="28">
                 
                 </a>
                 <p class="is-size-7">

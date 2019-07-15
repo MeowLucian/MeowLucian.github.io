@@ -16,7 +16,7 @@
 <meta property="og:description" content="GCC 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1NuQGRZoR_mADjD044URFQysub3pcuTep">
-<meta property="og:updated_time" content="2019-07-15T09:20:03.427Z">
+<meta property="og:updated_time" content="2019-07-15T13:21:18.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCC 教學 (GCC Tutorial)">
 <meta name="twitter:description" content="GCC 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 36 words)
+                    a minute read (About 128 words)
                 </span>
                 
                 
@@ -173,8 +173,44 @@
         <div class="content">
             <p>GCC 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h1><h2 id="基礎-Basic"><a href="#基礎-Basic" class="headerlink" title="基礎 (Basic)"></a>基礎 (Basic)</h2><p>GNU 編譯器套裝 (GNU Compiler Collection, GCC)</p>
-<h2 id="安裝-MinGW"><a href="#安裝-MinGW" class="headerlink" title="安裝 MinGW"></a>安裝 MinGW</h2><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><code>gcc --version</code> ：查看 gcc 版本</p>
+<h1 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h1><h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>GNU 編譯器套裝 (GNU Compiler Collection, GCC)</p>
+<h2 id="安裝-MinGW-Install-MinGW"><a href="#安裝-MinGW-Install-MinGW" class="headerlink" title="安裝 MinGW (Install MinGW)"></a>安裝 MinGW (Install MinGW)</h2><h2 id="指令列表-Command-List"><a href="#指令列表-Command-List" class="headerlink" title="指令列表 (Command List)"></a>指令列表 (Command List)</h2><p>語法 ： <code>gcc [option] filename</code></p>
+<h3 id="option"><a href="#option" class="headerlink" title="option"></a>option</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">功能</th>
+<th style="text-align:center">指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">查看版本</td>
+<td style="text-align:center"><code>gcc --version</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">只做編譯、不做連結</td>
+<td style="text-align:center"><code>-c</code></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">指定輸出檔名</td>
+<td style="text-align:center"><code>-o filename</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="C-Example"><a href="#C-Example" class="headerlink" title="C Example"></a>C Example</h3><ul>
+<li>單一文件編譯：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c main.c</span><br><span class="line">gcc -o test main.c</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="C-Example-1"><a href="#C-Example-1" class="headerlink" title="C++ Example"></a>C++ Example</h3><ul>
+<li>單一文件編譯：<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g++ -c main.cpp</span><br><span class="line">g++ -o test main.cpp</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="基礎編譯-Basic-Compiling"><a href="#基礎編譯-Basic-Compiling" class="headerlink" title="基礎編譯 (Basic Compiling)"></a>基礎編譯 (Basic Compiling)</h2><ul>
+<li><a href="/GCC/GCC-Multiple-File-Compilation">GCC 編譯多個文件 (GCC Multiple File Compilation)</a></li>
+</ul>
 <h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1>
         </div>
         
@@ -208,8 +244,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/define/">
-                <span class="level-item">define 巨集 (define Macro)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Declaration-Definition/">
+                <span class="level-item">宣告 &amp; 定義 (Declaration, Definition)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -353,17 +389,33 @@
         <span class="has-mr-6">1</span>
         <span>GCC</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#基礎-Basic">
+        <a class="is-flex" href="#說明">
         <span class="has-mr-6">1.1</span>
-        <span>基礎 (Basic)</span>
+        <span>說明</span>
         </a></li><li>
-        <a class="is-flex" href="#安裝-MinGW">
+        <a class="is-flex" href="#安裝-MinGW-Install-MinGW">
         <span class="has-mr-6">1.2</span>
-        <span>安裝 MinGW</span>
+        <span>安裝 MinGW (Install MinGW)</span>
         </a></li><li>
-        <a class="is-flex" href="#指令">
+        <a class="is-flex" href="#指令列表-Command-List">
         <span class="has-mr-6">1.3</span>
-        <span>指令</span>
+        <span>指令列表 (Command List)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#option">
+        <span class="has-mr-6">1.3.1</span>
+        <span>option</span>
+        </a></li><li>
+        <a class="is-flex" href="#C-Example">
+        <span class="has-mr-6">1.3.2</span>
+        <span>C Example</span>
+        </a></li><li>
+        <a class="is-flex" href="#C-Example-1">
+        <span class="has-mr-6">1.3.3</span>
+        <span>C++ Example</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#基礎編譯-Basic-Compiling">
+        <span class="has-mr-6">1.4</span>
+        <span>基礎編譯 (Basic Compiling)</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#Makefile">
         <span class="has-mr-6">2</span>
