@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
+    
+    <lastmod>2019-07-15T11:02:01.730Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/list/index.html</loc>
+    
+    <lastmod>2019-07-15T11:01:57.999Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw/Google-Drive-Url/</loc>
     
     <lastmod>2019-07-15T09:41:01.049Z</lastmod>
@@ -26,20 +40,6 @@
     <loc>http://brain-garden.tw/Visual-Studio-Tutorial/</loc>
     
     <lastmod>2019-07-15T08:47:20.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/list/index.html</loc>
-    
-    <lastmod>2019-07-11T15:30:17.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
-    
-    <lastmod>2019-07-11T15:30:14.596Z</lastmod>
     
   </url>
   
