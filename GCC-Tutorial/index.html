@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>最大公因數 (Greatest Common Divisor) - Brain Garden</title>
+<title>GCC 教學 (GCC Tutorial) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="最大公因數 教學與筆記。">
-<meta name="keywords" content="Code,C++">
+    <meta name="description" content="GCC 教學與筆記。">
+<meta name="keywords" content="Code,GCC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最大公因數 (Greatest Common Divisor)">
-<meta property="og:url" content="http://brain-garden.tw/C++/Common/GCD/index.html">
+<meta property="og:title" content="GCC 教學 (GCC Tutorial)">
+<meta property="og:url" content="http://brain-garden.tw/GCC-Tutorial/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="最大公因數 教學與筆記。">
+<meta property="og:description" content="GCC 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-07T06:25:37.544Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1NuQGRZoR_mADjD044URFQysub3pcuTep">
+<meta property="og:updated_time" content="2019-07-15T09:20:03.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最大公因數 (Greatest Common Divisor)">
-<meta name="twitter:description" content="最大公因數 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta name="twitter:title" content="GCC 教學 (GCC Tutorial)">
+<meta name="twitter:description" content="GCC 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1NuQGRZoR_mADjD044URFQysub3pcuTep">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="最大公因數 (Greatest Common Divisor)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="GCC 教學 (GCC Tutorial)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="最大公因數 (Greatest Common Divisor)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1NuQGRZoR_mADjD044URFQysub3pcuTep" alt="GCC 教學 (GCC Tutorial)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-06T16:00:00.000Z">2019-07-07</time>
+                <time class="level-item has-text-grey" datetime="2019-07-14T16:00:00.000Z">2019-07-15</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 59 words)
+                    a few seconds read (About 36 words)
                 </span>
                 
                 
@@ -167,21 +167,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">最大公因數 (Greatest Common Divisor)</a>
+                <a class="has-link-black-ter">GCC 教學 (GCC Tutorial)</a>
             
         </h1>
         <div class="content">
-            <p>最大公因數 教學與筆記。</p>
+            <p>GCC 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>使用<code>輾轉相除法</code>求最大公因數。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (y == <span class="hljs-number">0</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> x;</span><br><span class="line">    <span class="hljs-keyword">return</span> gcd(y, x % y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;	</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; gcd(<span class="hljs-number">54</span>, <span class="hljs-number">24</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h1><h2 id="基礎-Basic"><a href="#基礎-Basic" class="headerlink" title="基礎 (Basic)"></a>基礎 (Basic)</h2><p>GNU 編譯器套裝 (GNU Compiler Collection, GCC)</p>
+<h2 id="安裝-MinGW"><a href="#安裝-MinGW" class="headerlink" title="安裝 MinGW"></a>安裝 MinGW</h2><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><code>gcc --version</code> ：查看 gcc 版本</p>
+<h1 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h1>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                    <a class="has-link-grey -link" href="/tags/Code/">Code</a>, <a class="has-link-grey -link" href="/tags/GCC/">GCC</a>
                 </div>
             </div>
         </div>
@@ -198,17 +199,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/Input-Output/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">輸入輸出 (Input Output)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Logical-Bitwise-Shift/">
-                <span class="level-item">邏輯、位元、位移運算 (Logical, Bitwise, Shift)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/define/">
+                <span class="level-item">define 巨集 (define Macro)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -224,8 +218,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/Common/GCD/';
-        this.page.identifier = 'C++/Common/GCD/';
+        this.page.url = 'http://brain-garden.tw/GCC-Tutorial/';
+        this.page.identifier = 'GCC-Tutorial/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -348,9 +342,25 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#說明">
+        <a class="is-flex" href="#GCC">
         <span class="has-mr-6">1</span>
-        <span>說明</span>
+        <span>GCC</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#基礎-Basic">
+        <span class="has-mr-6">1.1</span>
+        <span>基礎 (Basic)</span>
+        </a></li><li>
+        <a class="is-flex" href="#安裝-MinGW">
+        <span class="has-mr-6">1.2</span>
+        <span>安裝 MinGW</span>
+        </a></li><li>
+        <a class="is-flex" href="#指令">
+        <span class="has-mr-6">1.3</span>
+        <span>指令</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Makefile">
+        <span class="has-mr-6">2</span>
+        <span>Makefile</span>
         </a></li></ul>
         </div>
     </div>
@@ -1062,7 +1072,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="最大公因數 (Greatest Common Divisor)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="GCC 教學 (GCC Tutorial)" height="28">
                 
                 </a>
                 <p class="is-size-7">

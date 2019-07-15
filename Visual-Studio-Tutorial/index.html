@@ -16,7 +16,7 @@
 <meta property="og:description" content="Visual Studio 使用教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj">
-<meta property="og:updated_time" content="2019-05-22T03:48:17.567Z">
+<meta property="og:updated_time" content="2019-07-15T08:47:20.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visual Studio 教學 (Visual Studio Tutorial)">
 <meta name="twitter:description" content="Visual Studio 使用教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 153 words)
+                    3 minutes read (About 523 words)
                 </span>
                 
                 
@@ -176,6 +176,8 @@
 <h1 id="快捷鍵"><a href="#快捷鍵" class="headerlink" title="快捷鍵"></a>快捷鍵</h1><ul>
 <li><code>F5</code> : 執行</li>
 <li><code>F9</code> : 放置中斷點 (Breakpoint)</li>
+<li><code>F10</code> : 單步執行 (Step Over)</li>
+<li><code>F11</code> : 逐步執行 (Step Into)</li>
 <li><code>Ctrl + K + C</code> : 多行註解</li>
 <li><code>Ctrl + K + U</code> : 多行取消註解</li>
 </ul>
@@ -183,6 +185,23 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;pch.h&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="跑完程式自動關閉"><a href="#跑完程式自動關閉" class="headerlink" title="跑完程式自動關閉"></a>跑完程式自動關閉</h2><p>Options -&gt; Debugging -&gt; General -&gt; Automatically close the console when debugging stops</p>
 <p><img src="https://drive.google.com/uc?export=download&amp;id=1v9UzlKgNVUzsRkjkTxrznCu8NUzcrZNs" alt></p>
+<h2 id="除錯-Debugger"><a href="#除錯-Debugger" class="headerlink" title="除錯 (Debugger)"></a>除錯 (Debugger)</h2><p>有分三種模式：</p>
+<h3 id="逐步執行-Step-Into"><a href="#逐步執行-Step-Into" class="headerlink" title="逐步執行 (Step Into)"></a>逐步執行 (Step Into)</h3><p>遇到子函數就進入並且繼續單步執行。</p>
+<h3 id="單步執行-Step-Over"><a href="#單步執行-Step-Over" class="headerlink" title="單步執行 (Step Over)"></a>單步執行 (Step Over)</h3><p>不會進入子函數內逐步執行，而是將子函數整個執行完再停止，也就是把子函數整個作為一步。</p>
+<h3 id="跳步執行-Step-Out"><a href="#跳步執行-Step-Out" class="headerlink" title="跳步執行 (Step Out)"></a>跳步執行 (Step Out)</h3><p>執行完子函數餘下部分，跳出子函數並返回到上一層函數。</p>
+<h2 id="除錯監看視窗-Debug-Window"><a href="#除錯監看視窗-Debug-Window" class="headerlink" title="除錯監看視窗 (Debug Window)"></a>除錯監看視窗 (Debug Window)</h2><p>按 <code>F11</code> 逐步執行 (Step Into)，<code>Debug -&gt; Windows -&gt; Memory -&gt; Memory1</code></p>
+<p>或按快捷鍵 <code>Ctrl + Alt + M</code> 再按 <code>1</code>。</p>
+<h3 id="int-範例"><a href="#int-範例" class="headerlink" title="int 範例"></a>int 範例</h3><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> a[] = &#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>,<span class="hljs-number">15</span>,<span class="hljs-number">16</span>,<span class="hljs-number">17</span>,<span class="hljs-number">18</span> &#125;;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1u-es2rJTxJAP--9Hv6JCvUEw--RHmPH4" alt></p>
+<p>顯示陣列位址從 0x003CFBFC 開始，並為連續記憶體配置。</p>
+<p>int 所占大小為 4 bytes，所以 Columns 設為 4，較適合監看。</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1oPohKAuYlid4sHu0MCp9ppD8fNJUmRI_" alt></p>
+<p>記憶體使用 16 位元進制來顯示。</p>
+<h3 id="char-範例"><a href="#char-範例" class="headerlink" title="char 範例"></a>char 範例</h3><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"pch.h"</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> a[] = &#123;<span class="hljs-string">"ABCabc"</span>&#125;;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; &amp;a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    system(<span class="hljs-string">"pause"</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1ZuQNq_qCp1mGjY6CnnCjfEhY2ob_j0tf" alt></p>
+<p>顯示陣列位址從 0x003EFA24 開始，並為連續記憶體配置。</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1zY6bJDdK17RUlk8gSQABSTYHaA3Gvwm3" alt></p>
+<p>char 所占大小為 1 bytes，所以 Columns 設為 1，較適合監看。記憶體使用 16 位元進制來顯示。</p>
 <h2 id="Power-Mode-外掛"><a href="#Power-Mode-外掛" class="headerlink" title="Power Mode 外掛"></a>Power Mode 外掛</h2><p>此插件可使程式撰寫時擁有更多樂趣。</p>
 <p>Download Extension:</p>
 <ul>
@@ -302,7 +321,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        16
                     </p>
                 </div>
             </div>
@@ -322,7 +341,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        17
                     </p>
                 </div>
             </div>
@@ -382,8 +401,36 @@
         <span class="has-mr-6">2.2</span>
         <span>跑完程式自動關閉</span>
         </a></li><li>
-        <a class="is-flex" href="#Power-Mode-外掛">
+        <a class="is-flex" href="#除錯-Debugger">
         <span class="has-mr-6">2.3</span>
+        <span>除錯 (Debugger)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#逐步執行-Step-Into">
+        <span class="has-mr-6">2.3.1</span>
+        <span>逐步執行 (Step Into)</span>
+        </a></li><li>
+        <a class="is-flex" href="#單步執行-Step-Over">
+        <span class="has-mr-6">2.3.2</span>
+        <span>單步執行 (Step Over)</span>
+        </a></li><li>
+        <a class="is-flex" href="#跳步執行-Step-Out">
+        <span class="has-mr-6">2.3.3</span>
+        <span>跳步執行 (Step Out)</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#除錯監看視窗-Debug-Window">
+        <span class="has-mr-6">2.4</span>
+        <span>除錯監看視窗 (Debug Window)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#int-範例">
+        <span class="has-mr-6">2.4.1</span>
+        <span>int 範例</span>
+        </a></li><li>
+        <a class="is-flex" href="#char-範例">
+        <span class="has-mr-6">2.4.2</span>
+        <span>char 範例</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Power-Mode-外掛">
+        <span class="has-mr-6">2.5</span>
         <span>Power Mode 外掛</span>
         </a></li></ul></li></ul>
         </div>
@@ -409,7 +456,7 @@
                 <span class="level-item">Learning-Note-學習筆記</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag is-primary">12</span>
+                <span class="level-item tag is-primary">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Lift-生活/">
@@ -431,7 +478,7 @@
         <h3 class="menu-label has-text-danger">
             Tag Cloud
         </h3>
-        <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/Code/" style="font-size: 16.67px;">Code</a> <a href="/tags/Dpi/" style="font-size: 13.33px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/Office/" style="font-size: 13.33px;">Office</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a>
+        <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/Code/" style="font-size: 20px;">Code</a> <a href="/tags/Dpi/" style="font-size: 15px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/Office/" style="font-size: 15px;">Office</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a>
     </div>
 </div>
 
@@ -445,6 +492,25 @@
         <h3 class="menu-label has-text-danger">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/GCC-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1NuQGRZoR_mADjD044URFQysub3pcuTep" alt="GCC 教學 (GCC Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-14T16:00:00.000Z">2019-07-15</time></div>
+                    <a href="/GCC-Tutorial/" class="has-link-black-ter is-size-6">GCC 教學 (GCC Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -522,25 +588,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/Visual-Studio-Tutorial/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj" alt="Visual Studio 教學 (Visual Studio Tutorial)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-01T16:00:00.000Z">2018-12-02</time></div>
-                    <a href="/Visual-Studio-Tutorial/" class="has-link-black-ter is-size-6">Visual Studio 教學 (Visual Studio Tutorial)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -552,6 +599,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/05/">
@@ -631,7 +689,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Code/">
                         <span class="tag">Code</span>
-                        <span class="tag is-primary">3</span>
+                        <span class="tag is-primary">4</span>
                     </a>
                 </div>
                 
@@ -645,6 +703,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Drive/">
                         <span class="tag">Drive</span>
+                        <span class="tag is-primary">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
                         <span class="tag is-primary">1</span>
                     </a>
                 </div>
@@ -758,6 +823,25 @@
         
         <article class="media">
             
+            <a href="/GCC-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1NuQGRZoR_mADjD044URFQysub3pcuTep" alt="GCC 教學 (GCC Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-14T16:00:00.000Z">2019-07-15</time></div>
+                    <a href="/GCC-Tutorial/" class="has-link-black-ter is-size-6">GCC 教學 (GCC Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/C++-Tutorial/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="C++ 教學 (C++ Tutorial)">
@@ -832,25 +916,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/Visual-Studio-Tutorial/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=16XB09c3DXxQHf5nAFs-Bwho1xuWL7Grj" alt="Visual Studio 教學 (Visual Studio Tutorial)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-01T16:00:00.000Z">2018-12-02</time></div>
-                    <a href="/Visual-Studio-Tutorial/" class="has-link-black-ter is-size-6">Visual Studio 教學 (Visual Studio Tutorial)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -862,6 +927,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag is-primary">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/05/">
@@ -941,7 +1017,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Code/">
                         <span class="tag">Code</span>
-                        <span class="tag is-primary">3</span>
+                        <span class="tag is-primary">4</span>
                     </a>
                 </div>
                 
@@ -955,6 +1031,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Drive/">
                         <span class="tag">Drive</span>
+                        <span class="tag is-primary">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCC/">
+                        <span class="tag">GCC</span>
                         <span class="tag is-primary">1</span>
                     </a>
                 </div>
