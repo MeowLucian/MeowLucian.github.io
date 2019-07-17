@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
+    
+    <lastmod>2019-07-17T08:39:21.135Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://brain-garden.tw/C-Tutorial/</loc>
     
-    <lastmod>2019-07-17T07:02:00.849Z</lastmod>
+    <lastmod>2019-07-17T08:30:41.906Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/GCC-Tutorial/</loc>
+    
+    <lastmod>2019-07-17T08:19:57.678Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://brain-garden.tw/list/index.html</loc>
     
-    <lastmod>2019-07-17T06:45:40.468Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
-    
-    <lastmod>2019-07-16T19:24:10.717Z</lastmod>
+    <lastmod>2019-07-17T08:18:02.637Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://brain-garden.tw/Chrome-Extension/</loc>
     
     <lastmod>2019-07-16T17:56:58.319Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/GCC-Tutorial/</loc>
-    
-    <lastmod>2019-07-16T02:51:51.593Z</lastmod>
     
   </url>
   

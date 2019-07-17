@@ -2,24 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Extern 關鍵字 (Extern Keyword) - Brain Garden</title>
+<title>字串交換 (Swap String) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Extern 關鍵字 教學與筆記。">
-<meta name="keywords" content="Code,C">
+    <meta name="description" content="字串交換 實作教學與筆記。">
+<meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Extern 關鍵字 (Extern Keyword)">
-<meta property="og:url" content="http://brain-garden.tw/C/Basic/Extern-Keyword/index.html">
+<meta property="og:title" content="字串交換 (Swap String)">
+<meta property="og:url" content="http://brain-garden.tw/C++/Common/Swap-String/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="Extern 關鍵字 教學與筆記。">
+<meta property="og:description" content="字串交換 實作教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
-<meta property="og:updated_time" content="2019-07-17T07:03:04.687Z">
+<meta property="og:updated_time" content="2019-07-17T08:42:19.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Extern 關鍵字 (Extern Keyword)">
-<meta name="twitter:description" content="Extern 關鍵字 教學與筆記。">
+<meta name="twitter:title" content="字串交換 (Swap String)">
+<meta name="twitter:description" content="字串交換 實作教學與筆記。">
 <meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Extern 關鍵字 (Extern Keyword)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字串交換 (Swap String)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="Extern 關鍵字 (Extern Keyword)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="字串交換 (Swap String)">
         </span>
     </div>
     
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 200 words)
+                    a few seconds read (About 16 words)
                 </span>
                 
                 
@@ -167,40 +167,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">Extern 關鍵字 (Extern Keyword)</a>
+                <a class="has-link-black-ter">字串交換 (Swap String)</a>
             
         </h1>
         <div class="content">
-            <p>Extern 關鍵字 教學與筆記。</p>
+            <p>字串交換 實作教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>可以宣告變數會在其他的位置被定義，這個位置可能是在同一份文件之中，或是在其他文件。</p>
-<h1 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h1><ul>
-<li>some.c</li>
-</ul>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">100</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>main.c</li>
-</ul>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>編譯：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o test main.c some.c</span><br></pre></td></tr></table></figure>
-<h1 id="重覆定義錯誤"><a href="#重覆定義錯誤" class="headerlink" title="重覆定義錯誤"></a>重覆定義錯誤</h1><p>extern 宣告 a 在<code>其他位置被定義</code>。如果在使用 extern 時<code>同時指定其值</code>，則視為在該位置<code>定義</code>變數。結果就是引發重覆定義錯誤。</p>
-<ul>
-<li>main.c</li>
-</ul>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">200</span>; <span class="hljs-comment">// error, 'a' has both 'extern' and initializer</span></span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="重新指定其值"><a href="#重新指定其值" class="headerlink" title="重新指定其值"></a>重新指定其值</h1><p><code>先聲明 extern 找到變數，再重新指定其值。</code></p>
-<ul>
-<li>main.c</li>
-</ul>
-<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a;</span><br><span class="line">    a = <span class="hljs-number">200</span>;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
                 </div>
             </div>
         </div>
@@ -218,16 +198,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Common/Swap-String/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C-Tutorial/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">字串交換 (Swap String)</span>
+                <span class="level-item">C 教學 (C Tutorial)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C/Basic/Static-Keyword/">
-                <span class="level-item">Static 關鍵字 (Static Keyword)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C/Basic/Extern-Keyword/">
+                <span class="level-item">Extern 關鍵字 (Extern Keyword)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -243,8 +223,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C/Basic/Extern-Keyword/';
-        this.page.identifier = 'C/Basic/Extern-Keyword/';
+        this.page.url = 'http://brain-garden.tw/C++/Common/Swap-String/';
+        this.page.identifier = 'C++/Common/Swap-String/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -370,18 +350,6 @@
         <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
         <span>說明</span>
-        </a></li><li>
-        <a class="is-flex" href="#範例">
-        <span class="has-mr-6">2</span>
-        <span>範例</span>
-        </a></li><li>
-        <a class="is-flex" href="#重覆定義錯誤">
-        <span class="has-mr-6">3</span>
-        <span>重覆定義錯誤</span>
-        </a></li><li>
-        <a class="is-flex" href="#重新指定其值">
-        <span class="has-mr-6">4</span>
-        <span>重新指定其值</span>
         </a></li></ul>
         </div>
     </div>
@@ -1107,7 +1075,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="Extern 關鍵字 (Extern Keyword)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字串交換 (Swap String)" height="28">
                 
                 </a>
                 <p class="is-size-7">
