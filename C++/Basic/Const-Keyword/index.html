@@ -16,7 +16,7 @@
 <meta property="og:description" content="Const 關鍵字 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-06-30T04:19:24.342Z">
+<meta property="og:updated_time" content="2019-07-17T06:09:20.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Const 關鍵字 (Const Keyword)">
 <meta name="twitter:description" content="Const 關鍵字 教學與筆記。">
@@ -176,11 +176,14 @@
 <h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>如果希望宣告的變數是<code>唯讀</code>的，可使用 Const 關鍵字。</p>
 <h2 id="int-const-a"><a href="#int-const-a" class="headerlink" title="int const a"></a>int const a</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;</span><br><span class="line">a = <span class="hljs-number">2</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
 <h2 id="const-int-a"><a href="#const-int-a" class="headerlink" title="const int a"></a>const int a</h2><p>與 int const a 相同。</p>
+<hr>
 <h2 id="int-const-p-amp-a"><a href="#int-const-p-amp-a" class="headerlink" title="int const *p = &amp;a"></a>int const *p = &amp;a</h2><p><code>不可改變指定變數的值</code>；但<code>可改變指定成其他變數</code>。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> *p = &amp;a;</span><br><span class="line">*p = <span class="hljs-number">3</span>; <span class="hljs-comment">// error</span></span><br><span class="line">p = &amp;b; <span class="hljs-comment">// OK</span></span><br></pre></td></tr></table></figure>
 <h2 id="const-int-p-amp-a"><a href="#const-int-p-amp-a" class="headerlink" title="const int *p = &amp;a"></a>const int *p = &amp;a</h2><p>與 int const *p 相同。</p>
+<hr>
 <h2 id="int-const-p-amp-a-1"><a href="#int-const-p-amp-a-1" class="headerlink" title="int *const p = &amp;a"></a>int *const p = &amp;a</h2><p><code>可改變指定變數的值</code>；但<code>不可改變指定成其他變數</code>。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> *<span class="hljs-keyword">const</span> p = &amp;a;</span><br><span class="line">*p = <span class="hljs-number">3</span>; <span class="hljs-comment">// OK</span></span><br><span class="line">p = &amp;b; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="const-int-const-p-amp-a"><a href="#const-int-const-p-amp-a" class="headerlink" title="const int *const p = &amp;a"></a>const int *const p = &amp;a</h2><p><code>不可改變指定變數的值</code>；也<code>不可改變指定成其他變數</code>。</p>
 
         </div>
@@ -292,7 +295,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        17
                     </p>
                 </div>
             </div>
@@ -312,7 +315,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        17
+                        18
                     </p>
                 </div>
             </div>
@@ -407,7 +410,7 @@
                 <span class="level-item">Learning-Note-學習筆記</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag is-primary">13</span>
+                <span class="level-item tag is-primary">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Lift-生活/">
@@ -429,7 +432,7 @@
         <h3 class="menu-label has-text-danger">
             Tag Cloud
         </h3>
-        <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/Code/" style="font-size: 20px;">Code</a> <a href="/tags/Dpi/" style="font-size: 15px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/Office/" style="font-size: 15px;">Office</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a>
+        <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 13.33px;">C++</a> <a href="/tags/Code/" style="font-size: 20px;">Code</a> <a href="/tags/Dpi/" style="font-size: 13.33px;">Dpi</a> <a href="/tags/Drive/" style="font-size: 10px;">Drive</a> <a href="/tags/GCC/" style="font-size: 10px;">GCC</a> <a href="/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/tags/Headphone/" style="font-size: 10px;">Headphone</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/MIMO/" style="font-size: 10px;">MIMO</a> <a href="/tags/Mathtype/" style="font-size: 10px;">Mathtype</a> <a href="/tags/Nas/" style="font-size: 10px;">Nas</a> <a href="/tags/Office/" style="font-size: 13.33px;">Office</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/SDR/" style="font-size: 10px;">SDR</a> <a href="/tags/SSL/" style="font-size: 10px;">SSL</a> <a href="/tags/Url/" style="font-size: 10px;">Url</a> <a href="/tags/Web/" style="font-size: 16.67px;">Web</a>
     </div>
 </div>
 
@@ -443,6 +446,25 @@
         <h3 class="menu-label has-text-danger">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/C-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="C 教學 (C Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-16T16:00:00.000Z">2019-07-17</time></div>
+                    <a href="/C-Tutorial/" class="has-link-black-ter is-size-6">C 教學 (C Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -520,25 +542,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/Chrome-Extension/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1Nwm5be1aPeuHlPmRXTwaGUoJMbFbzivC" alt="Chrome 擴充功能 (Chrome Extension)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T16:00:00.000Z">2018-12-04</time></div>
-                    <a href="/Chrome-Extension/" class="has-link-black-ter is-size-6">Chrome 擴充功能 (Chrome Extension)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -557,7 +560,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag is-primary">1</span>
+                    <span class="level-item tag is-primary">2</span>
                 </span>
             </a>
         </li>
@@ -632,6 +635,13 @@
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C</span>
+                        <span class="tag is-primary">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C++</span>
                         <span class="tag is-primary">2</span>
                     </a>
@@ -640,7 +650,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Code/">
                         <span class="tag">Code</span>
-                        <span class="tag is-primary">4</span>
+                        <span class="tag is-primary">5</span>
                     </a>
                 </div>
                 
@@ -774,6 +784,25 @@
         
         <article class="media">
             
+            <a href="/C-Tutorial/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="C 教學 (C Tutorial)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-16T16:00:00.000Z">2019-07-17</time></div>
+                    <a href="/C-Tutorial/" class="has-link-black-ter is-size-6">C 教學 (C Tutorial)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/GCC-Tutorial/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1NuQGRZoR_mADjD044URFQysub3pcuTep" alt="GCC 教學 (GCC Tutorial)">
@@ -848,25 +877,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/Chrome-Extension/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1Nwm5be1aPeuHlPmRXTwaGUoJMbFbzivC" alt="Chrome 擴充功能 (Chrome Extension)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-03T16:00:00.000Z">2018-12-04</time></div>
-                    <a href="/Chrome-Extension/" class="has-link-black-ter is-size-6">Chrome 擴充功能 (Chrome Extension)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -885,7 +895,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag is-primary">1</span>
+                    <span class="level-item tag is-primary">2</span>
                 </span>
             </a>
         </li>
@@ -960,6 +970,13 @@
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/C/">
+                        <span class="tag">C</span>
+                        <span class="tag is-primary">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/C/">
                         <span class="tag">C++</span>
                         <span class="tag is-primary">2</span>
                     </a>
@@ -968,7 +985,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Code/">
                         <span class="tag">Code</span>
-                        <span class="tag is-primary">4</span>
+                        <span class="tag is-primary">5</span>
                     </a>
                 </div>
                 
