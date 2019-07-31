@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>字元陣列指標 (Char Array Pointer) - Brain Garden</title>
+<title>strlen 實作 (strlen Implementation) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="字元陣列指標 教學與筆記。">
-<meta name="keywords" content="Code,C++">
+    <meta name="description" content="strlen 實作 教學與筆記。">
+<meta name="keywords" content="Code,C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字元陣列指標 (Char Array Pointer)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Char-Array-Pointer/index.html">
+<meta property="og:title" content="strlen 實作 (strlen Implementation)">
+<meta property="og:url" content="http://brain-garden.tw/C/Common/strlen-Implementation/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="字元陣列指標 教學與筆記。">
+<meta property="og:description" content="strlen 實作 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-17T07:51:17.768Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
+<meta property="og:updated_time" content="2019-07-30T14:30:59.955Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字元陣列指標 (Char Array Pointer)">
-<meta name="twitter:description" content="字元陣列指標 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta name="twitter:title" content="strlen 實作 (strlen Implementation)">
+<meta name="twitter:description" content="strlen 實作 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列指標 (Char Array Pointer)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="strlen 實作 (strlen Implementation)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="字元陣列指標 (Char Array Pointer)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="strlen 實作 (strlen Implementation)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-21T16:00:00.000Z">2019-06-22</time>
+                <time class="level-item has-text-grey" datetime="2019-07-29T16:00:00.000Z">2019-07-30</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 737 words)
+                    a few seconds read (About 50 words)
                 </span>
                 
                 
@@ -167,50 +167,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">字元陣列指標 (Char Array Pointer)</a>
+                <a class="has-link-black-ter">strlen 實作 (strlen Implementation)</a>
             
         </h1>
         <div class="content">
-            <p>字元陣列指標 教學與筆記。</p>
+            <p>strlen 實作 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>可以相當方便地將一個字串常數指定給字元指標。</p>
-<p>在 C++ 標準中建議需要加上 <code>const 關鍵字</code>，否則會出現編譯<code>警告</code>，但還是可以編譯成功。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* str = <span class="hljs-string">"Hello"</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="字元陣列指標使用方式"><a href="#字元陣列指標使用方式" class="headerlink" title="字元陣列指標使用方式"></a>字元陣列指標使用方式</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* str = <span class="hljs-string">"hello"</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; str  &lt;&lt; <span class="hljs-built_in">endl</span>;       <span class="hljs-comment">// 輸出子串 hello</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; *str &lt;&lt; <span class="hljs-built_in">endl</span>;       <span class="hljs-comment">// 輸出指標位址的值 h</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-keyword">void</span>*)str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 直接轉型輸出指標的位址</span></span><br><span class="line"><span class="hljs-comment">// pointer address</span></span><br><span class="line"><span class="hljs-keyword">void</span>* address = str;  <span class="hljs-comment">// 另宣告 void* 型態輸出指標的位址</span></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; address &lt;&lt; <span class="hljs-built_in">endl</span>;    <span class="hljs-comment">// 輸出指標的位址</span></span><br></pre></td></tr></table></figure>
-<p>因為字元指標常常是字串，所以 cout 一個字元指標時，會把它當成字串來印，(是由 operator &lt;&lt; 定義的)。如果想要 cout 一個字元指標的位址需要轉型成 <code>(void*)</code> 才可顯示。</p>
-<h1 id="指定後不可改變字串裡的值"><a href="#指定後不可改變字串裡的值" class="headerlink" title="指定後不可改變字串裡的值"></a>指定後不可改變字串裡的值</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* str = <span class="hljs-string">"hello"</span>;</span><br><span class="line">str[<span class="hljs-number">0</span>] = <span class="hljs-string">'a'</span>; <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
-<h1 id="重新指定新的字串"><a href="#重新指定新的字串" class="headerlink" title="重新指定新的字串"></a>重新指定新的字串</h1><p>當重新指定新的字串時，指向的記憶體位址會不相同。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* str = <span class="hljs-string">"hello"</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-keyword">void</span>*)str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 010EDB30</span></span><br><span class="line">str = <span class="hljs-string">"world"</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-keyword">void</span>*)str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 010EDB38</span></span><br></pre></td></tr></table></figure>
-<h1 id="不可直接使用字元陣列宣告指定字串"><a href="#不可直接使用字元陣列宣告指定字串" class="headerlink" title="不可直接使用字元陣列宣告指定字串"></a>不可直接使用字元陣列宣告指定字串</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* str = <span class="hljs-string">"hello"</span>;                        <span class="hljs-comment">// OK</span></span><br><span class="line"><span class="hljs-keyword">char</span>* str = &#123; <span class="hljs-string">'h'</span>,<span class="hljs-string">'e'</span>,<span class="hljs-string">'l'</span>,<span class="hljs-string">'l'</span>,<span class="hljs-string">'o'</span>,<span class="hljs-string">'\0'</span> &#125;;   <span class="hljs-comment">// error</span></span><br></pre></td></tr></table></figure>
-<h1 id="指標與直接宣告字串之差異"><a href="#指標與直接宣告字串之差異" class="headerlink" title="指標與直接宣告字串之差異"></a>指標與直接宣告字串之差異</h1><p>以下兩者之差異：</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"Hello World"</span>;</span><br><span class="line"><span class="hljs-keyword">char</span>* str  = <span class="hljs-string">"Hello World"</span>;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>前者是個 char 陣列，包含 12 個 byte (包含空白和結尾\0)，將字元一個個複製進 s 陣列。</p>
-</li>
-<li><p>後者是一個 char 指標，指向<code>&quot;Hello World&quot;</code>這個字串常數的起始記憶體位置。</p>
-</li>
-</ul>
-<h2 id="記憶體大小差異"><a href="#記憶體大小差異" class="headerlink" title="記憶體大小差異"></a>記憶體大小差異</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> s1[] = <span class="hljs-string">"Hello World"</span>;</span><br><span class="line"><span class="hljs-keyword">char</span>* s2 = <span class="hljs-string">"Hello World"</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"size of s1: "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(s1) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"size of s2: "</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(s2) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<p>結果：<br>size of s1: 12<br>size of s2: 4</p>
-<p>s1 是陣列，所以占了 12 個 byte；而 s2 只是指標，所以只占 4 byte。</p>
-<h2 id="迴圈寫法差異"><a href="#迴圈寫法差異" class="headerlink" title="迴圈寫法差異"></a>迴圈寫法差異</h2><p>在使用普通迴圈時，兩者都可以使用取值寫法。</p>
-<h3 id="普通迴圈"><a href="#普通迴圈" class="headerlink" title="普通迴圈"></a>普通迴圈</h3><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// char s[] = "Hello World";      // OK</span></span><br><span class="line"><span class="hljs-comment">// char* s = "Hello World";       // OK</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i != <span class="hljs-number">11</span>; ++i) &#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; s[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i != <span class="hljs-number">11</span>; ++i) &#123;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; *(s + i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="s-迴圈"><a href="#s-迴圈" class="headerlink" title="s++ 迴圈"></a>s++ 迴圈</h3><p>只有 const char* s 指標可以使用 *s++ 寫法。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> s[] = <span class="hljs-string">"Hello World"</span>;      <span class="hljs-comment">// error</span></span><br><span class="line"><span class="hljs-keyword">char</span> *s = <span class="hljs-string">"Hello World"</span>;       <span class="hljs-comment">// OK</span></span><br><span class="line"><span class="hljs-keyword">while</span>(*s) </span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; *s++;</span><br></pre></td></tr></table></figure>
-<p>理由是 char s[] 為陣列，s 值為 <code>s[0]</code> 之位址<code>常數</code>，且無法改變。</p>
-<p>但 const char* s 為指標，初始指向 “Hello World” 的 <code>H</code>，是一個<code>變數</code>，可以任意改變，可用 *s++ 修改指標之指向。</p>
-<p>一般來說只用指標 const char* s 速度會略快，因為不需複製 (copy) 的動作。</p>
-<h1 id="更方便的處理字串陣列"><a href="#更方便的處理字串陣列" class="headerlink" title="更方便的處理字串陣列"></a>更方便的處理字串陣列</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* s[] = &#123; <span class="hljs-string">"John"</span>, <span class="hljs-string">"Harry"</span>, <span class="hljs-string">"George"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i)</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; s[i] &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<p>s 中的每個元素都是字元指標，各自指向一個字串常數。</p>
-<h1 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h1><p>在 Visual Studio 編譯器中<code>必須</code>要加上 <code>const 關鍵字</code>，否則不能編譯成功。</p>
-
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>strlen 計算字串長度 (不包含空字元<code>\0</code>)。</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strlen</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span>(*s) &#123; <span class="hljs-comment">// *s != '\0'</span></span><br><span class="line">        size++;</span><br><span class="line">        s++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"Hello"</span>;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, <span class="hljs-built_in">strlen</span>(str)); <span class="hljs-comment">// 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                    <a class="has-link-grey -link" href="/tags/C/">C</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
                 </div>
             </div>
         </div>
@@ -228,16 +200,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Void-Pointer/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/ADP/Char-Style-String-Pointer/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Void 指標 (Void Pointer)</span>
+                <span class="level-item">字元陣列指標 (Char Style String Pointer)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/Basic/Literal-Constant/">
-                <span class="level-item">字面常數 (Literal Constant)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C/Common/strchr-Implementation/">
+                <span class="level-item">strchr 實作 (strlen Implementation)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -253,8 +225,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/Char-Array-Pointer/';
-        this.page.identifier = 'C++/ADP/Char-Array-Pointer/';
+        this.page.url = 'http://brain-garden.tw/C/Common/strlen-Implementation/';
+        this.page.identifier = 'C/Common/strlen-Implementation/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -380,50 +352,6 @@
         <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
         <span>說明</span>
-        </a></li><li>
-        <a class="is-flex" href="#字元陣列指標使用方式">
-        <span class="has-mr-6">2</span>
-        <span>字元陣列指標使用方式</span>
-        </a></li><li>
-        <a class="is-flex" href="#指定後不可改變字串裡的值">
-        <span class="has-mr-6">3</span>
-        <span>指定後不可改變字串裡的值</span>
-        </a></li><li>
-        <a class="is-flex" href="#重新指定新的字串">
-        <span class="has-mr-6">4</span>
-        <span>重新指定新的字串</span>
-        </a></li><li>
-        <a class="is-flex" href="#不可直接使用字元陣列宣告指定字串">
-        <span class="has-mr-6">5</span>
-        <span>不可直接使用字元陣列宣告指定字串</span>
-        </a></li><li>
-        <a class="is-flex" href="#指標與直接宣告字串之差異">
-        <span class="has-mr-6">6</span>
-        <span>指標與直接宣告字串之差異</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#記憶體大小差異">
-        <span class="has-mr-6">6.1</span>
-        <span>記憶體大小差異</span>
-        </a></li><li>
-        <a class="is-flex" href="#迴圈寫法差異">
-        <span class="has-mr-6">6.2</span>
-        <span>迴圈寫法差異</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#普通迴圈">
-        <span class="has-mr-6">6.2.1</span>
-        <span>普通迴圈</span>
-        </a></li><li>
-        <a class="is-flex" href="#s-迴圈">
-        <span class="has-mr-6">6.2.2</span>
-        <span>s++ 迴圈</span>
-        </a></li></ul></li></ul></li><li>
-        <a class="is-flex" href="#更方便的處理字串陣列">
-        <span class="has-mr-6">7</span>
-        <span>更方便的處理字串陣列</span>
-        </a></li><li>
-        <a class="is-flex" href="#備註">
-        <span class="has-mr-6">8</span>
-        <span>備註</span>
         </a></li></ul>
         </div>
     </div>
@@ -1149,7 +1077,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="字元陣列指標 (Char Array Pointer)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="strlen 實作 (strlen Implementation)" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -16,7 +16,7 @@
 <meta property="og:description" content="字串反轉 strrev 實作 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-17T08:12:11.279Z">
+<meta property="og:updated_time" content="2019-07-30T14:38:08.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="strrev 實作 (strlen Implementation)">
 <meta name="twitter:description" content="字串反轉 strrev 實作 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 113 words)
+                    a minute read (About 114 words)
                 </span>
                 
                 
@@ -175,7 +175,7 @@
 <a id="more"></a>
 <h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>假設字串長度為 n，將索引值 0 和 n-1 調換，再換 1 和 n-2，直到字串中間為止。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> &amp;a, <span class="hljs-keyword">char</span> &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strlen</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span>(*s != <span class="hljs-string">'\0'</span>) &#123;</span><br><span class="line">        size++;</span><br><span class="line">        s++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">strlen</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">while</span>(*s) &#123; <span class="hljs-comment">// *s != '\0'</span></span><br><span class="line">        size++;</span><br><span class="line">        s++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">strrev</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> front = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> end = <span class="hljs-built_in">strlen</span>(s)<span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (; front &lt; end; front++, end--) &#123;</span><br><span class="line">        swap(s[front], s[end]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"ABCD"</span>;</span><br><span class="line">    strrev(str);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// DCBA</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
@@ -202,16 +202,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C/Common/strrev-Implementation/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C/Basic/Static-Keyword/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">strrev 實作 (strlen Implementation)</span>
+                <span class="level-item">Static 關鍵字 (Static Keyword)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C-Tutorial/">
-                <span class="level-item">C 教學 (C Tutorial)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++/Common/Swap-String/">
+                <span class="level-item">字串交換 (Swap String)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>

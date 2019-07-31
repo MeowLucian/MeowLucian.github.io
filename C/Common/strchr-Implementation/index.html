@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>數字字串型態轉換 (String Num Type Conversion) - Brain Garden</title>
+<title>strchr 實作 (strlen Implementation) - Brain Garden</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="數字字串型態轉換 教學與筆記。">
-<meta name="keywords" content="Code,C++">
+    <meta name="description" content="strchr 實作 教學與筆記。">
+<meta name="keywords" content="Code,C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="數字字串型態轉換 (String Num Type Conversion)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/String-Num-Type-Conversion/index.html">
+<meta property="og:title" content="strchr 實作 (strlen Implementation)">
+<meta property="og:url" content="http://brain-garden.tw/C/Common/strchr-Implementation/index.html">
 <meta property="og:site_name" content="Brain Garden">
-<meta property="og:description" content="數字字串型態轉換 教學與筆記。">
+<meta property="og:description" content="strchr 實作 教學與筆記。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-09T03:52:55.899Z">
+<meta property="og:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
+<meta property="og:updated_time" content="2019-07-31T09:33:15.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="數字字串型態轉換 (String Num Type Conversion)">
-<meta name="twitter:description" content="數字字串型態轉換 教學與筆記。">
-<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
+<meta name="twitter:title" content="strchr 實作 (strlen Implementation)">
+<meta name="twitter:description" content="strchr 實作 教學與筆記。">
+<meta name="twitter:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="數字字串型態轉換 (String Num Type Conversion)" height="28">
+                <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="strchr 實作 (strlen Implementation)" height="28">
             
             </a>
         </div>
@@ -140,7 +140,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw" alt="數字字串型態轉換 (String Num Type Conversion)">
+            <img class="thumbnail" src="https://drive.google.com/uc?export=download&amp;id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE" alt="strchr 實作 (strlen Implementation)">
         </span>
     </div>
     
@@ -148,7 +148,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-08T16:00:00.000Z">2019-07-09</time>
+                <time class="level-item has-text-grey" datetime="2019-07-29T16:00:00.000Z">2019-07-30</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Learning-Note-學習筆記/">Learning-Note-學習筆記</a>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 122 words)
+                    a few seconds read (About 95 words)
                 </span>
                 
                 
@@ -167,33 +167,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter">數字字串型態轉換 (String Num Type Conversion)</a>
+                <a class="has-link-black-ter">strchr 實作 (strlen Implementation)</a>
             
         </h1>
         <div class="content">
-            <p>數字字串型態轉換 教學與筆記。</p>
+            <p>strchr 實作 教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>將<code>數字</code>的字串進行型態轉換。</p>
-<h1 id="字串轉數字"><a href="#字串轉數字" class="headerlink" title="字串轉數字"></a>字串轉數字</h1><ul>
-<li><p>atoi()：將字串轉為 int</p>
-</li>
-<li><p>atol()：將字串轉為 long</p>
-</li>
-<li><p>atof()：將字串轉為 double</p>
-</li>
-</ul>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"12.3"</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> a = atoi(str);    <span class="hljs-comment">// 12</span></span><br><span class="line"><span class="hljs-keyword">long</span> b = atol(str);   <span class="hljs-comment">// 12</span></span><br><span class="line"><span class="hljs-keyword">double</span> c = atof(str); <span class="hljs-comment">// 12.3</span></span><br></pre></td></tr></table></figure>
-<h2 id="非數字字串"><a href="#非數字字串" class="headerlink" title="非數字字串"></a>非數字字串</h2><p>如果是非數字字串，將返回 0。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"ABC"</span>;</span><br><span class="line"><span class="hljs-built_in">cout</span> &lt;&lt; atoi(str) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 0</span></span><br></pre></td></tr></table></figure>
-<h1 id="數字轉字串"><a href="#數字轉字串" class="headerlink" title="數字轉字串"></a>數字轉字串</h1><p>C++ 專屬，需要先 include <code>&lt;string&gt;</code>。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> a = <span class="hljs-number">123</span>;</span><br><span class="line"><span class="hljs-built_in">string</span> str = to_string(a);</span><br></pre></td></tr></table></figure>
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>尋找字串裡某字元。若有回傳字元第一次出現的指標，若無返回 NULL。</p>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">strchr</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> *p = <span class="hljs-literal">NULL</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(*s) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(*s == c) &#123;</span><br><span class="line">            p = s;</span><br><span class="line">            <span class="hljs-keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        s++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"hello"</span>;</span><br><span class="line">    <span class="hljs-keyword">char</span> *p = str;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// print all address</span></span><br><span class="line">    <span class="hljs-keyword">while</span>(*p) &#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p\n"</span>, p);</span><br><span class="line">        p++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// search</span></span><br><span class="line">    <span class="hljs-keyword">char</span> *ptr = <span class="hljs-built_in">strchr</span>(str, <span class="hljs-string">'l'</span>);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p\n"</span>, ptr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/C/">C++</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
+                    <a class="has-link-grey -link" href="/tags/C/">C</a>, <a class="has-link-grey -link" href="/tags/Code/">Code</a>
                 </div>
             </div>
         </div>
@@ -211,16 +200,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Basic/define/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C/Common/strlen-Implementation/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">define 巨集 (define Macro)</span>
+                <span class="level-item">strlen 實作 (strlen Implementation)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C++/ADP/String-Function/">
-                <span class="level-item">字串函式 (String Function)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C++-Tutorial/">
+                <span class="level-item">C++ 教學 (C++ Tutorial)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -236,8 +225,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/String-Num-Type-Conversion/';
-        this.page.identifier = 'C++/ADP/String-Num-Type-Conversion/';
+        this.page.url = 'http://brain-garden.tw/C/Common/strchr-Implementation/';
+        this.page.identifier = 'C/Common/strchr-Implementation/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -363,18 +352,6 @@
         <a class="is-flex" href="#說明">
         <span class="has-mr-6">1</span>
         <span>說明</span>
-        </a></li><li>
-        <a class="is-flex" href="#字串轉數字">
-        <span class="has-mr-6">2</span>
-        <span>字串轉數字</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#非數字字串">
-        <span class="has-mr-6">2.1</span>
-        <span>非數字字串</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#數字轉字串">
-        <span class="has-mr-6">3</span>
-        <span>數字轉字串</span>
         </a></li></ul>
         </div>
     </div>
@@ -1100,7 +1077,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="數字字串型態轉換 (String Num Type Conversion)" height="28">
+                    <img src="https://drive.google.com/uc?export=download&id=1pD5zVq2kD5LvJwqy7jcsGiDY3xXwAW09" alt="strchr 實作 (strlen Implementation)" height="28">
                 
                 </a>
                 <p class="is-size-7">

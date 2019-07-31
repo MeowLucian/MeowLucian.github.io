@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
+    <loc>http://brain-garden.tw/C-Tutorial/</loc>
     
-    <lastmod>2019-07-18T17:13:27.111Z</lastmod>
+    <lastmod>2019-07-31T06:14:19.405Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://brain-garden.tw/C-Tutorial/</loc>
+    <loc>http://brain-garden.tw/C++-Tutorial/</loc>
     
-    <lastmod>2019-07-17T08:30:41.906Z</lastmod>
+    <lastmod>2019-07-30T16:35:27.608Z</lastmod>
     
   </url>
   
@@ -54,6 +54,13 @@
     <loc>http://brain-garden.tw/Visual-Studio-Tutorial/</loc>
     
     <lastmod>2019-07-15T08:47:20.690Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/Change-PowerPoint-Export-Resolution/</loc>
+    
+    <lastmod>2019-06-21T08:21:45.720Z</lastmod>
     
   </url>
   
@@ -131,13 +138,6 @@
     <loc>http://brain-garden.tw/First-Post/</loc>
     
     <lastmod>2019-05-14T08:19:28.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/Change-PowerPoint-Export-Resolution/</loc>
-    
-    <lastmod>2019-05-14T08:18:27.044Z</lastmod>
     
   </url>
   

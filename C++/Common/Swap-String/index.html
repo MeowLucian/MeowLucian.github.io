@@ -16,7 +16,7 @@
 <meta property="og:description" content="字串交換 實作教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
-<meta property="og:updated_time" content="2019-07-17T13:48:41.964Z">
+<meta property="og:updated_time" content="2019-07-30T09:52:43.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字串交換 (Swap String)">
 <meta name="twitter:description" content="字串交換 實作教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 59 words)
+                    a few seconds read (About 75 words)
                 </span>
                 
                 
@@ -173,7 +173,8 @@
         <div class="content">
             <p>字串交換 實作教學與筆記。</p>
 <a id="more"></a>
-<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> &amp;str1_ptr, <span class="hljs-keyword">char</span> &amp;str2_ptr)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> temp = str1_ptr;</span><br><span class="line">    str1_ptr = str2_ptr;</span><br><span class="line">    str2_ptr = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span>* str1 = <span class="hljs-string">"Hello"</span>;</span><br><span class="line">    <span class="hljs-keyword">char</span>* str2 = <span class="hljs-string">"World"</span>;</span><br><span class="line"></span><br><span class="line">    swap(str1, str2);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"str1 is "</span> &lt;&lt; str1 &lt;&lt; <span class="hljs-string">", str2 is "</span> &lt;&lt; str2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>在 C++ 中使用傳參考(Call by Reference)較為方便。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> &amp;str1_ptr, <span class="hljs-keyword">char</span> &amp;str2_ptr)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> temp = str1_ptr;</span><br><span class="line">    str1_ptr = str2_ptr;</span><br><span class="line">    str2_ptr = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span>* str1 = <span class="hljs-string">"Hello"</span>;</span><br><span class="line">    <span class="hljs-keyword">char</span>* str2 = <span class="hljs-string">"World"</span>;</span><br><span class="line"></span><br><span class="line">    swap(str1, str2);</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"str1 is "</span> &lt;&lt; str1 &lt;&lt; <span class="hljs-string">", str2 is "</span> &lt;&lt; str2 &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -198,16 +199,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-white  article-nav-prev" href="/C++-Tutorial/">
+            <a class="level level-item has-link-white  article-nav-prev" href="/C++/Common/strrev-Implementation/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">C++ 教學 (C++ Tutorial)</span>
+                <span class="level-item">strrev 實作 (strlen Implementation)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-white  article-nav-next" href="/C/Common/Swap-String/">
-                <span class="level-item">字串交換 (Swap String)</span>
+            <a class="level level-item has-link-white  article-nav-next" href="/C/Basic/Extern-Keyword/">
+                <span class="level-item">Extern 關鍵字 (Extern Keyword)</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
