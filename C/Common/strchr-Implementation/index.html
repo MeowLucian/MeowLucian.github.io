@@ -16,7 +16,7 @@
 <meta property="og:description" content="strchr 實作 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1zrMHb1tcFonXtjome9LfDpQeNOMMhUrE">
-<meta property="og:updated_time" content="2019-07-31T09:33:15.857Z">
+<meta property="og:updated_time" content="2019-07-31T12:38:48.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="strchr 實作 (strlen Implementation)">
 <meta name="twitter:description" content="strchr 實作 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 95 words)
+                    a few seconds read (About 111 words)
                 </span>
                 
                 
@@ -176,6 +176,9 @@
 <h1 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h1><p>尋找字串裡某字元。若有回傳字元第一次出現的指標，若無返回 NULL。</p>
 <figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">strchr</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s, <span class="hljs-keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> *p = <span class="hljs-literal">NULL</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(*s) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(*s == c) &#123;</span><br><span class="line">            p = s;</span><br><span class="line">            <span class="hljs-keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        s++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> str[] = <span class="hljs-string">"hello"</span>;</span><br><span class="line">    <span class="hljs-keyword">char</span> *p = str;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// print all address</span></span><br><span class="line">    <span class="hljs-keyword">while</span>(*p) &#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p\n"</span>, p);</span><br><span class="line">        p++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">// search</span></span><br><span class="line">    <span class="hljs-keyword">char</span> *ptr = <span class="hljs-built_in">strchr</span>(str, <span class="hljs-string">'l'</span>);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p\n"</span>, ptr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>結果圖：</p>
+<p><img src="https://drive.google.com/uc?export=download&amp;id=1Avjag_bxttP_JdUicIDZhTOiVrWEo5OX" alt></p>
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
