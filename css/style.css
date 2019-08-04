@@ -398,9 +398,10 @@ img.thumbnail {
   font-family: "Source Code Pro", monospace, "Microsoft YaHei";
 }
 .content code {
-  color: #ff3860;
-  background: transparent;
+  color: #f00;
+  background: #f9fd30;
   padding: 0;
+  border: #00f 1px solid;
 }
 .content blockquote footer strong + cite {
   margin-left: 0.5em;
@@ -477,7 +478,19 @@ figure.highlight:hover .copy {
   display: block;
 }
 /* ---------------------------------
- *        Fix Video
+ *          Overflow Table
+ * --------------------------------- */
+.table-overflow {
+  overflow-x: auto;
+}
+.table-overflow table {
+  width: auto !important;
+}
+.table-overflow table th {
+  word-break: keep-all;
+}
+/* ---------------------------------
+ *            Fix Video
  * --------------------------------- */
 .video-container {
   position: relative;

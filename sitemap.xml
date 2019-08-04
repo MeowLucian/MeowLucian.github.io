@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://brain-garden.tw/Chrome-Extension/</loc>
+    <loc>http://brain-garden.tw/about/index.html</loc>
     
-    <lastmod>2019-07-31T17:59:01.775Z</lastmod>
+    <lastmod>2019-08-04T13:46:27.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/Hexo-Tutorial/</loc>
+    
+    <lastmod>2019-08-04T08:21:14.691Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/Linux-Tutorial/</loc>
+    
+    <lastmod>2019-08-04T06:04:26.135Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/list/index.html</loc>
+    
+    <lastmod>2019-08-04T05:59:37.619Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://brain-garden.tw/C-Tutorial/</loc>
     
-    <lastmod>2019-07-31T06:14:19.405Z</lastmod>
+    <lastmod>2019-08-04T05:02:19.952Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://brain-garden.tw/Chrome-Extension/</loc>
+    
+    <lastmod>2019-07-31T17:59:01.775Z</lastmod>
     
   </url>
   
@@ -26,13 +54,6 @@
     <loc>http://brain-garden.tw/GCC-Tutorial/</loc>
     
     <lastmod>2019-07-17T08:19:57.678Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/list/index.html</loc>
-    
-    <lastmod>2019-07-17T08:18:02.637Z</lastmod>
     
   </url>
   
@@ -68,20 +89,6 @@
     <loc>http://brain-garden.tw//404.html</loc>
     
     <lastmod>2019-05-25T05:08:08.263Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/about/index.html</loc>
-    
-    <lastmod>2019-05-25T05:07:29.363Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://brain-garden.tw/Hexo-Tutorial/</loc>
-    
-    <lastmod>2019-05-20T13:50:54.498Z</lastmod>
     
   </url>
   
