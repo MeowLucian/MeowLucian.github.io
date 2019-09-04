@@ -11,12 +11,12 @@
 <meta name="keywords" content="Code,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字元陣列常數指標 (Char Array Const Pointer)">
-<meta property="og:url" content="http://brain-garden.tw/C++/ADP/Char-Array-Const-Pointer/index.html">
+<meta property="og:url" content="https://meowlucian.github.io/C++/ADP/Char-Array-Const-Pointer/index.html">
 <meta property="og:site_name" content="Brain Garden">
 <meta property="og:description" content="字元陣列指標 教學與筆記。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1mwyCgrEozQM9mwBxCus_6urx-sUEMWyw">
-<meta property="og:updated_time" content="2019-07-30T17:08:03.923Z">
+<meta property="og:updated_time" content="2019-08-10T05:25:59.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字元陣列常數指標 (Char Array Const Pointer)">
 <meta name="twitter:description" content="字元陣列指標 教學與筆記。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 739 words)
+                    5 minutes read (About 737 words)
                 </span>
                 
                 
@@ -198,8 +198,8 @@
 <h3 id="s-迴圈"><a href="#s-迴圈" class="headerlink" title="s++ 迴圈"></a>s++ 迴圈</h3><p>只有 char* s 指標可以使用 *s++ 寫法。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span> s[] = <span class="hljs-string">"Hello World"</span>;      <span class="hljs-comment">// error</span></span><br><span class="line"><span class="hljs-keyword">char</span> *s = <span class="hljs-string">"Hello World"</span>;       <span class="hljs-comment">// OK</span></span><br><span class="line"><span class="hljs-keyword">while</span>(*s) </span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; *s++;</span><br></pre></td></tr></table></figure>
 <p>理由是 char s[] 為陣列，s 值為 <code>s[0]</code> 之位址<code>常數</code>，且無法改變。</p>
-<p>但 const char* s 為指標，初始指向 “Hello World” 的 <code>H</code>，是一個<code>變數</code>，可以任意改變，可用 *s++ 修改指標之指向。</p>
-<p>一般來說只用指標 const char* s 速度會略快，因為不需複製 (copy) 的動作。</p>
+<p>但 char* s 為指標，初始指向 “Hello World” 的 <code>H</code>，是一個<code>變數</code>，可以任意改變，可用 *s++ 修改指標之指向。</p>
+<p>一般來說只用指標 char* s 速度會略快，因為不需複製 (copy) 的動作。</p>
 <h1 id="更方便的處理字串陣列"><a href="#更方便的處理字串陣列" class="headerlink" title="更方便的處理字串陣列"></a>更方便的處理字串陣列</h1><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">char</span>* s[] = &#123; <span class="hljs-string">"John"</span>, <span class="hljs-string">"Harry"</span>, <span class="hljs-string">"George"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i)</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; s[i] &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
 <p>s 中的每個元素都是字元指標，各自指向一個字串常數。</p>
 <h1 id="備註"><a href="#備註" class="headerlink" title="備註"></a>備註</h1><p>在 Visual Studio 編譯器中<code>必須</code>要加上 <code>const 關鍵字</code>，否則不能編譯成功。</p>
@@ -253,7 +253,7 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://brain-garden.tw/C++/ADP/Char-Array-Const-Pointer/';
+        this.page.url = 'https://meowlucian.github.io/C++/ADP/Char-Array-Const-Pointer/';
         this.page.identifier = 'C++/ADP/Char-Array-Const-Pointer/';
     };
     (function() {
