@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://meowlucian.github.io/Chrome-Extension/</loc>
+    
+    <lastmod>2019-09-14T13:33:37.199Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://meowlucian.github.io/about/index.html</loc>
     
     <lastmod>2019-08-09T11:49:36.222Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://meowlucian.github.io/C-Tutorial/</loc>
     
     <lastmod>2019-08-04T05:02:19.952Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://meowlucian.github.io/Chrome-Extension/</loc>
-    
-    <lastmod>2019-07-31T17:59:01.775Z</lastmod>
     
   </url>
   
