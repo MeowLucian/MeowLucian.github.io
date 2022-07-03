@@ -1851,7 +1851,7 @@ a.list-item {
   padding-left: 0.75em;
 }
 .menu-label {
-  color: #7a7a7a;
+  color: #f00;
   font-size: 0.75em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -10253,6 +10253,7 @@ html {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background: url("/img/Wallpaper.png");
 }
 body {
   min-height: 100%;
@@ -10269,16 +10270,16 @@ body > .section {
   }
   ::-webkit-scrollbar-track {
     border-radius: 3px;
-    background: rgba(0,0,0,0.06);
+    background: #502222;
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background: rgba(0,0,0,0.12);
+    background: rgba(223,26,26,0.6);
     box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,0,0,0.24);
+    background: #df1a1a;
   }
 }
 .ml-0,
@@ -10789,12 +10790,13 @@ article.media .image {
   height: 64px;
 }
 article.media .image img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
 }
 article.media .title {
   margin-bottom: 0.25em;
+  color: #3273dc;
 }
 article.media .media-content {
   color: #7a7a7a;
@@ -10802,6 +10804,10 @@ article.media .media-content {
 article.media .media-content .title {
   margin: 0;
   line-height: inherit;
+}
+article.article img {
+  display: block;
+  margin: auto;
 }
 article.article .article-meta,
 article.article .article-tags {
@@ -10811,18 +10817,25 @@ article.article .article-meta {
   overflow-x: auto;
   margin-bottom: 0.5rem;
 }
+article.article .article-more {
+  border-color: #000;
+  color: #ff3860;
+}
 article.article .content {
   word-wrap: break-word;
   font-size: 1.1rem;
 }
 article.article .content h1 {
   font-size: 1.75em;
+  color: #ff3860;
 }
 article.article .content h2 {
   font-size: 1.5em;
+  color: #00d1b2;
 }
 article.article .content h3 {
   font-size: 1.25em;
+  color: #f9d;
 }
 article.article .content h4 {
   font-size: 1.125em;
@@ -10836,6 +10849,8 @@ article.article .content pre {
 article.article .content code {
   padding: 0;
   background: transparent;
+  background: #f9fd30;
+  border: #00f 1px solid;
   overflow-wrap: break-word;
 }
 article.article .content blockquote.pullquote {
@@ -10935,6 +10950,7 @@ a.article-nav-next span {
   white-space: normal;
 }
 .navbar-main {
+  background: rgba(255,255,255,0.6);
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .navbar-main .navbar-container {
@@ -10991,6 +11007,9 @@ a.article-nav-next span {
     margin-right: 0rem;
   }
 }
+footer.footer {
+  background: rgba(255,255,255,0.6);
+}
 @media screen and (max-width: 768px) {
   footer.footer .level-start {
     text-align: center;
@@ -11032,6 +11051,7 @@ footer.footer .level-end .field {
   color: #7a7a7a;
   flex-wrap: wrap;
   justify-content: space-around;
+  color: #fff;
 }
 .post-navigation .level-item {
   margin-bottom: 0;
@@ -11336,6 +11356,10 @@ figure.highlight .section {
   vertical-align: inherit;
   min-width: inherit;
   border-radius: inherit;
+  color: #61aeee;
+}
+.hljs-comment {
+  color: #fff;
 }
 figure.highlight.foldable div.level-left {
   cursor: pointer;
