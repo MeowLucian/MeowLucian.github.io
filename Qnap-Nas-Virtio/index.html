@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Qnap Nas 安裝 Virtio (Qnap Nas Virtio) - Brain Garden</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Brain Garden"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Brain Garden"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。"><meta property="og:type" content="blog"><meta property="og:title" content="Qnap Nas 安裝 Virtio (Qnap Nas Virtio)"><meta property="og:url" content="https://meowlucian.github.io/Qnap-Nas-Virtio/"><meta property="og:site_name" content="Brain Garden"><meta property="og:description" content="在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://drive.google.com/uc?export=download&amp;id=1WmmkoyDgzzhfVbtMgfJTmfz6h164wzag"><meta property="article:published_time" content="2018-11-30T16:00:00.000Z"><meta property="article:modified_time" content="2022-07-03T16:43:46.654Z"><meta property="article:author" content="Meow Lucian"><meta property="article:tag" content="Nas"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://drive.google.com/uc?export=download&amp;id=1WmmkoyDgzzhfVbtMgfJTmfz6h164wzag"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://meowlucian.github.io/Qnap-Nas-Virtio/"},"headline":"Qnap Nas 安裝 Virtio (Qnap Nas Virtio)","image":[],"datePublished":"2018-11-30T16:00:00.000Z","dateModified":"2022-07-03T16:43:46.654Z","author":{"@type":"Person","name":"Meow Lucian"},"publisher":{"@type":"Organization","name":"Brain Garden","logo":{"@type":"ImageObject","url":"https://meowlucian.github.io/img/logo.png"}},"description":"在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。"}</script><link rel="canonical" href="https://meowlucian.github.io/Qnap-Nas-Virtio/"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="Brain Garden" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/list">List</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="bd-index-section bd-newsletter-box"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://drive.google.com/uc?export=download&amp;id=1WmmkoyDgzzhfVbtMgfJTmfz6h164wzag" alt="Qnap Nas 安裝 Virtio (Qnap Nas Virtio)"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2018-11-30T16:00:00.000Z" title="12/1/2018, 12:00:00 AM">2018-12-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-07-03T16:43:46.654Z" title="7/4/2022, 12:43:46 AM">2022-07-04</time></span><span class="level-item"><a class="link-muted" href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></span><span class="level-item">6 minutes read (About 917 words)</span></div></div><h1 class="title is-3 is-size-4-mobile has-text-info">Qnap Nas 安裝 Virtio (Qnap Nas Virtio)</h1><div class="content"><p>在 Nas 主機中安裝虛擬機器(Virtual Machine) 後發現 Nas 的主系統磁碟與虛擬機磁碟之間的傳輸速度不高，可使用 Virtio 的方法解決。</p>
+<span id="more"></span>
+
+<h1 id="傳輸速度的疑難雜症"><a href="#傳輸速度的疑難雜症" class="headerlink" title="傳輸速度的疑難雜症"></a>傳輸速度的疑難雜症</h1><p>由於在虛擬機器安裝一個 Windows 的作業系統，所以 Qnap 的主 Linux 作業系統與虛擬出來的 Windows 作業系統在橋接(Bridge) 模式下，兩系統為獨立個體，透過各自的實體 IP 出去再由路由器交換資料、來達到互相傳輸的功能。</p>
+<p>此方式為安裝虛擬機後預設配置，交換資料是透過兩個階段而不是直接在 Nas 裡的硬體磁碟交換資料，以致於傳輸速度較低。</p>
+<p>可在 Qnap 的<code>網路與虛擬交換機</code>頁面中查看目前網路硬體配置，如下圖所示：</p>
+<p><img src="https://drive.google.com/uc?export=download&id=1jQC6HvHAPtqU0hJlFniCnpHqNLFnfc1M" alt="雙實體 IP 示意圖"></p>
+<h1 id="何謂-Virtio"><a href="#何謂-Virtio" class="headerlink" title="何謂 Virtio"></a>何謂 Virtio</h1><p>在 Kernel-based Virtual Machine(KVM) 架構下， Virtio 是用來虛擬 I&#x2F;O 裝置的主要平台。透過應用程式介面讓主系統與虛擬機溝通而不需再透過實體網路。</p>
+<h1 id="Virtio-驅動下載"><a href="#Virtio-驅動下載" class="headerlink" title="Virtio 驅動下載"></a>Virtio 驅動下載</h1><ul>
+<li>For Windows : <a target="_blank" rel="noopener" href="https://stg.fedoraproject.org/wiki/Windows_Virtio_Drivers">Fedora Project Wiki</a> 點選 <code>Stable virtio-win iso</code>。</li>
+</ul>
+<h1 id="安裝步驟"><a href="#安裝步驟" class="headerlink" title="安裝步驟"></a>安裝步驟</h1><ol>
+<li>虛擬工作站頁面 -&gt; 設定 -&gt; 網路 -&gt; 型別 -&gt; 改成 Virtio</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1tX_KQE_1DWyPUujc-ZDTA41ccM1-yPET"></p>
+<ol start="2">
+<li>儲存空間 -&gt; 新增裝置</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1PhPWMQckthYPAKvEIzd1yJurItsuoCbd"></p>
+<p>有別於 Windows 虛擬主磁碟的預設 IDE 介面；這裡我們要新增一個 Virtio 介面的虛擬副磁碟，以便載入剛剛下載的 Virtio 驅動程式。</p>
+<ol start="3">
+<li>介面 -&gt; Virtio</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1p_g8aMdoHtSUSxNi2tM_vVbO3H6TSZmY"></p>
+<p>這裡的容量大小不重要，設置為最小 1 GB 即可。</p>
+<ol start="4">
+<li>CD &#x2F;DVD 頁面 -&gt; 載入剛剛下載的驅動程式路徑</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1FXoPTmvAOKdW3ZqXZANxgDlAlWDoV_8S"></p>
+<ol start="5">
+<li>進入 Windows 虛擬機 -&gt; 裝置管理員</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1nkJqfl0HA4lzYTBs5KpEbD5FPEGSbDlS"></p>
+<p>發現有幾個 Virtio 裝置尚未安裝。</p>
+<ol start="6">
+<li>右鍵更新驅動 -&gt; 瀏覽電腦上的驅動程式軟體</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1DpXm1KJicf8i0et0lq6zdZwwenjmH6U5"></p>
+<ol start="7">
+<li>點選剛剛新增的虛擬光碟機檔案</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1AT3UpgmNbFuCjKEOztM7Uuh4ok_yziT2"></p>
+<p>記得點選<code>包含子資料夾</code>給它搜尋。</p>
+<ol start="8">
+<li>確認安裝</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1J-IOFIfNR8h9F4STCA2nDXGf0THAOvlZ"></p>
+<ol start="9">
+<li>個別點選並更新驅動</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1FK_-B-ZKJcXQW8JkntXimUHzzxieJQHd"></p>
+<p>確認所有都安裝完成後，會看到硬體都可辨識成功。</p>
+<ol start="10">
+<li>回到虛擬工作站頁面 -&gt; 儲存空間 -&gt; X</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1xGk1DT_jCt3V4eNQo1QqHOaP6nDiYO_F"></p>
+<p>驅動安裝完成後，將虛擬 Windows 關閉，並將虛擬主磁碟的介面由原本的 IDE 改成 Virtio。</p>
+<p>剛剛新增的虛擬副磁碟已不再需要，所以可以把它刪除。</p>
+<ol start="11">
+<li>移除虛擬副磁碟</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=16Aum_RlF3PiVzt1v7jQuteLAFOt1gbPo"></p>
+<p>映像檔也不再需要，可以一併刪除。</p>
+<ol start="12">
+<li>移除虛擬光碟機裝置</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1nQ7wVucqQ-wjnDp2KuWJ6fW50PAm7N4l"></p>
+<p>新增的虛擬光碟機也不再需要，可以一併刪除。</p>
+<ol start="13">
+<li>確認移除裝置</li>
+</ol>
+<p><img src="https://drive.google.com/uc?export=download&id=1olDCpaqoqWIx2GEbtNH3X67jzzdHmhCx"></p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>大功告成，現在 Nas 的主系統磁碟應該與虛擬機執行的 Windows 磁碟之間有 Virtio 介面做連接，可有較快的交換資料速度。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Qnap Nas 安裝 Virtio (Qnap Nas Virtio)</p><p><a href="https://meowlucian.github.io/Qnap-Nas-Virtio/">https://meowlucian.github.io/Qnap-Nas-Virtio/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Meow Lucian</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2018-12-01</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-07-04</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Nas/">Nas</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/Visual-Studio-Tutorial/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Visual Studio 教學 (Visual Studio Tutorial)</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/Webpage-with-SSL/"><span class="level-item">為網頁加上 SSL 憑證 (Webpage with SSL)</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://meowlucian.github.io/Qnap-Nas-Virtio/';
+            this.page.identifier = 'Qnap-Nas-Virtio/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'braingarden' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Meow Lucian"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Meow Lucian</p><p class="is-size-6 is-block">Software/Firmware Engineer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hsinchu, Taiwan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">22</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">22</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/MeowLucian" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/MeowLucian"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://www.facebook.com/profile.php?id=100002550282519"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Linkedin" href="https://www.linkedin.com/in/lucian-lo-505a02132/"><i class="fab fa-linkedin"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><li><a class="level is-mobile" href="#傳輸速度的疑難雜症"><span class="level-left"><span class="level-item">1</span><span class="level-item">傳輸速度的疑難雜症</span></span></a></li><li><a class="level is-mobile" href="#何謂-Virtio"><span class="level-left"><span class="level-item">2</span><span class="level-item">何謂 Virtio</span></span></a></li><li><a class="level is-mobile" href="#Virtio-驅動下載"><span class="level-left"><span class="level-item">3</span><span class="level-item">Virtio 驅動下載</span></span></a></li><li><a class="level is-mobile" href="#安裝步驟"><span class="level-left"><span class="level-item">4</span><span class="level-item">安裝步驟</span></span></a></li><li><a class="level is-mobile" href="#結語"><span class="level-left"><span class="level-item">5</span><span class="level-item">結語</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-19T16:00:00.000Z">2022-05-20</time></p><p class="title"><a href="/git-fetch-issue/">git version 2.36.1 - fatal unsafe repository</a></p><p class="categories"><a href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-19T16:00:00.000Z">2022-05-20</time></p><p class="title"><a href="/gnu-cflow/">gnu cflow 教學 (gnu cflow tutorial)</a></p><p class="categories"><a href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-16T16:00:00.000Z">2022-05-17</time></p><p class="title"><a href="/Fix-anydesk-Ubuntu-22-04/">Fix anydesk Ubuntu 22.04 not works issue</a></p><p class="categories"><a href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/Linux-Tutorial/"><img src="/images/Linux-Tutorial/Linux-Tutorial-banner.jpg" alt="Linux 教學 (Linux Tutorial)"></a></figure><div class="media-content"><p class="date"><time dateTime="2019-08-03T16:00:00.000Z">2019-08-04</time></p><p class="title"><a href="/Linux-Tutorial/">Linux 教學 (Linux Tutorial)</a></p><p class="categories"><a href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/C-Tutorial/"><img src="/images/C-Tutorial/C-Tutorial-banner.jpg" alt="C 教學 (C Tutorial)"></a></figure><div class="media-content"><p class="date"><time dateTime="2019-07-18T16:00:00.000Z">2019-07-19</time></p><p class="title"><a href="/C-Tutorial/">C 教學 (C Tutorial)</a></p><p class="categories"><a href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/">Learning-Note-學習筆記</a></p></div></article></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Learning-Note-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/"><span class="level-start"><span class="level-item">Learning-Note-學習筆記</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/Lift-%E7%94%9F%E6%B4%BB/"><span class="level-start"><span class="level-item">Lift-生活</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Code/"><span class="tag">Code</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dpi/"><span class="tag">Dpi</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Drive/"><span class="tag">Drive</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GCC/"><span class="tag">GCC</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Github/"><span class="tag">Github</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Headphone/"><span class="tag">Headphone</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MIMO/"><span class="tag">MIMO</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mathtype/"><span class="tag">Mathtype</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Nas/"><span class="tag">Nas</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Office/"><span class="tag">Office</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/QT/"><span class="tag">QT</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SDR/"><span class="tag">SDR</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSL/"><span class="tag">SSL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Url/"><span class="tag">Url</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web/"><span class="tag">Web</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/anydesk/"><span class="tag">anydesk</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cflow/"><span class="tag">cflow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">2</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="Brain Garden" height="28"></a><p class="is-size-7"><span>&copy; 2022 Meow Lucian</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><div class="level-item has-text-centered flex-shrink-1"><a target="_blank" rel="noopener" href="https://www.flagcounter.me/details/cSb"><img height="160" width="288" src="https://www.flagcounter.me/cSb/" style="margin-left: 0px"></a></div></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download my hexo theme on GitHub" href="https://github.com/MeowLucian/MeowLucian.github.io_Hexo_Theme"><i class="fab fa-github"></i></a></p></div><div class="level-item has-text-centered flex-shrink-1"><a target="_blank" rel="noopener" href="https://SiteStates.com"><img height="47" width="143" src="https://SiteStates.com/show/image/32617.jpg" style="margin-left: 0px"></a></div><br><div class="level-item has-text-centered flex-shrink-1"><a target="_blank" rel="noopener" href="https://SiteStates.com"><img height="47" width="143" src="https://SiteStates.com/show/image/32616.jpg" style="margin-left: 0px"></a></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
